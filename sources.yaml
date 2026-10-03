@@ -21,6 +21,13 @@ feeds:
   # AI, economics and work
   - {name: "One Useful Thing (Ethan Mollick)", url: "https://www.oneusefulthing.org/feed"}
   - {name: "Exponential View", url: "https://www.exponentialview.co/feed"}
+  - {name: "Epoch AI (Gradient Updates)", url: "https://epochai.substack.com/feed"}
+  - {name: "Understanding AI (Timothy B. Lee)", url: "https://www.understandingai.org/feed"}
+  - {name: "Marginal Revolution", url: "https://marginalrevolution.com/feed", filter: ai}
+  - {name: "Noahpinion", url: "https://www.noahpinion.blog/feed", filter: ai}
+  # Economic research: new papers on AI (NBER has no dates; each paper is shown once)
+  - {name: "NBER new working papers", url: "https://www.nber.org/rss/new.xml", filter: ai}
+  - {name: "arXiv econ.GN", url: "https://rss.arxiv.org/rss/econ.GN", filter: ai}
   # Netherlands
   - {name: "Emerce", url: "https://www.emerce.nl/rss", filter: ai}
 

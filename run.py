@@ -33,6 +33,8 @@ log = logging.getLogger("morning-signal")
 MODE_INSTRUCTIONS = {
     "weekday": (
         "1. Select the 3 to 5 news items most relevant to the listener. Three strong items beat five weak ones.\n"
+        "   Include one item on AI for (economic) research or the economics of AI whenever there is a\n"
+        "   worthwhile one (new papers, data, evidence); search for it if the feeds have none.\n"
         "2. Choose one deep-dive topic that is not in the past deep-dive list. It may grow out of today's news\n"
         "   or come from the listener's interests (techniques, architectures, AI for research, Dutch business\n"
         "   opportunities). Research it properly: mechanisms, trade-offs, concrete examples."
@@ -252,7 +254,7 @@ def publish(day: Date, workdir: Path, cfg: dict, mia_voice: str) -> None:
     git = ["git", "-C", str(ROOT)]
     subprocess.run([*git, "add", "episodes", "docs"], check=True)
     subprocess.run([*git, "commit", "-q", "-m", f"feat: episode {day.isoformat()}"], check=True)
-    subprocess.run([*git, "pull", "-q", "--rebase"], check=True)
+    subprocess.run([*git, "pull", "-q", "--rebase", "--autostash"], check=True)
     subprocess.run([*git, "push", "-q"], check=True)
 
 

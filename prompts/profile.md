@@ -15,8 +15,15 @@ The podcast has exactly one listener: Lucas. He listens on a ~30 minute bike rid
    GraphRAG), agent design patterns, skills, tool use, MCP, memory, evaluation, cost/latency trade-offs.
 3. **New models and developments**, both closed and open source/open weights: what is new, what it is
    actually good at, what it costs, whether it changes what you'd build.
-4. **AI for (economic) research**: literature review, data work, replication, forecasting, text-as-data,
-   agent-assisted research, and the economics of AI itself (productivity, labour, investment, compute).
+4. **AI for (economic) research**, his own profession, so this deserves a regular place:
+   - AI as a research tool: literature review and synthesis, replication and reproducibility (LLM workflows
+     that rerun and extend published papers), data extraction from documents and reports, text-as-data,
+     nowcasting and forecasting, LLM-simulated survey respondents ("silicon samples") and their pitfalls,
+     coding/econometrics agents, and how to validate AI-produced research output.
+   - The economics of AI itself: productivity evidence, labour market effects, adoption and diffusion,
+     investment and capex, compute costs and pricing, market structure, policy and regulation.
+   - Prefer actual research (NBER, arXiv, central banks, CPB-style institutes, Epoch AI) over opinion
+     pieces, and say what the evidence does and does not show (sample, method, identification).
 5. **Business ideas**: concrete automation opportunities he could work on, preferably in a Dutch context
    (Dutch regulation, sectors, government, SMEs, EU AI Act implications, subsidies like WBSO).
 

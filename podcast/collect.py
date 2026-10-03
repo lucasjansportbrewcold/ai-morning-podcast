@@ -17,10 +17,12 @@ from youtube_transcript_api import YouTubeTranscriptApi
 log = logging.getLogger(__name__)
 
 USER_AGENT = "Mozilla/5.0 (morning-signal podcast collector)"
+# Deliberately strict: broad words like "model", "agents" or "inference" also mean other things,
+# especially in economics feeds.
 AI_PATTERN = re.compile(
-    r"\b(AI|A\.I\.|LLMs?|GPT[-\w.]*|Claude|Gemini|OpenAI|Anthropic|DeepMind|agents?|agentic|RAG|"
-    r"machine learning|neural|transformers?|Llama|Mistral|Qwen|DeepSeek|chatbots?|inference|"
-    r"Nvidia|GPUs?|kunstmatige intelligentie|taalmodel\w*|model(s|len)?)\b",
+    r"\b(AI|A\.I\.|artificial intelligence|LLMs?|large language models?|generative|GPT[-\w.]*|ChatGPT|"
+    r"Claude|Gemini|OpenAI|Anthropic|DeepMind|agentic|AI agents?|RAG|machine learning|deep learning|"
+    r"neural|Llama|Mistral|Qwen|DeepSeek|chatbots?|Nvidia|GPUs?|kunstmatige intelligentie|taalmodel\w*)\b",
     re.IGNORECASE,
 )
 
@@ -54,7 +56,8 @@ def collect_feeds(feeds: list[dict], since: datetime, seen: set[str], cfg: dict)
         for entry in parsed.entries:
             published = _entry_time(entry)
             link = entry.get("link", "")
-            if not published or published < since or link in seen:
+            # Undated feeds (e.g. NBER): include each item once; `seen` holds what earlier episodes got.
+            if (published and published < since) or link in seen:
                 continue
             body = entry.get("content", [{}])[0].get("value") or entry.get("summary", "")
             text = _clean(body, cfg["summary_max_chars"])
@@ -62,7 +65,7 @@ def collect_feeds(feeds: list[dict], since: datetime, seen: set[str], cfg: dict)
             if feed.get("filter") == "ai" and not AI_PATTERN.search(f"{title} {text}"):
                 continue
             items.append({"source": feed["name"], "title": title, "url": link,
-                          "published": published.isoformat(), "text": text})
+                          "published": published.isoformat() if published else "undated", "text": text})
             kept += 1
             if kept >= cfg["max_items_per_feed"]:
                 break
@@ -119,7 +122,7 @@ def collect(sources: dict, cfg: dict, seen: set[str], now: datetime, out_dir: Pa
     yt_since = now - timedelta(hours=cfg["youtube_lookback_hours"])
     items = collect_feeds(sources.get("feeds", []), feed_since, seen, cfg)
     items += collect_youtube(sources.get("youtube", []), yt_since, seen, cfg)
-    items.sort(key=lambda it: it["published"], reverse=True)
+    items.sort(key=lambda it: (it["published"] != "undated", it["published"]), reverse=True)
     (out_dir / "collected.md").write_text(to_markdown(items, date), encoding="utf-8")
     (out_dir / "collected_urls.txt").write_text("\n".join(it["url"] for it in items), encoding="utf-8")
     return len(items)
