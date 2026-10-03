@@ -1,0 +1,36 @@
+# RSS/Atom feeds. `filter: ai` keeps only items that look AI-related (for broad feeds).
+feeds:
+  # Builders, agents, RAG, evals
+  - {name: "Simon Willison", url: "https://simonwillison.net/atom/everything/"}
+  - {name: "Latent Space", url: "https://www.latent.space/feed"}
+  - {name: "Hamel Husain", url: "https://hamel.dev/index.xml"}
+  - {name: "Eugene Yan", url: "https://eugeneyan.com/rss/"}
+  - {name: "AI Hero (Matt Pocock)", url: "https://www.aihero.dev/rss.xml"}
+  # Models and research
+  - {name: "Interconnects (Nathan Lambert)", url: "https://www.interconnects.ai/feed"}
+  - {name: "Import AI (Jack Clark)", url: "https://importai.substack.com/feed"}
+  - {name: "Ahead of AI (Sebastian Raschka)", url: "https://magazine.sebastianraschka.com/feed"}
+  - {name: "Hugging Face blog", url: "https://huggingface.co/blog/feed.xml"}
+  - {name: "OpenAI news", url: "https://openai.com/news/rss.xml"}
+  - {name: "Google DeepMind blog", url: "https://deepmind.google/blog/rss.xml"}
+  - {name: "Google AI blog", url: "https://blog.google/technology/ai/rss/"}
+  - {name: "The Decoder", url: "https://the-decoder.com/feed/"}
+  # Community signal
+  - {name: "Hacker News (100+ points)", url: "https://hnrss.org/frontpage?points=100", filter: ai}
+  - {name: "r/LocalLLaMA (top today)", url: "https://www.reddit.com/r/LocalLLaMA/top/.rss?t=day"}
+  # AI, economics and work
+  - {name: "One Useful Thing (Ethan Mollick)", url: "https://www.oneusefulthing.org/feed"}
+  - {name: "Exponential View", url: "https://www.exponentialview.co/feed"}
+  # Netherlands
+  - {name: "Emerce", url: "https://www.emerce.nl/rss", filter: ai}
+
+# YouTube channels: new videos are read via their transcripts.
+youtube:
+  - {name: "AI Explained", channel_id: "UCNJ1Ymd5yFuUPtn21xtRbbw"}
+  - {name: "Matt Pocock", channel_id: "UCswG6FSbgZjbWtdf_hMLaow"}
+  - {name: "Latent Space", channel_id: "UCxBcwypKK-W3GHd_RZ9FZrQ"}
+  - {name: "Sam Witteveen", channel_id: "UC55ODQSvARtgSyc8ThfiepQ"}
+  - {name: "Andrej Karpathy", channel_id: "UCXUPKJO5MZQN11PqgIvyuvQ"}
+  - {name: "IndyDevDan", channel_id: "UC_x36zCEGilGpB1m-V4gmjg"}
+  - {name: "Anthropic", channel_id: "UCrDwWp7EBBv4NwvScIpBDOA"}
+  - {name: "Dwarkesh Patel", channel_id: "UCXl4i9dYBrFOabk0xGmbkRA"}

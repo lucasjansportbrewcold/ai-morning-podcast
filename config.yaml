@@ -1,0 +1,38 @@
+podcast:
+  title: "Morning Signal"
+  author: "Lucas"
+  description: "A private daily AI briefing for the bike ride to work: AI engineering, agents, models, AI for (economic) research and business ideas."
+  repo: "lucasjansportbrewcold/ai-morning-podcast"
+  base_url: "https://lucasjansportbrewcold.github.io/ai-morning-podcast"
+  language: "en"
+
+# Mia is the hands-on AI enthusiast, George the tech expert.
+# Mia's voice rotates per day so you can find out which one you don't like;
+# the voice used is mentioned in the show notes.
+hosts:
+  MIA:
+    voices: ["af_heart", "af_bella", "af_sarah"]
+    lang: "en-us"
+  GEORGE:
+    voices: ["bm_george"]
+    lang: "en-gb"
+
+tts:
+  speed: 1.05
+  bitrate: "64k"
+
+episode:
+  target_minutes: 30
+  # Measured on the samples: ~950 characters of script per minute of audio.
+  chars_per_minute: 950
+
+collect:
+  lookback_hours: 36
+  youtube_lookback_hours: 72
+  max_items_per_feed: 12
+  summary_max_chars: 2500
+  transcript_max_words: 12000
+
+claude:
+  model: "opus"
+  timeout_minutes: 45
