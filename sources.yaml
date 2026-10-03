@@ -6,6 +6,7 @@ feeds:
   - {name: "Hamel Husain", url: "https://hamel.dev/index.xml"}
   - {name: "Eugene Yan", url: "https://eugeneyan.com/rss/"}
   - {name: "AI Hero (Matt Pocock)", url: "https://www.aihero.dev/rss.xml"}
+  - {name: "Lenny's Newsletter (How I AI)", url: "https://www.lennysnewsletter.com/feed"}
   # Models and research
   - {name: "Interconnects (Nathan Lambert)", url: "https://www.interconnects.ai/feed"}
   - {name: "Import AI (Jack Clark)", url: "https://importai.substack.com/feed"}
