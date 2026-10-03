@@ -1,0 +1,13 @@
+{
+  "title": "The Lethal Trifecta: Designing Agents That Survive Prompt Injection",
+  "summary": "Why filters and guardrail models fail against adaptive attackers, and how the Rule of Two, six design patterns and Google DeepMind's CaMeL make prompt injection structurally harmless instead. Ends with a concrete audit Lucas can run on his own agents, including this podcast pipeline, this week.",
+  "shownotes": "The threat model: no separate channel for instructions and data, and Simon Willison's lethal trifecta (private data, untrusted content, external communication)\nWhy detection fails: 'The Attacker Moves Second' broke 12 published defences with adaptive attacks, most above 90% success\nMeta's Agents Rule of Two: at most two of untrusted input, sensitive data, and state change or external communication per session\nSix design patterns for securing LLM agents: Action-Selector, Plan-Then-Execute, LLM Map-Reduce, Dual LLM, Code-Then-Execute, Context-Minimization\nCaMeL: privileged and quarantined LLMs, capability tags and security policies; 77% vs 84% task success, about 2.8x tokens\nAdaptive evaluation of out-of-band defences: an early, small-scale data point\nOS-level containment: Claude Code sandboxing, network proxy allowlists and 84% fewer permission prompts; approval fatigue\nContext: another OpenAI safety departure and the call for multiple layers of redundancy\nPractical audit: Rule of Two on the Morning Signal pipeline, Map-Reduce feed triage, hooks plus sandbox, planted injection tests\n\nSources\nhttps://simonwillison.net/2025/Jun/16/the-lethal-trifecta/\nhttps://arxiv.org/abs/2510.09023\nhttps://ai.meta.com/blog/practical-ai-agent-security/\nhttps://arxiv.org/html/2506.08837\nhttps://arxiv.org/abs/2503.18813\nhttps://arxiv.org/html/2503.18813v2\nhttps://github.com/google-research/camel-prompt-injection\nhttps://arxiv.org/abs/2606.26479\nhttps://www.anthropic.com/engineering/claude-code-sandboxing\nhttps://the-decoder.com/another-openai-safety-departure-adds-to-a-pattern-of-researchers-leaving-with-public-warnings/\n\nVoices: Mia: af_sarah, George: bm_george",
+  "date": "2026-10-03",
+  "guid": "morning-signal-2026-10-03",
+  "published": "2026-10-03T20:44:05+02:00",
+  "audio_url": "https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-03/morning-signal-2026-10-03.mp3",
+  "audio_bytes": 16700886,
+  "duration_seconds": 2087.498,
+  "deep_dive": "Prompt injection defence by architecture: the lethal trifecta, the Rule of Two, and CaMeL-style agents",
+  "voices": "Mia: af_sarah, George: bm_george"
+}

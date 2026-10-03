@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Morning Signal</title>
+    <link>https://lucasjansportbrewcold.github.io/ai-morning-podcast/</link>
+    <description>A private daily AI briefing for the bike ride to work: AI engineering, agents, models, AI for (economic) research and business ideas.</description>
+    <language>en</language>
+    <itunes:author>Lucas</itunes:author>
+    <itunes:block>Yes</itunes:block>
+    <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>The Lethal Trifecta: Designing Agents That Survive Prompt Injection</title>
+      <description>Why filters and guardrail models fail against adaptive attackers, and how the Rule of Two, six design patterns and Google DeepMind's CaMeL make prompt injection structurally harmless instead. Ends with a concrete audit Lucas can run on his own agents, including this podcast pipeline, this week.
+
+The threat model: no separate channel for instructions and data, and Simon Willison's lethal trifecta (private data, untrusted content, external communication)
+Why detection fails: 'The Attacker Moves Second' broke 12 published defences with adaptive attacks, most above 90% success
+Meta's Agents Rule of Two: at most two of untrusted input, sensitive data, and state change or external communication per session
+Six design patterns for securing LLM agents: Action-Selector, Plan-Then-Execute, LLM Map-Reduce, Dual LLM, Code-Then-Execute, Context-Minimization
+CaMeL: privileged and quarantined LLMs, capability tags and security policies; 77% vs 84% task success, about 2.8x tokens
+Adaptive evaluation of out-of-band defences: an early, small-scale data point
+OS-level containment: Claude Code sandboxing, network proxy allowlists and 84% fewer permission prompts; approval fatigue
+Context: another OpenAI safety departure and the call for multiple layers of redundancy
+Practical audit: Rule of Two on the Morning Signal pipeline, Map-Reduce feed triage, hooks plus sandbox, planted injection tests
+
+Sources
+https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/
+https://arxiv.org/abs/2510.09023
+https://ai.meta.com/blog/practical-ai-agent-security/
+https://arxiv.org/html/2506.08837
+https://arxiv.org/abs/2503.18813
+https://arxiv.org/html/2503.18813v2
+https://github.com/google-research/camel-prompt-injection
+https://arxiv.org/abs/2606.26479
+https://www.anthropic.com/engineering/claude-code-sandboxing
+https://the-decoder.com/another-openai-safety-departure-adds-to-a-pattern-of-researchers-leaving-with-public-warnings/
+
+Voices: Mia: af_sarah, George: bm_george</description>
+      <pubDate>Sat, 03 Oct 2026 20:44:05 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-03</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-03/morning-signal-2026-10-03.mp3" length="16700886" type="audio/mpeg"/>
+      <itunes:duration>00:34:47</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+  </channel>
+</rss>
