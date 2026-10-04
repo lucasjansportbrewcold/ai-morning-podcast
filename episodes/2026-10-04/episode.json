@@ -1,0 +1,13 @@
+{
+  "title": "The AI Data Editor: Agents That Rerun 4,452 Economics Papers",
+  "summary": "A new NBER workflow ran an LLM over 4,452 replication packages and flagged discrepancies in 3,460 articles, while benchmarks show coding agents now reproduce most social-science results when given code and data. We dig into what those flags mean, why agents must never see the answer key, and how Lucas can build a blind, sandboxed reproduction check this week.",
+  "shownotes": "NBER w35782 (Schwartz, Andrews, Shapiro): an LLM workflow that reproduces, improves and extends 4,452 published replication packages; 3,460 articles flagged, 496 with 10x+ speedups, 923 extensions\nWhat a discrepancy flag does and does not mean: a lead for a human editor, not a verdict\nThree regimes of reproduction: code and data (Alizadeh et al.), methods and data only (Kohler et al.), proof checking (Toda)\nThe confirmation-bias trap: giving agents the paper PDF or confirmatory prompts hurts accuracy on non-reproducible tasks; information isolation and deterministic diffing as the fix\nHuman-in-the-loop evidence: Brodeur et al. randomised experiment (94% / 91% / 37%) and its caveats\nWhere this goes: pre-submission checks, meta-science audits, who referees agent-written extensions, Dutch replication funding\nThis week's build: a blind, sandboxed mini AI data editor with deterministic diffing and a planted canary bug\n\nSources\nhttps://www.nber.org/papers/w35782\nhttps://github.com/MetaEconomics/AIDataEditorWorkflowPublic\nhttps://arxiv.org/abs/2606.11447\nhttps://arxiv.org/html/2606.11447\nhttps://arxiv.org/abs/2604.21965\nhttps://arxiv.org/html/2604.21965v2\nhttps://www.posadaaparicio.com/papers/ai-reproducibility.html\nhttps://www.pnas.org/doi/10.1073/pnas.2524747123\nhttps://github.com/I4Replication/AI-Games\nhttps://econjwatch.org/articles/are-chatbot-validations-of-mathematical-economics-valid\nhttps://arxiv.org/abs/2602.18453\nhttps://www.openscience.nl/en/news/new-call-replication-research-becomes-more-visible-and-normalised\nhttps://www.nwo.nl/en/projects/36202004\nhttps://x.com/heimbergecon/status/2105881619618029946\n\nVoices: Mia: af_heart, George: bm_george",
+  "date": "2026-10-04",
+  "guid": "morning-signal-2026-10-04",
+  "published": "2026-10-04T05:15:16+02:00",
+  "audio_url": "https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-04/morning-signal-2026-10-04.mp3",
+  "audio_bytes": 11437199,
+  "duration_seconds": 1429.5393333333334,
+  "deep_dive": "The AI data editor — agents that reproduce, stress-test and extend published economics research",
+  "voices": "Mia: af_heart, George: bm_george"
+}

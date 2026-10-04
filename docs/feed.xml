@@ -9,6 +9,41 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>The AI Data Editor: Agents That Rerun 4,452 Economics Papers</title>
+      <description>A new NBER workflow ran an LLM over 4,452 replication packages and flagged discrepancies in 3,460 articles, while benchmarks show coding agents now reproduce most social-science results when given code and data. We dig into what those flags mean, why agents must never see the answer key, and how Lucas can build a blind, sandboxed reproduction check this week.
+
+NBER w35782 (Schwartz, Andrews, Shapiro): an LLM workflow that reproduces, improves and extends 4,452 published replication packages; 3,460 articles flagged, 496 with 10x+ speedups, 923 extensions
+What a discrepancy flag does and does not mean: a lead for a human editor, not a verdict
+Three regimes of reproduction: code and data (Alizadeh et al.), methods and data only (Kohler et al.), proof checking (Toda)
+The confirmation-bias trap: giving agents the paper PDF or confirmatory prompts hurts accuracy on non-reproducible tasks; information isolation and deterministic diffing as the fix
+Human-in-the-loop evidence: Brodeur et al. randomised experiment (94% / 91% / 37%) and its caveats
+Where this goes: pre-submission checks, meta-science audits, who referees agent-written extensions, Dutch replication funding
+This week's build: a blind, sandboxed mini AI data editor with deterministic diffing and a planted canary bug
+
+Sources
+https://www.nber.org/papers/w35782
+https://github.com/MetaEconomics/AIDataEditorWorkflowPublic
+https://arxiv.org/abs/2606.11447
+https://arxiv.org/html/2606.11447
+https://arxiv.org/abs/2604.21965
+https://arxiv.org/html/2604.21965v2
+https://www.posadaaparicio.com/papers/ai-reproducibility.html
+https://www.pnas.org/doi/10.1073/pnas.2524747123
+https://github.com/I4Replication/AI-Games
+https://econjwatch.org/articles/are-chatbot-validations-of-mathematical-economics-valid
+https://arxiv.org/abs/2602.18453
+https://www.openscience.nl/en/news/new-call-replication-research-becomes-more-visible-and-normalised
+https://www.nwo.nl/en/projects/36202004
+https://x.com/heimbergecon/status/2105881619618029946
+
+Voices: Mia: af_heart, George: bm_george</description>
+      <pubDate>Sun, 04 Oct 2026 05:15:16 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-04</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-04/morning-signal-2026-10-04.mp3" length="11437199" type="audio/mpeg"/>
+      <itunes:duration>00:23:50</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>The Lethal Trifecta: Designing Agents That Survive Prompt Injection</title>
       <description>Why filters and guardrail models fail against adaptive attackers, and how the Rule of Two, six design patterns and Google DeepMind's CaMeL make prompt injection structurally harmless instead. Ends with a concrete audit Lucas can run on his own agents, including this podcast pipeline, this week.
 
