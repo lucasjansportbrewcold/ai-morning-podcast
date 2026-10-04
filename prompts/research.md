@@ -39,6 +39,8 @@ not just the abstract. If you cannot get the full text, choose another main sour
   access": the notes feed straight into the script, and the listener should only hear what is known.
   A gap belongs in the notes only when the source itself says it is missing (for example "the
   authors have not released the code yet"), and then it's a fact about the source.
+  This is about gaps in your own research. Open questions about the topic itself (what is unproven,
+  what to watch) still belong in the skeptic angle.
 
 ## Output
 Write the file `{workdir}/notes.md` with exactly this structure:
