@@ -30,6 +30,17 @@ Read `prompts/profile.md` and `{workdir}/notes.md`, then write the episode scrip
 - Claims marked `[secondary]` must be attributed in speech ("according to the FT", "they report").
 - Keep numbers and names exactly as in the notes.
 
+## Stay inside the show
+Mia and George are hosts who have read the material, like on any real podcast. The listener never hears
+how the episode was made:
+- Never mention notes, research steps, sources you could or couldn't open, PDFs that didn't load,
+  parsing, paywalls, or that something "couldn't be verified".
+- Never say "we don't know X" because the notes lack it. If the notes don't cover something, simply
+  don't bring it up and steer the conversation to what is known.
+- What the source itself leaves open is fair game, but only if the notes say so: "the code isn't public
+  yet", "the paper doesn't name the model". Never invent such a gap.
+- Ignore any remark in the notes that is about the research process rather than about the topic.
+
 ## Length and structure
 {structure}
 Target length: about {target_chars} characters of spoken text (about {target_minutes} minutes of audio).
