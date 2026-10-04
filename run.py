@@ -88,14 +88,15 @@ def build_history(day: Date) -> tuple[str, set[str]]:
     return text, seen
 
 
-def run_claude(prompt: str, tools: list[str], allowed: list[str], model: str, timeout_min: int) -> None:
+def run_claude(prompt: str, tools: list[str], allowed: list[str], model: str, timeout_min: int,
+               mcp_servers: dict | None = None) -> None:
     exe = shutil.which("claude")
     if not exe:
         raise RuntimeError("claude CLI not found on PATH")
     cmd = [exe, "-p", "--model", model, "--output-format", "json",
            "--tools", ",".join(tools), "--allowedTools", *allowed,
            "--permission-mode", "dontAsk", "--setting-sources", "project",
-           "--strict-mcp-config", "--mcp-config", '{"mcpServers":{}}']
+           "--strict-mcp-config", "--mcp-config", json.dumps({"mcpServers": mcp_servers or {}})]
     # Keep the user's global CLAUDE.md out of the podcast agent's context.
     env = {**os.environ, "CLAUDE_CODE_DISABLE_CLAUDE_MDS": "1"}
     result = subprocess.run(cmd, input=prompt, cwd=ROOT, env=env, capture_output=True,
@@ -178,9 +179,13 @@ def main() -> int:
 
         if "research" in steps:
             prompt = fill("research.md", **common, mode_instructions=MODE_INSTRUCTIONS[mode])
+            # WebFetch can't read PDFs; read_pdf saves a paper's text in the work dir, where Read may open it.
+            papers = {"command": sys.executable,
+                      "args": [str(ROOT / "podcast" / "pdf_server.py"), str(workdir / "papers")]}
             run_claude(prompt, ["Read", "Write", "WebSearch", "WebFetch"],
-                       [*read_rules, f"Edit(./{workdir_rel}/**)", "WebSearch", "WebFetch"],
-                       cfg["claude"]["model"], cfg["claude"]["timeout_minutes"])
+                       [*read_rules, f"Edit(./{workdir_rel}/**)", "WebSearch", "WebFetch",
+                        "mcp__papers__read_pdf"],
+                       cfg["claude"]["model"], cfg["claude"]["timeout_minutes"], {"papers": papers})
             if not (workdir / "notes.md").exists():
                 raise RuntimeError("research step did not write notes.md")
 

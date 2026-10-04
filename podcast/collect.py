@@ -7,6 +7,7 @@ source are logged and skipped so one broken feed never blocks an episode.
 import html
 import logging
 import re
+import time
 import urllib.request
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
@@ -27,10 +28,19 @@ AI_PATTERN = re.compile(
 )
 
 
-def _fetch(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return resp.read()
+def _fetch(url: str, retry_delays: tuple[int, ...] = (10, 30)) -> bytes:
+    # Retry because the feeds fail now and then for a short while: YouTube's feed endpoint
+    # returned 404 for every channel at 05:00 on 2026-10-04 and worked again later that day.
+    for delay in (*retry_delays, None):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.read()
+        except Exception as e:
+            if delay is None:
+                raise
+            log.info("fetch %s failed (%s), retrying in %ds", url, e, delay)
+            time.sleep(delay)
 
 
 def _clean(text: str, limit: int) -> str:

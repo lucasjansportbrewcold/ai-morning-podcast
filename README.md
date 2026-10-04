@@ -10,7 +10,7 @@ bespreken het AI-nieuws en één verdieping, afgestemd op [mijn profiel](prompts
 | Stap | Wat | Waarmee |
 |---|---|---|
 | `collect` | Nieuwe items uit RSS-feeds en YouTube-transcripten ([sources.yaml](sources.yaml)) | Python, geen AI |
-| `research` | Selecteert nieuws, controleert bronnen, kiest en onderzoekt een deep dive → `notes.md` | `claude -p` met Read, Write, WebSearch, WebFetch |
+| `research` | Selecteert nieuws, controleert bronnen, kiest en onderzoekt een deep dive → `notes.md` | `claude -p` met Read, Write, WebSearch, WebFetch en `read_pdf` |
 | `write` | Schrijft het gesprek → `script.txt` + `episode.json` | `claude -p` met alleen Read en Write, geen web |
 | `tts` | Zet het script om naar mp3 | Kokoro (lokaal, gratis) |
 | `publish` | mp3 als GitHub Release, feed in `docs/feed.xml`, commit + push | `gh`, `git` |
@@ -21,7 +21,10 @@ Werkdagen: nieuws plus deep dive. Weekend: alleen een deep dive.
 
 Feeds en webpagina's zijn onbetrouwbare tekst (prompt injection). Daarom:
 - De Claude-stappen mogen alleen lezen in `prompts/` en de werkmap van vandaag, alleen schrijven in de
-  werkmap, en hebben geen shell, geen MCP-servers en niet mijn globale CLAUDE.md.
+  werkmap, en hebben geen shell, geen andere MCP-servers en niet mijn globale CLAUDE.md.
+- De onderzoeker krijgt één eigen tool, `read_pdf` ([podcast/pdf_server.py](podcast/pdf_server.py)):
+  die downloadt een PDF en zet de tekst in `work/<datum>/papers/`. WebFetch kan geen PDF's lezen, en zo
+  is er geen shell nodig. De map bepaalt `run.py`, niet Claude.
 - De schrijver heeft geen webtoegang en mag alleen feiten uit de gecontroleerde notities gebruiken.
 - Publiceren (`gh`, `git push`) doet het Python-script, nooit Claude.
 
