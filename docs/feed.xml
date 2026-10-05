@@ -9,6 +9,44 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Agents That Tune Themselves, and the URL Qwen Wasn't Told to Fetch</title>
+      <description>A local Qwen agent keeps dialling a memorised Alibaba Cloud URL, Meta's Muse has a one-line permission model, Strata puts a 125B MoE on a gaming GPU, and Epoch and Micron put numbers on how many agents memory supply can run. The deep dive covers Google's RRSI, which applies classical regularisation so that self-improving harnesses learn reusable mechanisms instead of memorising their tests.
+
+Qwen3.8-Flash-Next fabricates signed Alibaba Cloud storage URLs; prompt guards fail, Crow's provenance guard and a hard-block plugin work
+Meta's Muse: a system prompt line saying household authority overrides safety training, and why permissions belong in a table, not a sentence
+Strata runs the 125B Qwen3.8-Flash-Next at roughly 100 tokens per second on a single gaming GPU, with accuracy caveats
+Epoch AI estimates how many agents the world's HBM supply could run; Micron says memory stays tight through 2028
+Deep dive: Google's RRSI and how to regularise self-improving agent harnesses so they don't overfit their test sets
+
+Sources
+https://www.reddit.com/r/LocalLLaMA/comments/1wxvt41/my_qwen_model_hallucinated_a_signed_url_to/
+https://github.com/nibor1896/Crow/issues/288
+https://github.com/wtogami/qwen-block-proxy-artifacts
+https://github.com/QwenLM/Qwen3/issues/1891
+https://huggingface.co/Qwen/Qwen3.8-Flash-Next
+https://aiweekly.co/alerts/meta-muse-prompt-household-authority-overrides-safety-training
+https://startupfortune.com/metas-muse-tells-its-ai-that-household-authority-overrides-safety-training/
+https://www.resultsense.com/news/2026-09-30-meta-muse-agent-privacy-incidents/
+https://www.marktechpost.com/2026/08/26/alibabas-qwen-team-releases-qwen3-8-flash-next-a-125b-multimodal-moe-with-6b-active-parameters-previewing-the-qwen4-architecture/
+https://github.com/Niko1221/Strata
+https://news.ycombinator.com/item?id=49953495
+https://www.reddit.com/r/LocalLLaMA/comments/1wx72ni/the_curse_of_64gb_system_ram/
+https://www.reddit.com/r/LocalLLaMA/comments/1wxbm8w/need_maybe_say_use_llamacpp/
+https://epoch.ai/publications/estimating-the-agent-population
+https://s25.q4cdn.com/621799436/files/doc_financials/2026/q4/Q4-FY26-Prepared-Remarks.pdf
+https://thenextweb.com/news/micron-record-quarter-memory-shortage-2028
+https://arxiv.org/pdf/2609.24972
+https://the-decoder.com/google-researchers-find-a-way-to-keep-self-improving-ai-agents-from-memorizing-their-tests/
+https://wenwen-d.github.io/blog/harness-delta-attribution/
+
+Voices: Mia: af_bella, George: bm_george</description>
+      <pubDate>Mon, 05 Oct 2026 05:19:05 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-05</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-05/morning-signal-2026-10-05.mp3" length="14551637" type="audio/mpeg"/>
+      <itunes:duration>00:30:19</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>The AI Data Editor: Agents That Rerun 4,452 Economics Papers</title>
       <description>A new NBER workflow ran an LLM over 4,452 replication packages and flagged discrepancies in 3,460 articles, while benchmarks show coding agents now reproduce most social-science results when given code and data. We dig into what those flags mean, why agents must never see the answer key, and how Lucas can build a blind, sandboxed reproduction check this week.
 
