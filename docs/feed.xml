@@ -9,6 +9,38 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Right Order, Wrong Scale: When Your LLM Judge Gets the Level Wrong</title>
+      <description>Claude Cowork moves its agent sandbox to the cloud, Reflection promises a 501B open-weight model, OpenAI's EU watermark comes with an API opt-out, and nearly 30% of new US STEM dissertations contain AI writing. The deep dive: an MIT audit of 33 LLM judges shows that ranking answers correctly says almost nothing about whether the judge gets acceptance rates right, and what to do about it.
+
+Claude Cowork goes cloud-only: one sandbox per session, the desktop app brokers local file access
+Reflection announces Beam, a 501B-total, 23B-active open-weight MoE, weights promised later this month; Aleph Alpha releases Kolibri
+OpenAI turns on textGrain watermarking for EU ChatGPT users but makes it optional on the API; Anthropic marks Claude output worldwide
+NBER paper: nearly 30% of 2026 US STEM dissertations contain AI writing, and those authors leave academia more often
+Deep dive: Lyu and Thompson (MIT) audit 33 LLM judges against 45,796 worker ratings: right order, wrong scale, and how to validate a judge for the number you actually report
+
+Sources
+https://simonwillison.net/2026/Oct/5/felix-rieseberg/
+https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile
+https://qz.com/openai-gpt-61-astra-canceled-safety-deception-092826
+https://reflection.ai/blog/introducing-beam
+https://the-decoder.com/aleph-alpha-releases-kolibri-an-open-weight-model-that-makes-the-case-for-european-ai-sovereignty/
+https://infoq.com/news/2026/08/eu-ai-content-watermark
+https://the-decoder.com/openai-will-watermark-chatgpt-text-in-the-eu-but-makes-it-optional-for-api-users-worldwide/
+https://thenextweb.com/news/claude-watermark-eu-ai-act-exemptions-detection-api
+https://www.nber.org/papers/w35859
+https://www.nber.org/system/files/working_papers/w35859/w35859.pdf
+https://arxiv.org/abs/2610.02492
+https://arxiv.org/pdf/2610.02492
+https://arxiv.org/abs/2301.09633
+
+Voices: Mia: af_sarah, George: bm_george</description>
+      <pubDate>Tue, 06 Oct 2026 05:15:13 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-06</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-06/morning-signal-2026-10-06.mp3" length="14320085" type="audio/mpeg"/>
+      <itunes:duration>00:29:50</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Agents That Tune Themselves, and the URL Qwen Wasn't Told to Fetch</title>
       <description>A local Qwen agent keeps dialling a memorised Alibaba Cloud URL, Meta's Muse has a one-line permission model, Strata puts a 125B MoE on a gaming GPU, and Epoch and Micron put numbers on how many agents memory supply can run. The deep dive covers Google's RRSI, which applies classical regularisation so that self-improving harnesses learn reusable mechanisms instead of memorising their tests.
 

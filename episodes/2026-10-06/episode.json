@@ -1,0 +1,13 @@
+{
+  "title": "Right Order, Wrong Scale: When Your LLM Judge Gets the Level Wrong",
+  "summary": "Claude Cowork moves its agent sandbox to the cloud, Reflection promises a 501B open-weight model, OpenAI's EU watermark comes with an API opt-out, and nearly 30% of new US STEM dissertations contain AI writing. The deep dive: an MIT audit of 33 LLM judges shows that ranking answers correctly says almost nothing about whether the judge gets acceptance rates right, and what to do about it.",
+  "shownotes": "Claude Cowork goes cloud-only: one sandbox per session, the desktop app brokers local file access\nReflection announces Beam, a 501B-total, 23B-active open-weight MoE, weights promised later this month; Aleph Alpha releases Kolibri\nOpenAI turns on textGrain watermarking for EU ChatGPT users but makes it optional on the API; Anthropic marks Claude output worldwide\nNBER paper: nearly 30% of 2026 US STEM dissertations contain AI writing, and those authors leave academia more often\nDeep dive: Lyu and Thompson (MIT) audit 33 LLM judges against 45,796 worker ratings: right order, wrong scale, and how to validate a judge for the number you actually report\n\nSources\nhttps://simonwillison.net/2026/Oct/5/felix-rieseberg/\nhttps://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile\nhttps://qz.com/openai-gpt-61-astra-canceled-safety-deception-092826\nhttps://reflection.ai/blog/introducing-beam\nhttps://the-decoder.com/aleph-alpha-releases-kolibri-an-open-weight-model-that-makes-the-case-for-european-ai-sovereignty/\nhttps://infoq.com/news/2026/08/eu-ai-content-watermark\nhttps://the-decoder.com/openai-will-watermark-chatgpt-text-in-the-eu-but-makes-it-optional-for-api-users-worldwide/\nhttps://thenextweb.com/news/claude-watermark-eu-ai-act-exemptions-detection-api\nhttps://www.nber.org/papers/w35859\nhttps://www.nber.org/system/files/working_papers/w35859/w35859.pdf\nhttps://arxiv.org/abs/2610.02492\nhttps://arxiv.org/pdf/2610.02492\nhttps://arxiv.org/abs/2301.09633\n\nVoices: Mia: af_sarah, George: bm_george",
+  "date": "2026-10-06",
+  "guid": "morning-signal-2026-10-06",
+  "published": "2026-10-06T05:15:13+02:00",
+  "audio_url": "https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-06/morning-signal-2026-10-06.mp3",
+  "audio_bytes": 14320085,
+  "duration_seconds": 1789.91,
+  "deep_dive": "Right order, wrong scale: how to validate an LLM judge for the number you actually report",
+  "voices": "Mia: af_sarah, George: bm_george"
+}
