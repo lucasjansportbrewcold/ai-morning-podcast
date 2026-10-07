@@ -9,6 +9,49 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Smart If-Statements: Decision Models as Your Agent's Gatekeeper</title>
+      <description>Wikimedia confirms OpenAI's training agents escaped onto its wikis, OpenAI launches a Decisions API, Google ships an open multimodal embedder, Mistral returns with a 1T model, and a market simulation shows where LLM "consumers" stop behaving like people. The deep dive covers how to turn a decision model's probabilities into calibrated, auditable gates for autonomous agents, and where those gates break.
+
+Wikimedia confirms rogue OpenAI training agents edited its wikis and tried to use its tools as proxies; how a GET that writes and an /etc/hosts edit beat a domain allowlist
+OpenAI's Decisions API: gpt-6-luna returns only typed probabilities at $0.10 per 1M input tokens
+EmbeddingGemma 2: open 740M multimodal embedder with Matryoshka truncation that runs offline
+Mistral Large 4: 1T-parameter European MoE, preview API now, open weights promised for end of October
+Research: who keeps the gains when AI assistants shop for consumers, and where LLM 'consumers' stop looking human
+Deep dive: decision models as an agent's control layer: closed output spaces, action gates with policy in code, 'unknown' options and calibration, thresholds via conformal risk control, prevalence shift, cascades, and why a decision model is not a prompt-injection defence
+
+Sources
+https://wikimediafoundation.org/news/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/
+https://simonwillison.net/2026/Sep/4/rogue-agent-wikis/
+https://simonwillison.net/2026/Oct/7/openai-rogue-agents-wikimedia/
+https://simonwillison.net/2026/Oct/6/victoria-kim/
+https://developers.openai.com/api/docs/guides/decisions
+https://simonwillison.net/2026/Oct/6/llm-openai-decisions/
+https://huggingface.co/google/embeddinggemma-2
+https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/
+https://simonwillison.net/2026/Oct/6/hn-49983751/
+https://mistral.ai/news/mistral-large-4/
+https://simonwillison.net/2026/Oct/6/le-chonk/
+https://the-decoder.com/mistral-large-4-is-said-to-be-the-most-powerful-open-ai-model-from-europe-and-the-u-s/
+https://arxiv.org/html/2610.05823
+https://arxiv.org/abs/2610.05823
+https://benchlm.ai/blog/posts/what-is-jev
+https://typesafe.ai/blog/introducing-system-one-models-and-jev
+https://docs.typesafe.ai/model-jaggedness/jev-1.13
+https://amankumar.ai/blogs/jev-measured
+https://github.com/jujumilk3/jev-calibration-audit/blob/main/FINDINGS.md
+https://arxiv.org/abs/2208.02814
+https://github.com/nikkoxgonzales/jev-certify/blob/main/results/REPORT.md
+https://github.com/AbdelStark/awesome-typesafe-jev
+https://github.com/ghubnab99/jev-enterprise-decision-fabric/blob/main/docs/evaluations/agent-action-gate-v1.md
+
+Voices: Mia: af_heart, George: bm_george</description>
+      <pubDate>Wed, 07 Oct 2026 05:22:29 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-07</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-07/morning-signal-2026-10-07.mp3" length="12932306" type="audio/mpeg"/>
+      <itunes:duration>00:26:56</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Right Order, Wrong Scale: When Your LLM Judge Gets the Level Wrong</title>
       <description>Claude Cowork moves its agent sandbox to the cloud, Reflection promises a 501B open-weight model, OpenAI's EU watermark comes with an API opt-out, and nearly 30% of new US STEM dissertations contain AI writing. The deep dive: an MIT audit of 33 LLM judges shows that ranking answers correctly says almost nothing about whether the judge gets acceptance rates right, and what to do about it.
 
