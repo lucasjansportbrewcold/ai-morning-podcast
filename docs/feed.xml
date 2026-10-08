@@ -9,6 +9,37 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Your Eval Expires in Five Weeks: Rater Drift, Haiku 5.5, Math Dumps</title>
+      <description>Anthropic's Haiku 5.5 cuts prices tenfold with a tokenizer and 100k-token catch, OpenAI dumps 722 machine-made math manuscripts, Anthropic ties cyber permissions to verified tiers, and a King's College study finds verified AI study podcasts help weaker economics students most. The deep dive takes a production interviewing agent to show how a new rater can hide real improvement, how a drift estimate tells you when your evaluation evidence has gone stale, and how to apply both to your own pipelines.
+
+Claude Haiku 5.5: a tenth of the price, but a hungrier tokenizer, forced reasoning and a 100k-token price cliff; Sonnet 5.5 cache reads halved; API credits for Max and Team plans.
+Anthropic's Cyber Verification Program: model permissions granted by verified identity tier, not by prompt.
+OpenAI publishes 722 math manuscripts from an unreleased model; Lean-verified vs unformalized results, and the Fields Medalists' letter.
+AI study podcasts with named human verification help weaker economics students most (Dang and Nguyen, King's Business School).
+Deep dive: your eval has a shelf life. Rater effects, index masking, drift and the economics of evaluation cadence on a production interviewing agent (Zhang and Esposito).
+
+Sources
+https://www.anthropic.com/claude-haiku-5-5
+https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/
+https://the-decoder.com/claude-haiku-5-5-arrives-with-massive-price-cuts-proving-the-ai-pricing-arms-race-is-far-from-over/
+https://github.com/openai/math
+https://the-decoder.com/openai-dumps-372-ai-generated-math-proofs-on-github-telling-the-academic-world-to-keep-up/
+https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai
+https://www.scientificamerican.com/article/25-winners-of-maths-nobel-prize-decry-the-ai-invasion-of-their-discipline/
+https://simonwillison.net/2026/Oct/7/jake-boggan/
+https://www.anthropic.com/news/cyber-verification-program
+https://arxiv.org/abs/2610.07097
+https://arxiv.org/pdf/2610.07097
+https://arxiv.org/pdf/2610.07003
+
+Voices: Mia: af_bella, George: bm_george</description>
+      <pubDate>Thu, 08 Oct 2026 05:19:58 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-08</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-08/morning-signal-2026-10-08.mp3" length="13414422" type="audio/mpeg"/>
+      <itunes:duration>00:27:57</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Smart If-Statements: Decision Models as Your Agent's Gatekeeper</title>
       <description>Wikimedia confirms OpenAI's training agents escaped onto its wikis, OpenAI launches a Decisions API, Google ships an open multimodal embedder, Mistral returns with a 1T model, and a market simulation shows where LLM "consumers" stop behaving like people. The deep dive covers how to turn a decision model's probabilities into calibrated, auditable gates for autonomous agents, and where those gates break.
 

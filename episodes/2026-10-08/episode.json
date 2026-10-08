@@ -1,0 +1,13 @@
+{
+  "title": "Your Eval Expires in Five Weeks: Rater Drift, Haiku 5.5, Math Dumps",
+  "summary": "Anthropic's Haiku 5.5 cuts prices tenfold with a tokenizer and 100k-token catch, OpenAI dumps 722 machine-made math manuscripts, Anthropic ties cyber permissions to verified tiers, and a King's College study finds verified AI study podcasts help weaker economics students most. The deep dive takes a production interviewing agent to show how a new rater can hide real improvement, how a drift estimate tells you when your evaluation evidence has gone stale, and how to apply both to your own pipelines.",
+  "shownotes": "Claude Haiku 5.5: a tenth of the price, but a hungrier tokenizer, forced reasoning and a 100k-token price cliff; Sonnet 5.5 cache reads halved; API credits for Max and Team plans.\nAnthropic's Cyber Verification Program: model permissions granted by verified identity tier, not by prompt.\nOpenAI publishes 722 math manuscripts from an unreleased model; Lean-verified vs unformalized results, and the Fields Medalists' letter.\nAI study podcasts with named human verification help weaker economics students most (Dang and Nguyen, King's Business School).\nDeep dive: your eval has a shelf life. Rater effects, index masking, drift and the economics of evaluation cadence on a production interviewing agent (Zhang and Esposito).\n\nSources\nhttps://www.anthropic.com/claude-haiku-5-5\nhttps://simonwillison.net/2026/Oct/7/claude-haiku-5-5/\nhttps://the-decoder.com/claude-haiku-5-5-arrives-with-massive-price-cuts-proving-the-ai-pricing-arms-race-is-far-from-over/\nhttps://github.com/openai/math\nhttps://the-decoder.com/openai-dumps-372-ai-generated-math-proofs-on-github-telling-the-academic-world-to-keep-up/\nhttps://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai\nhttps://www.scientificamerican.com/article/25-winners-of-maths-nobel-prize-decry-the-ai-invasion-of-their-discipline/\nhttps://simonwillison.net/2026/Oct/7/jake-boggan/\nhttps://www.anthropic.com/news/cyber-verification-program\nhttps://arxiv.org/abs/2610.07097\nhttps://arxiv.org/pdf/2610.07097\nhttps://arxiv.org/pdf/2610.07003\n\nVoices: Mia: af_bella, George: bm_george",
+  "date": "2026-10-08",
+  "guid": "morning-signal-2026-10-08",
+  "published": "2026-10-08T05:19:58+02:00",
+  "audio_url": "https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-08/morning-signal-2026-10-08.mp3",
+  "audio_bytes": 13414422,
+  "duration_seconds": 1676.6973333333333,
+  "deep_dive": "Your eval has a shelf life: rater effects, drift and how often to re-evaluate a deployed agent",
+  "voices": "Mia: af_bella, George: bm_george"
+}
