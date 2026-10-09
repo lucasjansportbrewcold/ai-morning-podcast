@@ -9,6 +9,40 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Verify, Don't Opine: Why Manager Agents Make Reports Worse</title>
+      <description>A Leiden experiment shows that letting a manager agent send work back made reports more hedged and 51.5% more expensive, with no quality gain, unless the manager can actually verify something. Plus: one prompt that unlocked every Bedrock agent in an AWS account, silicon samples tested like stated-preference surveys, and Epoch's 13x-a-year drop in the price of AI performance.
+
+AgentCorruption: one chat message to a public Bedrock agent reached IMDS, stole STS credentials and unlocked every agent in the AWS account; scope your execution role, block link-local egress, treat memory as an attack surface.
+Silicon samples tested like a stated-preference survey: newer models pass theory-based validity tests yet miss human willingness-to-pay by 4 to 6x; coherent is not correct.
+Epoch AI: the price of a fixed level of AI performance falls about 13x a year (47% per quarter since 2023), faster than DNA sequencing, compute, batteries or electricity.
+CrowdStrike: a likely single operator used the open-source agentic pentest tool ARTEX against South Korean banks, with 25,000+ records stolen at Shinhan Bank.
+Deep dive: a LIACS Leiden paired experiment finds flat pipelines beat manager-with-loop-back on utility and clarity; the harm comes from the revision step, not the hierarchy. Tie revisions to verifier failures, not a manager's taste.
+
+Sources:
+https://labs.zenity.io/post/agentcorruption-initial-imds-access
+https://the-decoder.com/a-single-prompt-was-enough-to-hijack-every-ai-agent-in-an-aws-account-zenity-researchers-found/
+https://arxiv.org/html/2610.10506v1
+https://arxiv.org/abs/2610.10506
+https://marginalrevolution.com/marginalrevolution/2026/10/predictions-for-economics-given-ai.html
+https://epoch.ai/publications/the-plunging-price-of-thought
+https://epochai.substack.com/p/the-epoch-brief-october-8-2026
+https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/
+https://the-decoder.com/ai-powered-hacking-tools-enabled-a-likely-single-attacker-to-breach-multiple-south-korean-banks/
+https://arxiv.org/abs/2609.14767
+https://arxiv.org/html/2609.14767v2
+https://arxiv.org/abs/2310.01798
+https://aclanthology.org/2024.tacl-1.78/
+https://arxiv.org/abs/2305.11738
+https://arxiv.org/abs/2310.13548
+
+Voices: Mia: af_sarah, George: bm_george</description>
+      <pubDate>Fri, 09 Oct 2026 06:11:02 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-09</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-09/morning-signal-2026-10-09.mp3" length="12261453" type="audio/mpeg"/>
+      <itunes:duration>00:25:33</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Your Eval Expires in Five Weeks: Rater Drift, Haiku 5.5, Math Dumps</title>
       <description>Anthropic's Haiku 5.5 cuts prices tenfold with a tokenizer and 100k-token catch, OpenAI dumps 722 machine-made math manuscripts, Anthropic ties cyber permissions to verified tiers, and a King's College study finds verified AI study podcasts help weaker economics students most. The deep dive takes a production interviewing agent to show how a new rater can hide real improvement, how a drift estimate tells you when your evaluation evidence has gone stale, and how to apply both to your own pipelines.
 
