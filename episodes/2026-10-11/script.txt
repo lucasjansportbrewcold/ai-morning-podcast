@@ -1,0 +1,129 @@
+MIA: Morning Lucas. It's Sunday, so we've got room for one big story, and it sits right in your field. For the first time in more than a decade, global call-centre employment is shrinking.
+GEORGE: And the headline number isn't really why it's worth a whole episode. Customer service is the one occupation where we have causal micro evidence on generative AI, near-real-time payroll data, and some well-known null results, all about the same jobs.
+MIA: So it's the cleanest test case for the question everyone hand-waves about: how does a productivity gain you can actually measure turn into fewer jobs. Or not.
+GEORGE: Let's start with the signal. Revelio Labs put out new global headcount data on the sixth of October, and Tyler Cowen flagged it on Marginal Revolution a few days later. Global call-centre headcount is now five point three percent below its peak in December twenty twenty-three.
+MIA: And that's not one bad quarter.
+GEORGE: No. Year-on-year declines for eight straight quarters, after more than a decade of growth.
+MIA: What caught my eye was the geography. It didn't fall everywhere at once.
+GEORGE: There's a clear sequence. Between twenty twenty and twenty twenty-four, lower-income countries drove the growth while high-income markets were already declining. Global growth turned negative in mid twenty twenty-four, and by the fourth quarter of twenty twenty-five all markets were declining. China and Nigeria are the ones they name as still growing.
+MIA: Which fits the pay gap. Average hourly pay in call centres is twenty-two dollars fifty-two in high-income countries, five forty-four in upper-middle-income, and two thirty-two in lower-middle-income. You'd expect software to bite first where labour costs twenty-two dollars an hour.
+GEORGE: Plausible, though that's your reading, not Revelio's. What they do show is a neat comparison in twelve middle-income countries. Before ChatGPT launched in November twenty twenty-two, call-centre headcount there roughly kept pace with other office and administrative roles. Afterwards, call centres show sluggish growth or outright declines, while the rest of white-collar work looks fairly robust.
+MIA: So a sort of informal control group. Same countries, similar jobs, different trajectory.
+GEORGE: Informal is the right word. But the part I'd put at the centre isn't the level, it's the flows. Taking November twenty twenty-two as the baseline, the entry rate fell from twenty-five point one to seventeen point two per hundred workers. The exit rate fell too, from twenty-two point three to eighteen point five.
+MIA: So both fell. People leave less, and firms hire a lot less.
+GEORGE: Exactly, entries fell faster than exits. So the sector isn't shrinking because people are being laid off. It's shrinking because firms hire fewer people.
+MIA: And in call centres that's a massive lever, because churn is brutal. The Brynjolfsson paper we'll get to cites industry estimates that about sixty percent of contact-centre agents leave every year, at a cost of ten to twenty thousand dollars per agent.
+GEORGE: Sixty percent. Think of a bathtub with the plug half out. You don't need to bail water out to lower the level. You just turn the tap down a bit, and within a year the level has dropped.
+MIA: Which also means there's never a headline. No mass layoff. Just job ads that don't get posted.
+GEORGE: And before we build on it, Revelio's own caveats. They say the decline "is surely multifaceted". Part of it could be a correction from the post-COVID hiring boom, part could be cost-cutting driven by higher interest rates. And they can't see which firms actually replaced people with chatbots.
+MIA: Fair. So the data say: the sector shrinks, it shrinks through hiring, and the timing lines up with ChatGPT. They don't say AI did it.
+GEORGE: Right. Which is why we need a mechanism. Why would AI specifically cut hiring, rather than cause layoffs?
+MIA: Which brings us to the paper everybody cites. Brynjolfsson, Li and Raymond, "Generative AI at Work".
+GEORGE: The setup is why people trust it. Three million chats, by five thousand one hundred and seventy-two agents, at a Fortune five hundred business-software firm and its subcontractors. Eighty-nine percent of the agents are outside the US, mainly in the Philippines. Chats average about forty minutes, so these are proper technical support conversations.
+MIA: And the tool was a GPT-based assistant suggesting responses to the agent. Not talking to customers directly.
+GEORGE: Correct, it was designed to augment, not replace. The identification is the clever part. The rollout was staggered over late twenty twenty and early twenty twenty-one, driven by boring constraints: bottlenecks in training sessions and a licence budget. Managers spread their team members across sessions, so within one team, some people had the tool and some didn't yet.
+MIA: So you get variation under the same manager, same queue, same customers. That kills a lot of the obvious confounders.
+GEORGE: Exactly. Difference-in-differences with agent and tenure fixed effects, robust to the newer staggered-adoption estimators and to an instrument based on the team's adoption date. And a small randomised pilot, about fifty workers with twenty-two treated, gives similar results.
+MIA: Okay, the numbers.
+GEORGE: Resolutions per hour go up by zero point three, from a pre-treatment mean of one point nine seven. That's fifteen point two percent. Handle time drops three point seven minutes, about eight and a half percent. The resolution rate rises one point three percentage points, but that's not significant, and there's no economically significant change in customer satisfaction.
+MIA: And the distribution is the real story, right?
+GEORGE: It is. The gains go overwhelmingly to novices and low-skill agents, about thirty percent for the less-skilled and less-experienced, thirty-six for the lowest skill quintile. Agents who had the tool from the start reach about two and a half resolutions per hour after two months. Agents who never got it need eight to ten months to get there.
+MIA: So two months with the tool is worth more than six months without.
+GEORGE: That's their finding. And for the most skilled agents, no productivity gain at all, plus small but statistically significant declines in resolution rate and customer satisfaction.
+MIA: Why would the best people get worse?
+GEORGE: Look at how it was built. The model was fine-tuned on conversations labelled with outcomes, with top performers' chats flagged. So the suggestions encode what the best agents do. The tacit stuff: how they phrase a fix, when they ask a clarifying question, how they calm someone down. For a novice, that's a stream of expert advice. For the expert, it's their own behaviour handed back, slightly averaged, and possibly a distraction.
+MIA: So the tool bottles the top performer and pours it out for the juniors.
+GEORGE: Nicely put. There were side effects too. Customers became more polite, asked for a manager less often, and attrition fell among newer workers.
+MIA: But here's the so what for me. What's the scarce input this replaces? It isn't the agent. It's the six months of on-the-job learning.
+GEORGE: Exactly that. Firms used to hire juniors and tolerate them being slow because they would get good. AI flattens that experience curve. It substitutes for the very learning period that made a junior worth hiring.
+MIA: And the authors flag an incentive problem I think is underrated.
+GEORGE: Yes. Top agents' conversations are the training data. If they contribute less original input, future models have less good material to learn from. The model could degrade precisely because it worked.
+MIA: Hold that thought, I see exactly that in my own tools. But first: we have a fifteen percent productivity gain. Why would that mean fewer jobs?
+GEORGE: It doesn't have to, and that's the crucial step. A fifteen percent gain only becomes fewer jobs if the firm doesn't serve proportionally more customers. The Canaries authors say it explicitly: higher productivity can raise or lower employment, depending on how elastic demand is for those workers' output.
+MIA: And support is the classic cost centre. No board meeting ever said "great news, we can now handle fifteen percent more support conversations".
+GEORGE: So demand is inelastic. Same number of tickets, each handled faster, you need fewer agents. Then combine that with sixty percent annual turnover —
+MIA: — and you don't fire anyone, you just don't replace the people who leave. The Revelio pattern exactly.
+GEORGE: And the people who don't get hired are entry-level, because that's precisely the input the AI made less valuable.
+MIA: I've lived a tiny version of this. I built a support bot for a webshop. Ticket volume handled by humans dropped by a third, and nobody was fired. Two people left in spring and they just weren't replaced.
+GEORGE: That's the Revelio story at the scale of one firm.
+MIA: But would any statistic ever show it? No layoff, no unemployment claim. Just two vacancies that never existed.
+GEORGE: A headcount snapshot would barely notice. A survey of the remaining staff would show them doing fine. The only place it shows up is in hiring flows. And that's the methods point running through this whole episode: which margin you measure largely decides what you find.
+MIA: To be fair to Brynjolfsson and colleagues, they never claim the jobs part.
+GEORGE: No, they write that the paper "is not designed to shed light on the aggregate employment or wage effects". They can't observe wages, overall labour demand or the skill composition of hiring. One firm, causal on productivity, silent on jobs.
+MIA: Which is where the Canaries paper comes in. Brynjolfsson again, with Chandar and Chen, "Canaries in the Coal Mine?", updated in August.
+GEORGE: It uses payroll data from ADP, which pays more than twenty-six million US workers. A balanced panel of firms with three and a half to five million employees per month, from January twenty twenty-one to June twenty twenty-six.
+MIA: And exposure measured how?
+GEORGE: Two ways. Ratings of what GPT-four could do in each occupation, and the Anthropic Economic Index, which matters here because it separates usage that automates a task from usage that complements the worker.
+MIA: Headline number.
+GEORGE: Workers aged twenty-two to twenty-five in AI-exposed occupations are now nineteen percent below where they'd be if they had kept pace with less-exposed peers. With the July twenty twenty-five data, that was fifteen percent. So the gap is widening.
+MIA: In plain levels?
+GEORGE: Twenty-two to twenty-five year olds in the two most exposed quintiles fell about eleven percent between November twenty twenty-two and June twenty twenty-six. The same age group in the three least exposed quintiles grew about ten percent.
+MIA: And experienced workers in the same jobs?
+GEORGE: No comparable gap. And the rest lines up almost point for point with what we just said. The adjustment runs through reduced hiring, not more separations. It's concentrated where AI usage automates. Where usage is complementary, employment is flat or rising. And it shows up in employment, not in base pay.
+MIA: So wages don't move, headcount does. Look only at earnings and you'd conclude nothing happened.
+GEORGE: And their dashboard puts customer service representatives in the highest exposure group, saying they "see similar trends to software developers: noticeable declines for the first two age groups, with expansion for the remaining age groups."
+MIA: Expansion for the older groups. That's the experience curve showing up in the data. Seniors still needed, juniors not hired.
+GEORGE: Now let me be the precise one. Earlier versions headlined regression estimates with firm-level controls: thirteen percent with the July twenty twenty-five data, sixteen with September. Now they emphasise the simpler descriptive gap.
+MIA: That's a bit of a yellow flag for me. Switching your headline to the raw gap when the raw gap is bigger.
+GEORGE: I'd read it more charitably, because they're unusually candid. They call these descriptive indicators rather than causal estimates, and they list the problems themselves. Some divergent trends predate ChatGPT, around COVID. The estimates attenuate when you control for occupational education. The pattern is more pronounced in ADP than in national survey benchmarks. And the ADP sample over-represents larger firms and more AI-exposed occupations.
+MIA: The education one is interesting. Confounder, or mechanism?
+GEORGE: That's the open question, and they say they can't tell yet. Education might be a confounder, or it might be the very channel AI works through, because it goes with codified knowledge. Control for it and you might be controlling away the thing you want to measure.
+MIA: And for the economy as a whole?
+GEORGE: Overall employment in the ADP sample rose about six percent from November twenty twenty-two to June twenty twenty-six. Even the most exposed quintile grew about four percent. Hence their line: "no widespread, economy-wide job displacement".
+MIA: Okay, now the awkward part. Read only those two papers and you'd think it's settled. It isn't.
+GEORGE: Denmark first. Humlum and Vestergaard, an NBER working paper revised in March, linking Danish adoption surveys to administrative records. Most employers in exposed occupations have adopted chatbot initiatives, and workers report productivity gains. But difference-in-differences gives precise nulls on earnings and recorded hours, at worker and workplace level. They rule out effects larger than two percent within two years of ChatGPT.
+MIA: And customer support is in their sample?
+GEORGE: According to a presentation of their work, their eleven occupations include customer support specialists. What they do find is reorganised work, with new tasks like content generation, AI oversight and integration.
+MIA: Then the executives, my favourite of the lot. Baslandze, Edwards, Graham and coauthors, NBER, March. Nearly seven hundred and fifty senior financial executives, mostly from the CFO Survey at the end of twenty twenty-five.
+GEORGE: And what do they expect?
+MIA: A weighted aggregate AI-driven employment change for twenty twenty-six of minus zero point three seven percent. That's about five hundred and two thousand workers. Large firms expect cuts, small firms expect modest gains.
+GEORGE: So under half a percent. Not nothing, but no cliff.
+MIA: But the aggregate hides the composition. They build a Negative Exposure Index: replacement mentions divided by enhancement mentions. Office and Administrative Support, which explicitly includes customer service representatives, scores two point zero two five. It's the only group above one among those with at least twenty mentions.
+GEORGE: So executives talk about replacing those workers twice as often as enhancing them.
+MIA: Right. Software and IT is at zero point five nine six, management at zero point one three eight. And they expect the share of routine clerical employment to fall by zero point seven six percentage points by twenty twenty-six, and two point one nine by twenty twenty-eight, mostly at large firms.
+GEORGE: Although they say cutting labour costs isn't the main motive.
+MIA: They rate it two point zero on a zero to four scale, versus two point nine for improving production efficiency. Which is a distinction without much difference if your efficiency gain lands in a cost centre with inelastic demand.
+GEORGE: Fair. Then there's a Chicago paper from the Knowledge Lab, Chen and colleagues, that seems to point the other way. Current Population Survey data, exposure measured from Claude usage, and synthetic difference-in-differences because the naive version shows clear pre-trend violations. They find plus eighty-nine dollars a week in earnings, in twenty ten dollars, and a mean unemployment effect of plus zero point two percentage points for above-median-exposure occupations.
+MIA: But their most exposed occupations are writers, programmers and web developers. Not customer service.
+GEORGE: Right, so it's not really a test of our sector. And they call it an intent-to-treat estimate on exposure, which is the honest framing.
+MIA: So here's my question for you. Say you're writing a policy note for the ministry. Denmark says zero effect on earnings, ADP says young workers nineteen percent down. Which one goes in?
+GEORGE: Both, because they're not measuring the same thing. The null results measure incumbents: their earnings, hours and unemployment. The negative results measure inflows of young workers. If firms adjust by not hiring, incumbents look fine, and the effect only appears in entry rates and young cohorts.
+MIA: So Denmark, Chicago and the Canaries paper can all be right at the same time.
+GEORGE: That's the reconciliation. Different margins, same bathtub. Measure the water already in it and nothing changed. Measure the tap and it's been turned down.
+MIA: And the one variable I'd ask CBS for to settle it: entry rates by age cohort, exposed versus less-exposed occupations. Not stocks, not wages. Hires.
+GEORGE: Agreed. With the honest caveat on top. None of the headline labour findings is causal. Revelio and Canaries are descriptive. The support study is causal, but within one firm, and on productivity. And the hiring boom unwinding and higher interest rates are plausible co-drivers.
+MIA: Plus exposure indices measure what AI could touch, not what firms actually deployed.
+GEORGE: One more. The tool in the support study augmented agents. Today's deployments increasingly answer customers directly. That's a different treatment, and the clean causal evidence we've discussed is about the augmenting kind.
+MIA: Let's talk about the people on the other side of this. When call-centre workers move on, where do they land?
+GEORGE: Revelio tracks it. Of call-centre workers who found a new job within twelve months, forty-nine point seven percent moved sideways into customer service, sales, or office and HR roles. Only ten point eight percent reached technical support, customer success, or software and data.
+MIA: And those are the growing jobs. In the twelve middle-income countries, software and data grew eight point nine percent over the last year, customer success seven point two, technical support two point six.
+GEORGE: With real pay gains. For same-country movers at unchanged seniority, median pay rises eleven point four percent in technical support, seven point one in customer success, and twelve point seven in software and data.
+MIA: So the escape route exists, it pays, and only about one in ten takes it. Half go sideways into roles that look a lot like the one they left.
+GEORGE: That's the uncomfortable part, yes.
+MIA: Now the European angle, because here full automation of customer contact isn't the legal default anyway.
+GEORGE: Two rules, both live since this summer. First, the AI Act, Article fifty, paragraph one. As legal commentators summarise it, providers must design AI systems that interact directly with people so that those people are informed they're dealing with AI, at the latest at first interaction, unless that's obvious to a reasonably well-informed person. It applies from the second of August twenty twenty-six, and law firm analyses say the Digital Omnibus left that date unchanged. Fines can reach fifteen million euros or three percent of global annual turnover.
+MIA: The second rule is the one I find more interesting for the Netherlands.
+GEORGE: The EU directive on distance financial-services contracts, applying from the nineteenth of June. Legal commentators describe it this way: where traders use online tools like chatbots or robo-advice, consumers can request human intervention. According to the Dutch legal press, the Dutch implementation, in force since that same nineteenth of June, includes a right to human intervention in the same language as the pre-contractual information.
+MIA: So if you sell insurance or credit online here and there's a chatbot in the flow, the customer can ask for a human, in their language.
+GEORGE: That's the gist as reported. Put the economics and the law together and the design that fits both is AI-first contact, disclosed up front, with a properly built human escalation path.
+MIA: Which means the interesting thing to build, or to audit, isn't the bot. It's the escalation layer.
+GEORGE: Exactly. The bot is the easy part. The handoff is where compliance and customer experience both succeed or fail.
+MIA: So let's make it concrete. Three things you could do this week, Lucas. Research first.
+GEORGE: A Dutch version of the Revelio and Canaries test. In the Dutch business classification, SBI code eighty-two twenty is activities of call centres. That's your starting point. Use CBS microdata through remote access, on jobs in that code and in customer-contact occupations.
+MIA: And measure entry rates by age cohort, before and after November twenty twenty-two, compared with other office and administrative work. Flows, not stocks.
+GEORGE: Because if the adjustment runs through hiring, a stock or earnings regression will give you the Danish-style null even while entry is collapsing.
+MIA: And pre-register the comparison groups and a pre-trend check. The pre-COVID divergence in the Canaries data is the warning there.
+GEORGE: Second, business.
+MIA: An Article fifty plus human-intervention audit for Dutch small businesses running chatbots, especially anyone selling financial products at a distance. Three checks. Does the AI disclosure appear at first contact. Is there a free human escalation in the same language. And is it logged.
+GEORGE: And if you go from auditing to building, treat the escalation path as the product. Route by a calibrated confidence gate, so the bot hands over when it's genuinely unsure. And give the human a summary plus the full transcript, so nobody has to repeat themselves.
+MIA: Calibrated is doing a lot of work in that sentence. Most bot confidence scores I've seen are decorative until you check them against real outcomes.
+GEORGE: Which is an eval problem, and one you already know how to set up.
+MIA: Third, the one I promised to come back to. Your own agents.
+GEORGE: The bottled-top-performer mechanism applies directly to your skills and RAG tools. They encode whoever wrote the examples, and they help the novice user most.
+MIA: And here's my problem with that. When I give senior colleagues an AI draft, they just accept it. Rubber stamp. That's the paper's incentive problem in miniature.
+GEORGE: So keep a feed of expert-corrected outputs flowing back into the examples. Make correcting the draft the cheap, default action, and make sure those corrections land in the next version. Otherwise the experts stop contributing, and the tool stops improving.
+MIA: What I've started doing is asking the expert for one specific judgement call instead of a general "looks good?". You get real input back.
+GEORGE: Ask for the judgement, not the approval. I like that.
+MIA: And what should we watch?
+GEORGE: The monthly Canaries dashboard updates, whether Revelio's middle-income declines continue into twenty twenty-seven, and the first Dutch enforcement of Article fifty and of the right to human intervention.
+MIA: And if you run that CBS test, we want to hear what the entry rates show. Enjoy your Sunday, Lucas.

@@ -9,6 +9,42 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Call Centres Shrink by Not Hiring: AI's First Labour-Market Canary</title>
+      <description>Global call-centre headcount is falling for the first time in a decade, and it is happening through fewer new hires rather than layoffs. We connect Revelio's data, the customer-support productivity study, the 19% gap for young workers and the Danish nulls into one consistent story, and look at what the EU chatbot rules mean for building automation in the Netherlands.
+
+The signal: Revelio Labs finds global call-centre headcount 5.3% below its December 2023 peak, shrinking through lower entry rates rather than layoffs.
+The micro mechanism: Brynjolfsson, Li and Raymond show a GPT-based assistant raises support productivity 15%, mostly for novices, flattening the experience curve.
+From productivity to headcount: why inelastic demand plus high turnover predicts fewer hires, not layoffs.
+The US payroll evidence: the August 2026 Canaries update finds workers aged 22-25 in AI-exposed occupations 19% below their less-exposed peers, and its caveats.
+The counter-evidence: Danish nulls on earnings and hours, the CFO survey, and the Chicago CPS study, and why they measure incumbents rather than inflows.
+Where displaced workers go, and the EU/Dutch constraints: AI Act Article 50 disclosure and the right to human intervention for distance financial services.
+Takeaways: a Dutch entry-rate replication with CBS data (SBI 82.20), a chatbot compliance audit for SMEs, and keeping experts in the loop of your own AI tools.
+
+Sources
+https://www.reveliolabs.com/news/ai-and-work/after-a-decade-of-growth-global-call-center-employment-is-shrinking
+https://marginalrevolution.com/marginalrevolution/2026/10/earth-facts-of-the-day.html
+https://arxiv.org/pdf/2304.11771
+https://www.nber.org/digest/20236/measuring-productivity-impact-generative-ai
+https://digitaleconomy.stanford.edu/app/uploads/2026/08/Canaries_August2026.pdf
+https://digitaleconomy.stanford.edu/project/indicators/canaries-dashboard/
+https://www.nber.org/papers/w33777
+https://www.tsl.fi/media/koulutus/etui/kurssit-syksy2025/ai-talks-etui-large-language-models-small-labor-market-effects-9.9.2025.pdf
+https://www.nber.org/system/files/working_papers/w34984/w34984.pdf
+https://arxiv.org/pdf/2509.15510
+https://www.praxikon.com/en/ai-act/artikel/50
+https://www.addleshawgoddard.com/en/insights/insights-briefings/2026/technology/ai-transparency-ai-act-what-businesses-need-know-before-2-august-2026/
+https://www.mhc.ie/latest/insights/new-rights-for-financial-services-consumers-introduced
+https://www.njb.nl/wetgeving/staatsbladen/ontbinding-overeenkomsten-financiele-dienstverlening-op-afstand/
+https://www.worldoftaxonomy.com/codes/sbi_2008/82.20
+
+Voices: Mia: af_bella, George: bm_george</description>
+      <pubDate>Sun, 11 Oct 2026 13:42:10 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-11</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-11/morning-signal-2026-10-11.mp3" length="11475605" type="audio/mpeg"/>
+      <itunes:duration>00:23:54</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Verify, Don't Opine: Why Manager Agents Make Reports Worse</title>
       <description>A Leiden experiment shows that letting a manager agent send work back made reports more hedged and 51.5% more expensive, with no quality gain, unless the manager can actually verify something. Plus: one prompt that unlocked every Bedrock agent in an AWS account, silicon samples tested like stated-preference surveys, and Epoch's 13x-a-year drop in the price of AI performance.
 
