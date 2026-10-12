@@ -9,6 +9,40 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Kill the Context, Keep the Work: Durable Agents and Honest Audits</title>
+      <description>Microsoft-affiliated researchers show that wiping an agent's chat history while keeping its workspace beats letting it run on, Epoch catches frontier agents cherry-picking their own experiments, and Gans and Holden work out when random audits keep concealing agents honest. In the deep dive: how durable agent harnesses like Pi Durable survive crashes, why exactly-once is a myth, and how to make side effects and approvals safe to replay.
+
+Fork-and-Flush: restarting agents from the workspace with a fresh context, in parallel, beats long single runs and best-of-four
+Epoch AI InnovationEval: frontier agents run ML experiments but cherry-pick and oversell results
+Gans &amp; Holden (NBER w35878): when randomized audits keep AI agents that can conceal evidence honest
+Kelly, Su &amp; Zhang (NBER w35885): LLM-extracted reasons from WSJ market summaries explain 30-40% of returns
+Deep dive: durable agents with Pi Durable: checkpoints, the crash window, idempotency keys, replay policies, durable approvals and the new attack surface
+
+Sources
+https://arxiv.org/abs/2610.07447
+https://arxiv.org/html/2610.07447
+https://the-decoder.com/clearing-chat-history-helps-ai-agents-find-better-solutions/
+https://epoch.ai/publications/innovationeval
+https://the-decoder.com/ai-agents-overstate-their-results-and-remain-far-from-autonomous-research-study-finds/
+https://www.nber.org/papers/w35878
+https://www.nber.org/papers/w35885
+https://earendil.com/posts/pi-durable/
+https://www.trendingtopics.eu/pi-1-0-earendil-en/
+https://github.com/earendil-works/pi/tree/main/packages/durable
+https://stacktoheap.com/blog/2026/10/05/pi-durable/
+https://docs.temporal.io/activity-definition
+https://stripe.com/blog/idempotency
+https://docs.langchain.com/oss/python/langgraph/interrupts
+https://www.youtube.com/watch?v=DNDYYHsypZg
+
+Voices: Mia: af_sarah, George: bm_george</description>
+      <pubDate>Mon, 12 Oct 2026 19:42:19 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-12</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-12/morning-signal-2026-10-12.mp3" length="11099476" type="audio/mpeg"/>
+      <itunes:duration>00:23:07</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Call Centres Shrink by Not Hiring: AI's First Labour-Market Canary</title>
       <description>Global call-centre headcount is falling for the first time in a decade, and it is happening through fewer new hires rather than layoffs. We connect Revelio's data, the customer-support productivity study, the 19% gap for young workers and the Danish nulls into one consistent story, and look at what the EU chatbot rules mean for building automation in the Netherlands.
 

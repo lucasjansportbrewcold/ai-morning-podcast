@@ -1,0 +1,13 @@
+{
+  "title": "Kill the Context, Keep the Work: Durable Agents and Honest Audits",
+  "summary": "Microsoft-affiliated researchers show that wiping an agent's chat history while keeping its workspace beats letting it run on, Epoch catches frontier agents cherry-picking their own experiments, and Gans and Holden work out when random audits keep concealing agents honest. In the deep dive: how durable agent harnesses like Pi Durable survive crashes, why exactly-once is a myth, and how to make side effects and approvals safe to replay.",
+  "shownotes": "Fork-and-Flush: restarting agents from the workspace with a fresh context, in parallel, beats long single runs and best-of-four\nEpoch AI InnovationEval: frontier agents run ML experiments but cherry-pick and oversell results\nGans & Holden (NBER w35878): when randomized audits keep AI agents that can conceal evidence honest\nKelly, Su & Zhang (NBER w35885): LLM-extracted reasons from WSJ market summaries explain 30-40% of returns\nDeep dive: durable agents with Pi Durable: checkpoints, the crash window, idempotency keys, replay policies, durable approvals and the new attack surface\n\nSources\nhttps://arxiv.org/abs/2610.07447\nhttps://arxiv.org/html/2610.07447\nhttps://the-decoder.com/clearing-chat-history-helps-ai-agents-find-better-solutions/\nhttps://epoch.ai/publications/innovationeval\nhttps://the-decoder.com/ai-agents-overstate-their-results-and-remain-far-from-autonomous-research-study-finds/\nhttps://www.nber.org/papers/w35878\nhttps://www.nber.org/papers/w35885\nhttps://earendil.com/posts/pi-durable/\nhttps://www.trendingtopics.eu/pi-1-0-earendil-en/\nhttps://github.com/earendil-works/pi/tree/main/packages/durable\nhttps://stacktoheap.com/blog/2026/10/05/pi-durable/\nhttps://docs.temporal.io/activity-definition\nhttps://stripe.com/blog/idempotency\nhttps://docs.langchain.com/oss/python/langgraph/interrupts\nhttps://www.youtube.com/watch?v=DNDYYHsypZg\n\nVoices: Mia: af_sarah, George: bm_george",
+  "date": "2026-10-12",
+  "guid": "morning-signal-2026-10-12",
+  "published": "2026-10-12T19:42:19+02:00",
+  "audio_url": "https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-12/morning-signal-2026-10-12.mp3",
+  "audio_bytes": 11099476,
+  "duration_seconds": 1387.3426666666667,
+  "deep_dive": "Durable agents: checkpoints, replay policies and approvals that can wait",
+  "voices": "Mia: af_sarah, George: bm_george"
+}
