@@ -9,6 +9,46 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>When the Answer Key Is Wrong, and How to Shrink a Model Safely</title>
+      <description>An AI agent got 49 of 50 unseen physics problems right, partly by proving the experts wrong, while Copilot puts local models behind an OS sandbox, Anthropic's leaked Q3 numbers reveal compute economics, LLMs lean one way on contested economic effects, and Meta releases an 816B open model. The deep dive covers why quantization-aware distillation keeps 2- and 4-bit models usable for agents where retraining breaks them.
+
+TheoPhysEval: GPT-6-Astra scores 49/50 on unpublished physics problems after experts found errors in their own answer key; how to adjudicate when agent and reference disagree.
+Ideological bias in LLMs' economic causal reasoning: models are more accurate when the true sign matches the intervention-oriented view; split eval accuracy by answer direction.
+GitHub Copilot gets local models (MAI Code 1.1 Flash) and deny-by-default OS sandboxing via Microsoft Execution Containers; egress and readable scope matter most.
+Anthropic's leaked Q3 numbers: $16.8bn revenue, $1.70 revenue per compute dollar, 5-7% from distillation, slowing growth ahead of a planned IPO; plus the AI vs railroads debate.
+Meta's Muse Spark Open: 816B total / 42B active open weights for agentic work, with a restrictive licence and slow local generation.
+Deep dive: PTQ, QAT and quantization-aware distillation (QAD); NVFP4 and 2-bit formats, why QAT breaks RL-trained models, why QAD preserves behaviour, and how to eval quantized models for agent skills.
+
+Sources
+https://arxiv.org/html/2610.16733v1
+https://the-decoder.com/gpt-6-astra-solves-49-of-50-physics-research-problems-at-2-40-apiece/
+https://marginalrevolution.com/marginalrevolution/2026/10/astra-held-its-ground-truth.html
+https://arxiv.org/abs/2610.11118
+https://commandline.microsoft.com/local-models-sandboxed-tools-github-windows/
+https://www.infoworld.com/article/4215416/running-ai-agents-in-sandboxes-with-microsoft-execution-containers.html
+https://research.meta.ai/blog/muse-spark-open
+https://huggingface.co/blog/meta-muse-spark-open
+https://the-decoder.com/muse-spark-open-is-metas-answer-to-qwen-glm-and-kimi-in-the-open-weight-race/
+https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/
+https://the-decoder.com/anthropics-q3-revenue-hits-16-8b-but-growth-slows-ahead-of-planned-november-ipo/
+https://www.exponentialview.co/p/anthropic-the-agony-and-the-ecstasy
+https://www.noahpinion.blog/p/ai-vs-the-railroads
+https://arxiv.org/abs/2604.21334
+https://arxiv.org/html/2604.21334v3
+https://developer.nvidia.com/blog/introducing-nvfp4-for-efficient-and-accurate-low-precision-inference/
+https://arxiv.org/pdf/2601.20088
+https://nvidia.github.io/Model-Optimizer/announcements/qwen36-w4a4-qad.html
+https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB-GGUF
+https://www.reddit.com/r/LocalLLaMA/comments/1x6vqft/fp4_qad_quant_of_qwen38flashnext_from_nvidia/
+
+Voices: Mia: af_heart, George: bm_george</description>
+      <pubDate>Fri, 16 Oct 2026 05:23:21 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-16</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-16/morning-signal-2026-10-16.mp3" length="13898833" type="audio/mpeg"/>
+      <itunes:duration>00:28:57</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Kill the Context, Keep the Work: Durable Agents and Honest Audits</title>
       <description>Microsoft-affiliated researchers show that wiping an agent's chat history while keeping its workspace beats letting it run on, Epoch catches frontier agents cherry-picking their own experiments, and Gans and Holden work out when random audits keep concealing agents honest. In the deep dive: how durable agent harnesses like Pi Durable survive crashes, why exactly-once is a myth, and how to make side effects and approvals safe to replay.
 
