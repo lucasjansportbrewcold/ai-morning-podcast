@@ -9,6 +9,40 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Who Accepts the Agent's Work? TRACE, Hidden Instructions, Learned Memory</title>
+      <description>WhatsApp's help pages hid instructions for AI readers, a fake-stats site made it into research reports, IBM's learned guidelines top tau-squared bench without fine-tuning, Gemini 4 Argon arrives, and NBER evidence shows econometrics agents fix crashes but not every wrong estimate. The deep dive covers TRACE from Leiden and INSEAD: five principles from software engineering and a Git-based operating system that keeps the researcher as the one who accepts agent work.
+
+WhatsApp help pages carried hidden instructions telling AI readers not to recommend regulators; StateGlobe's 50,000 fake statistics spread into research
+IBM's ALTK-Evolve: learned guidelines in the system prompt put GPT-4.1 at #1 on tau-squared bench retail, no fine-tuning
+Gemini 4 Argon: $2/$10 introductory pricing until 30 November, shared 1M token window; DeepSeek V4.1-Flash-1017
+NBER w35588: econometrics agents go from 79% to 97% task success, but wrong estimates survive
+Deep dive: TRACE, five governance principles for AI-assisted research, and TRACE-OS, a Git-based system that keeps the human as the acceptor
+
+Sources
+https://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions
+https://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web
+https://huggingface.co/blog/ibm-research/altk-evolve-bc
+https://github.com/AgentToolkit/altk-evolve
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/
+https://www.lindy.ai/blog/gemini-4-argon
+https://api-docs.deepseek.com/news/news261017
+https://www.latent.space/p/ainews-not-much-happened-today-f09
+https://www.nber.org/papers/w35588
+https://ideas.repec.org/p/nbr/nberwo/35588.html
+https://marginalrevolution.com/marginalrevolution/2026/10/tuesday-assorted-links-591.html
+https://arxiv.org/abs/2610.24035
+https://arxiv.org/pdf/2610.24035
+https://github.com/amrhs-zohrevand/trace-os
+trace-os.org
+
+Voices: Mia: af_bella, George: bm_george</description>
+      <pubDate>Tue, 20 Oct 2026 20:14:48 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-20</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-20/morning-signal-2026-10-20.mp3" length="12593435" type="audio/mpeg"/>
+      <itunes:duration>00:26:14</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>When the Answer Key Is Wrong, and How to Shrink a Model Safely</title>
       <description>An AI agent got 49 of 50 unseen physics problems right, partly by proving the experts wrong, while Copilot puts local models behind an OS sandbox, Anthropic's leaked Q3 numbers reveal compute economics, LLMs lean one way on contested economic effects, and Meta releases an 816B open model. The deep dive covers why quantization-aware distillation keeps 2- and 4-bit models usable for agents where retraining breaks them.
 

@@ -1,0 +1,13 @@
+{
+  "title": "Who Accepts the Agent's Work? TRACE, Hidden Instructions, Learned Memory",
+  "summary": "WhatsApp's help pages hid instructions for AI readers, a fake-stats site made it into research reports, IBM's learned guidelines top tau-squared bench without fine-tuning, Gemini 4 Argon arrives, and NBER evidence shows econometrics agents fix crashes but not every wrong estimate. The deep dive covers TRACE from Leiden and INSEAD: five principles from software engineering and a Git-based operating system that keeps the researcher as the one who accepts agent work.",
+  "shownotes": "WhatsApp help pages carried hidden instructions telling AI readers not to recommend regulators; StateGlobe's 50,000 fake statistics spread into research\nIBM's ALTK-Evolve: learned guidelines in the system prompt put GPT-4.1 at #1 on tau-squared bench retail, no fine-tuning\nGemini 4 Argon: $2/$10 introductory pricing until 30 November, shared 1M token window; DeepSeek V4.1-Flash-1017\nNBER w35588: econometrics agents go from 79% to 97% task success, but wrong estimates survive\nDeep dive: TRACE, five governance principles for AI-assisted research, and TRACE-OS, a Git-based system that keeps the human as the acceptor\n\nSources\nhttps://redact.dev/blog/whatsapp-help-pages-hidden-ai-instructions\nhttps://peec.ai/blog/publish-stats-get-cited-the-tactic-that-put-my-data-all-over-the-web\nhttps://huggingface.co/blog/ibm-research/altk-evolve-bc\nhttps://github.com/AgentToolkit/altk-evolve\nhttps://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/\nhttps://www.lindy.ai/blog/gemini-4-argon\nhttps://api-docs.deepseek.com/news/news261017\nhttps://www.latent.space/p/ainews-not-much-happened-today-f09\nhttps://www.nber.org/papers/w35588\nhttps://ideas.repec.org/p/nbr/nberwo/35588.html\nhttps://marginalrevolution.com/marginalrevolution/2026/10/tuesday-assorted-links-591.html\nhttps://arxiv.org/abs/2610.24035\nhttps://arxiv.org/pdf/2610.24035\nhttps://github.com/amrhs-zohrevand/trace-os\ntrace-os.org\n\nVoices: Mia: af_bella, George: bm_george",
+  "date": "2026-10-20",
+  "guid": "morning-signal-2026-10-20",
+  "published": "2026-10-20T20:14:48+02:00",
+  "audio_url": "https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-20/morning-signal-2026-10-20.mp3",
+  "audio_bytes": 12593435,
+  "duration_seconds": 1574.082,
+  "deep_dive": "TRACE. Governance principles for AI-assisted research, and an \"operating system\" that keeps the human as the acceptor",
+  "voices": "Mia: af_bella, George: bm_george"
+}
