@@ -9,6 +9,37 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Chat Is Not a Catalog: Why RAG Search Lost to Plain Filters</title>
+      <description>Anthropic's Claude Duet shows where a big lab draws the approval line for an always-on agent, Symantec catches an attack agent running on hijacked open LLM servers, a 9,000-firm survey puts AI's productivity effect at 0.2% a year, and Recursive's Flint brings a fast open-weights coding model. In the deep dive, a pre-registered experiment shows why a pure chat box makes people search worse than plain filters, and how to design RAG interfaces that keep the corpus visible.
+
+Claude Duet: Anthropic's always-on agent and its three-tier approval model (do it, ask first, never)
+"Skynet mode": Symantec honeypot catches an attack agent running on hijacked, unprotected LLM servers
+Firm Data on AI (NBER w34836): 78% of firms use AI, 0.2% a year in productivity so far; Gartner CIO survey
+Recursive Flint: 40B-total, 2.5B-active open-weights coding model, built largely by an automated research loop
+Deep dive: Allu &amp; Kagan's pre-registered experiment where RAG chat search lost to filters, the echo chamber and prompting fatigue mechanisms, and design fixes (hybrid UI, self-querying with editable filters, intent routing, outcome metrics)
+
+Sources
+https://claude.com/resources/articles/claude-duet
+https://claude.com/product/claude-duet
+https://www.lennysnewsletter.com/p/claude-duet-is-beautiful-i-still
+https://www.security.com/threat-intelligence/ai-llmjacking-skynet
+https://the-decoder.com/an-ai-agent-in-skynet-mode-hijacks-unprotected-language-models-to-launch-self-sustaining-cyberattacks/
+https://www.nber.org/papers/w34836
+https://the-decoder.com/only-13-percent-of-companies-see-real-returns-from-ai-gartner-survey-finds/
+https://recursive.com/updates/introducing-recursive-flint
+https://www.reddit.com/r/LocalLLaMA/comments/1xc23iq/recursive_flint_the_qwen38_35b_weve_all_been/
+https://arxiv.org/pdf/2610.28639
+https://arxiv.org/abs/2402.05880
+https://js.langchain.com/v0.2/docs/how_to/self_query/
+
+Voices: Mia: af_heart, George: bm_george</description>
+      <pubDate>Thu, 22 Oct 2026 20:04:12 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-22</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-22/morning-signal-2026-10-22.mp3" length="12780430" type="audio/mpeg"/>
+      <itunes:duration>00:26:37</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Who Accepts the Agent's Work? TRACE, Hidden Instructions, Learned Memory</title>
       <description>WhatsApp's help pages hid instructions for AI readers, a fake-stats site made it into research reports, IBM's learned guidelines top tau-squared bench without fine-tuning, Gemini 4 Argon arrives, and NBER evidence shows econometrics agents fix crashes but not every wrong estimate. The deep dive covers TRACE from Leiden and INSEAD: five principles from software engineering and a Git-based operating system that keeps the researcher as the one who accepts agent work.
 

@@ -1,0 +1,13 @@
+{
+  "title": "Chat Is Not a Catalog: Why RAG Search Lost to Plain Filters",
+  "summary": "Anthropic's Claude Duet shows where a big lab draws the approval line for an always-on agent, Symantec catches an attack agent running on hijacked open LLM servers, a 9,000-firm survey puts AI's productivity effect at 0.2% a year, and Recursive's Flint brings a fast open-weights coding model. In the deep dive, a pre-registered experiment shows why a pure chat box makes people search worse than plain filters, and how to design RAG interfaces that keep the corpus visible.",
+  "shownotes": "Claude Duet: Anthropic's always-on agent and its three-tier approval model (do it, ask first, never)\n\"Skynet mode\": Symantec honeypot catches an attack agent running on hijacked, unprotected LLM servers\nFirm Data on AI (NBER w34836): 78% of firms use AI, 0.2% a year in productivity so far; Gartner CIO survey\nRecursive Flint: 40B-total, 2.5B-active open-weights coding model, built largely by an automated research loop\nDeep dive: Allu & Kagan's pre-registered experiment where RAG chat search lost to filters, the echo chamber and prompting fatigue mechanisms, and design fixes (hybrid UI, self-querying with editable filters, intent routing, outcome metrics)\n\nSources\nhttps://claude.com/resources/articles/claude-duet\nhttps://claude.com/product/claude-duet\nhttps://www.lennysnewsletter.com/p/claude-duet-is-beautiful-i-still\nhttps://www.security.com/threat-intelligence/ai-llmjacking-skynet\nhttps://the-decoder.com/an-ai-agent-in-skynet-mode-hijacks-unprotected-language-models-to-launch-self-sustaining-cyberattacks/\nhttps://www.nber.org/papers/w34836\nhttps://the-decoder.com/only-13-percent-of-companies-see-real-returns-from-ai-gartner-survey-finds/\nhttps://recursive.com/updates/introducing-recursive-flint\nhttps://www.reddit.com/r/LocalLLaMA/comments/1xc23iq/recursive_flint_the_qwen38_35b_weve_all_been/\nhttps://arxiv.org/pdf/2610.28639\nhttps://arxiv.org/abs/2402.05880\nhttps://js.langchain.com/v0.2/docs/how_to/self_query/\n\nVoices: Mia: af_heart, George: bm_george",
+  "date": "2026-10-22",
+  "guid": "morning-signal-2026-10-22",
+  "published": "2026-10-22T20:04:12+02:00",
+  "audio_url": "https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-22/morning-signal-2026-10-22.mp3",
+  "audio_bytes": 12780430,
+  "duration_seconds": 1597.4426666666666,
+  "deep_dive": "When chat is the wrong interface. A RAG search experiment where the chat box lost to filters",
+  "voices": "Mia: af_heart, George: bm_george"
+}
