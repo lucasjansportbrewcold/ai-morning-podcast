@@ -9,6 +9,42 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Keys Out of Reach: LiteLLM's Breach and Credential-Free Agents</title>
+      <description>A poisoned LiteLLM release, traced back to tokens in logs, opens a day where Anthropic proves 123 libraries crash-free, Agent Skills gets a neutral home, and Fernández-Villaverde argues AI's real bottleneck is savings and rising real rates. The deep dive covers where an agent's secrets should live: sandbox tiers, egress proxies and credential brokering in Claude Code, NVIDIA OpenShell and Google's Agent Compute Engine.
+
+LiteLLM 1.107.0 compromised on PyPI and Docker: credential stealer via .pth and sitecustomize, root cause chain through tokens in logs; pin 1.106.2 and rotate secrets
+Anthropic Frontier Red Team: Claude writes 180 million lines of Rocq proofs showing no crashes for 239 entry points across 123 OSS-Fuzz libraries
+Agent Skills donated to the Agentic AI Foundation under the Linux Foundation, with security guidance on the roadmap
+Fernández-Villaverde, 'Saving for the Machines': savings as AI's binding constraint, soaring real rates, and the fiscal squeeze on bystander economies
+Deep dive: where an agent's secrets should live - isolation tiers, egress proxies, credential brokering and policy review in Claude Code, NVIDIA OpenShell and Google Agent Compute Engine
+
+Sources
+https://docs.litellm.ai/blog/security-incident-oct-21-2026
+https://www.stepsecurity.io/blog/litellm-1-107-0-compromised-pypi-backdoored-wheels-credential-stealer
+https://www.mend.io/blog/litellm-1-107-0-compromised/
+https://latent.space/p/ainews-black-october/
+https://www.anthropic.com/research/formal-verification
+https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation
+https://simonwillison.net/2026/Oct/22/donating-agent-skills/
+https://www.sas.upenn.edu/~jesusfv/Saving_Machines.pdf
+https://marginalrevolution.com/marginalrevolution/2026/10/will-bystander-economies-be-able-to-finance-their-governments.html
+https://code.claude.com/docs/en/sandboxing
+https://code.claude.com/docs/en/sandbox-environments
+https://github.com/NVIDIA/OpenShell
+https://docs.nvidia.com/openshell/latest/about/architecture.html
+https://cloud.google.com/blog/topics/ai-infrastructure/agent-compute-engine-deep-dive
+https://the-decoder.com/googles-agent-compute-engine-gives-every-gemini-agent-its-own-hardware-isolated-micro-virtual-machine/
+https://www.youtube.com/watch?v=IiZ9yd2Do8I
+https://latent.space/p/modal-d/
+
+Voices: Mia: af_bella, George: bm_george</description>
+      <pubDate>Fri, 23 Oct 2026 13:30:32 +0200</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-23</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-23/morning-signal-2026-10-23.mp3" length="12663889" type="audio/mpeg"/>
+      <itunes:duration>00:26:23</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Chat Is Not a Catalog: Why RAG Search Lost to Plain Filters</title>
       <description>Anthropic's Claude Duet shows where a big lab draws the approval line for an always-on agent, Symantec catches an attack agent running on hijacked open LLM servers, a 9,000-firm survey puts AI's productivity effect at 0.2% a year, and Recursive's Flint brings a fast open-weights coding model. In the deep dive, a pre-registered experiment shows why a pure chat box makes people search worse than plain filters, and how to design RAG interfaces that keep the corpus visible.
 
