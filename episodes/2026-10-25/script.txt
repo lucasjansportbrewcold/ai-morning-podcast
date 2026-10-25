@@ -1,0 +1,143 @@
+MIA: Morning, Lucas. It's Sunday, so no news today, just one paper, and it's one I've been itching to talk about. George, the title is a question: does AI assistance enhance or erode expertise?
+GEORGE: Morning. It's David Autor plus six co-authors at Google, an NBER working paper from September, revised this month. A three-month field experiment with patent lawyers.
+MIA: And it matters well beyond lawyers. Two weeks ago we did the call-centre study, which was about productivity and hiring. This one asks the next question: what happens to the human capital of the people who stay?
+GEORGE: Right. So let's start with the tension, because it's a genuinely open one. In law, medicine, consulting, expertise gets built by learning-by-doing under supervision. You draft, a senior marks it up, you draft again.
+MIA: The apprenticeship model.
+GEORGE: Exactly. And AI could cut both ways. It could speed that up, because you get good examples and on-the-spot feedback all day long. Or it could stunt it, because the junior hands off precisely the tasks that were building their judgment.
+MIA: Which is the thing I worry about with my own setup, honestly. If my role is to be the acceptor of agent output, like we discussed with TRACE last week, then my judgment is the one thing that can't quietly erode.
+GEORGE: And the authors have a phrase for why that's tricky. AI is "easy to operate but hard to evaluate". Anyone can prompt it. But checking whether the output is any good needs exactly the judgment that learning-by-doing builds.
+MIA: So the tool lowers the barrier to producing and raises the stakes on checking.
+GEORGE: That's the crux. Now, why hasn't this been answered already? Measuring it needs three things at once. Sustained use, not a one-afternoon lab session. A measure of skill that's separate from AI-assisted output. And experimental control over who gets access.
+MIA: And the second one is the killer, right? If you only ever look at work done with the tool, you can't tell whether the person got better or the tool did.
+GEORGE: Precisely. The authors say no previous study had all three in a high-stakes professional setting. That's the gap they're going after.
+MIA: Okay, walk me through the design, because I suspect that's where the cleverness is.
+GEORGE: It is. A hundred and thirty-three patent lawyers at eleven US intellectual property firms, all of which have drafting relationships with Google. Randomised two to one within firm, stratified by experience.
+MIA: Two to one, so more treated than control. Why?
+GEORGE: It was a compromise. The researchers wanted an even split, the firms wanted to give more of their lawyers access sooner. So you end up with ninety in treatment and forty-three in control.
+MIA: That's the firms' business interest leaking into the design. Not fatal, but it costs you precision on the control side.
+GEORGE: Fair. A bit more context: there were twenty-four firms with regular, non-exclusive business with Google, and eleven agreed to take part. Firms put forward a hundred and fifty-six lawyers, and a hundred and thirty-three of them, eighty-five percent, were randomised. Participants were paid their contractual hourly rate for the time spent on the tasks.
+MIA: Which matters, because otherwise you'd get rushed work. What was the tool?
+GEORGE: An unreleased Google Labs writing assistant. Prompt-based text modification, feedback from several AI "editorial personas", and rule-based checks for internal inconsistencies. A redlining feature was added in July twenty twenty-five. It never shipped as a standalone product; its features were folded into other Google AI products.
+MIA: And control got what, a typewriter?
+GEORGE: Standard legal tools, but no generative AI writing tools. Both arms got basic AI training, and treatment also got tool-specific training, including a patent-specific prompt library and material on common pitfalls.
+MIA: Now the tasks.
+GEORGE: Three of them. At ten days, an AI-assisted drafting task: five to seven dependent claims plus a detailed description, at most a thousand words, at most two hours. At ninety days, a harder drafting task, up to two thousand words. And also at ninety days, the important one: a redlining task done without AI. They're handed an AI-generated patent draft and have to mark it up.
+MIA: Oh, that's nice. Redlining an AI draft is basically the acceptor job. You're not producing text, you're judging it.
+GEORGE: That's exactly why they picked it as the skill measure. It draws on judgment rather than text production. And the core trick is that the same people are measured once with the tool and once without it.
+MIA: And I assume they made sure the model hadn't seen the inventions?
+GEORGE: Invention details came from a hold-out set not used to train the model. Scoring was done by blinded raters from an independent IP firm, two raters per task, drawn from a pool of six. The rubric was developed with Google's in-house counsel and covers five dimensions: enforceability, technical accuracy, strategic ambiguity, completeness and clarity.
+MIA: Strategic ambiguity is such a lawyer thing. You want the claim vague in exactly the right places.
+GEORGE: It's a proper skill, and a hard one to fake. One more detail for later: senior means seven or more years of experience, which the authors describe as industry convention.
+MIA: Pre-registered?
+GEORGE: Yes, in the AEA trial registry, on May twenty-first, twenty twenty-five. The study ran from May twenty twenty-five to February twenty twenty-six.
+MIA: Okay. Result one. What happened to drafting with the tool?
+GEORGE: Quality went up. Point three four standard deviations at ten days, point three eight at ninety days. And the gains were bigger for juniors: point five eight and point six zero. Seniors got point two two and point three zero.
+MIA: So the classic leveling pattern. Same shape as Noy and Zhang, Brynjolfsson and colleagues, and the rest of that literature.
+GEORGE: Same shape. With AI, juniors actually beat untreated seniors at ten days. At ninety days, treated juniors averaged point three six standard deviations, against point one three for untreated seniors.
+MIA: Where does the gain come from, though? Better top work or less bad work?
+GEORGE: Fewer poor drafts, not more excellent ones. The share of bottom-quintile scores fell by point one nine at ten days. At ninety days it fell by point one one, though that one isn't significant. And the variance compressed significantly on the ninety-day task.
+MIA: That fits everything I see. These tools raise the floor. They stop you writing something embarrassing; they don't make you brilliant.
+GEORGE: One caveat for the precision crowd. The difference between the junior and senior gains isn't itself statistically significant, one-sided p-values of point one five and point one seven. So "juniors gained more" is the point estimate, not a nailed-down result.
+MIA: Noted. But if you stopped there, the headline would be "AI makes juniors as good as seniors".
+GEORGE: And that's the headline the paper argues against. Result two, the redlining, no AI allowed. Treated lawyers beat controls by point three two standard deviations overall. But all of that comes from seniors. Seniors, plus point four five. Juniors, minus point zero three. Basically zero.
+MIA: So the ordering flips. With the tool, juniors gain most. Without it, juniors gain nothing and seniors gain a lot.
+GEORGE: And here the senior effect is significantly larger than the junior effect, one-sided p of point zero four. Treated seniors beat controls on all five subscales. Juniors had negative, non-significant point estimates on two of the five.
+MIA: What about the controls? Is there just a natural senior advantage at redlining?
+GEORGE: That's the striking bit. Among controls, juniors and seniors performed comparably. The point estimate even slightly favoured juniors. So three months of AI drafting opened a junior–senior gap in unassisted judgment that doesn't exist among people who didn't get the tool.
+MIA: Huh. So in this sample, the AI created the expertise gap. That's quite a sentence.
+GEORGE: Within this sample and this window, yes. And the junior average of zero hides something. Their scores bifurcated. The share of poor scores went up by point two two. Mediocre went down by point four two. Good scores up by point one nine, but that one's imprecisely estimated.
+MIA: So the middle hollowed out. Some juniors got better, some got worse, and they average to nothing.
+GEORGE: More dispersion among juniors. The seniors went the other way: less dispersed, more good scores, fewer poor ones. Neither group saw a significant change in top-quintile scores.
+MIA: How do the authors put it?
+GEORGE: AI was "a springboard for some juniors and a cushion for others". And their reading is that foundational expertise may be needed to turn AI-assisted practice into lasting skill.
+MIA: The cushion. This is the thing I keep thinking about. On a RAG project I worked on, the juniors who let Claude write the retrieval code shipped faster. Then the reranker broke on a Friday, and only the seniors could debug it without the agent. Is that the cushion effect?
+GEORGE: It's the same shape. The cushion catches you, so you never learn to fall properly. Whether it's the same mechanism is the next question, and that's where the paper gets more tentative.
+MIA: Go on then. Why would seniors learn and juniors not?
+GEORGE: The leading candidate is time on task and engagement. Look at the clock. At ten days, juniors were eighteen minutes faster, against a junior control mean of about a hundred and twenty-four minutes. Seniors were only five minutes faster.
+MIA: So the seniors used the tool and kept spending the time. The juniors pocketed the savings.
+GEORGE: That's the reading. Seniors drafted better but were barely faster. Juniors saved time but gained no unassisted skill. At ninety days the gap was twenty-two minutes versus five, though neither is significant. And I should say these times are self-reported.
+MIA: And on the redlining itself, where nobody had the tool?
+GEORGE: No time savings for treated lawyers. Treated juniors actually spent four minutes longer than control juniors, seniors one minute longer. So it's not that the juniors rushed the test.
+MIA: Interesting. So they put in the time on the exam, they just didn't have the goods. How did they feel about it all?
+GEORGE: Great. Perceived speed gains overall were point seven two standard deviations at ten days and one point one four at ninety. Junior satisfaction at ninety days was up one point four eight standard deviations, against point two eight for seniors. And juniors reported a perceived quality gain of point nine five at ten days.
+MIA: Which was true for assisted work.
+GEORGE: True for assisted work, not for unassisted work. The belief that they'd improved didn't carry over to what they could do on their own.
+MIA: That's the bit that worries me most. It's not just that juniors stagnated, it's that they felt like they were improving. There's no internal alarm going off.
+GEORGE: And there's a parallel the authors lean on. Strömberg and colleagues, Chinese secondary school students. AI adopters spent less time on homework, got higher homework scores, and lower scores on high-stakes exams. And the students who kept their study time did fine.
+MIA: Homework is the assisted drafting, the exam is the redlining.
+GEORGE: Exactly the mapping. Then there's Bastani and colleagues, in PNAS last year. According to Wharton's write-up, nearly a thousand high-school maths students in Turkey. A plain version, GPT Base, improved practice performance by forty-eight percent but lowered exam scores by seventeen percent relative to control.
+MIA: Ouch.
+GEORGE: But a GPT Tutor version, which gives hints rather than answers and was built with teacher input, improved practice by a hundred and twenty-seven percent, with exam scores about equal to control.
+MIA: So the design of the assistant removed the penalty. Not the model, the interaction.
+GEORGE: Right. And the third one is close to home for you. Shen and Tamkin, from the Anthropic Fellows programme, "How AI Impacts Skill Formation". Fifty-two developers learning the Python Trio library, twenty-six per arm, with a GPT four o assistant.
+MIA: And?
+GEORGE: The AI group scored seventeen percent lower on the comprehension quiz. Four point one five points on a twenty-seven-point scale, a Cohen's d of point seven three eight. And no significant speed gain.
+MIA: So they paid the learning cost and didn't even get faster. That's worse than the lawyers.
+GEORGE: But the useful part is that they classified six interaction patterns. "AI delegation", "progressive reliance" and "iterative debugging" scored low, forty percent or under. "Generation-then-comprehension", "hybrid code-explanation" and "conceptual inquiry" scored high, sixty-five percent or more.
+MIA: Iterative debugging scoring low is uncomfortable, because that's what I do half the day. Paste the error, paste the fix, paste the next error.
+GEORGE: Which is delegation in a loop, if you think about it. You never form a model of why it broke.
+MIA: Fair. Whereas generation-then-comprehension is: let it write, then make sure you understand every line.
+GEORGE: Yes. And the paper's literature review has a few more. Budzyń and colleagues, in the Lancet Gastroenterology and Hepatology, found routine AI assistance associated with deterioration of endoscopists' unassisted skill. But He and colleagues found novice radiologists trained with predictive AI later diagnosed more accurately on their own. And Bednar and colleagues found law students exposed to AI outperformed controls once AI was removed.
+MIA: So it's not "AI rots your brain". Sometimes it teaches. It depends on how you engage with it.
+GEORGE: That's the working hypothesis. Whether you build skill depends on whether you stay engaged, and seniors know what to check. But I want to be precise: the authors say their experiment doesn't show why some juniors gained and others lost. To test time on task as the channel, you'd have to manipulate it directly.
+MIA: Which would be a lovely follow-up. Make half the treated juniors spend the full two hours regardless.
+GEORGE: Something like that. Now, how much should we trust all this?
+MIA: Let me put my sceptic hat on, because a lot is riding on small numbers here.
+GEORGE: It is. Ninety-one people completed the redlining. The junior subgroup has fifty rating-level observations. A hundred and five did the ten-day task, ninety-eight the ninety-day drafting, ninety-one the redlining. Cumulative attrition of thirty-two percent.
+MIA: Thirty-two percent attrition would normally make me nervous. Did it differ by arm?
+GEORGE: No. The differential attrition estimates were point zero four, minus point zero two and minus point zero four, all with p-values of point five six or higher. So no sign that treatment changed who stayed.
+MIA: Okay. What about a baseline skill test? Without one, the whole skill story leans on randomisation.
+GEORGE: There wasn't one. The partner firms refused it. So yes, the skill interpretation rests on randomisation balance.
+MIA: And then the elephant. Google paid for it, the tool came from Google Labs, the firms all work for Google, and six of the seven authors are at Google.
+GEORGE: All disclosed. Google paid the direct costs, and Autor was a Google Technology and Society Visiting Fellow. I'd note the headline isn't exactly flattering to a tool vendor. "Our product hollows out your juniors" isn't a marketing line.
+MIA: Fair, though "it supercharges your seniors" kind of is. And the sample is sophisticated firms doing work for Google. Not your average practice.
+GEORGE: Agreed, representativeness is limited. Three months is short. And they couldn't monitor AI use during the redlining.
+MIA: Which is a big deal, since that's the one task where AI wasn't allowed.
+GEORGE: So they audited it. They used NotebookLM running Gemini three point oh Pro, plus a manual review, and flagged fifteen of ninety-one redlining submissions for possible AI use. The tells were things like full-paragraph rewrites, "strained praise", the word "delves", and change-logs instead of inline edits.
+MIA: "Delves". The universal fingerprint.
+GEORGE: Flags were about as common among controls, four of twenty-nine, as among treated lawyers, eleven of sixty-two. But here's a fragile part. Exclude the flagged submissions and the full-sample effect drops to point two five, no longer significant, p of point one four. The senior effect is point three nine with a p of point zero six, and juniors go to minus point one one.
+MIA: So the senior story survives and the overall story wobbles.
+GEORGE: That's the pattern throughout, actually. Permutation test with two thousand draws: full sample p of point zero five, seniors point zero two, juniors point nine three. Drop one firm at a time, and the full-sample estimate ranges from point two two to point three eight, the senior one from point three three to point five five.
+MIA: I'm guessing one firm is doing a lot of the work.
+GEORGE: Firm ten. Six participants, all senior. Drop them and the full-sample effect falls to point two two, not significant. The senior effect stays at point three three, with a p of point zero eight.
+MIA: And the seven-year cutoff? That's always where you wonder if someone picked the threshold that worked.
+GEORGE: They swept thresholds from three to eleven years. The senior redlining effect is point three eight to point four six, significant at five percent at every threshold. The junior effect is never significant. And the randomisation itself was stratified on the within-firm median, not on seven years.
+MIA: That's reassuring. So my summary: the senior gain is fairly robust, the junior null is robust, and the overall average is fragile.
+GEORGE: I'd sign that. And as a template for stress-testing a small trial, it's a nice checklist. Permutation inference, leave one cluster out, threshold sweeps, a contamination audit.
+MIA: Now, the bit that made me laugh. They also used an LLM as a rater.
+GEORGE: Gemini two point five flash, same rubric. It reproduces the broad pattern but gives systematically larger gaps, for example point eight nine versus point four five in the ninety-day drafting. And the correlation between the LLM and the experts is only point four seven, point one nine and point one four across the three tasks.
+MIA: Point one four on redlining, and it still "corroborates" the result. If I saw an r of point one four between my judge and my humans, I would not call that corroboration. I'd call it a different instrument.
+GEORGE: To be fair, the authors don't oversell it. They treat the LLM as "a third, less reliable rater". With pooled ratings, juniors and seniors get similar drafting boosts at ninety days, which is the one place the pattern changes.
+MIA: This is exactly what we covered in the episode on validating LLM judges. Agreement on the aggregate direction can coexist with almost no per-item agreement.
+GEORGE: And it's worth sitting with. A per-item correlation that low means the judge is only informative when averaged over lots of items, and even then it roughly doubled the effect size in that drafting comparison.
+MIA: Though the human raters weren't perfect either.
+GEORGE: No. Inter-rater correlations of point five nine, point four seven and point five five. Patent quality is genuinely hard to score, which is part of why the confidence intervals are wide.
+MIA: Anything on real job outcomes?
+GEORGE: Sixty-eight participants, underpowered, a minimum detectable effect of about two point three weeks, and no significant effects. There's one spillover finding, though: treated lawyers became more likely to report regular work-related use of other gen AI tools. A gap of seventeen point three points in month three, on a control base of five point six percent.
+MIA: So the tool was a gateway. And roughly four in five respondents said they used gen AI at work never or only occasionally. These were not power users going in.
+GEORGE: Which is worth keeping in mind. Most of them were learning the tool and the craft at the same time.
+MIA: Okay, let's make it useful. Lucas, a few things. The first is the design itself, in miniature.
+GEORGE: Measure with-tool and without-tool separately.
+MIA: Yes. Pick a task you now do with Claude. Coding an estimation, summarising a literature strand. Once a month, do one small instance unaided and compare it with your earlier work. If the with-tool output keeps improving and the without-tool work is flat or slipping, you're the junior in this paper.
+GEORGE: And the paper's closing point backs this up. You can only judge AI's effect on skill if the evaluation separates the software's contribution from the user's expertise. If you only ever look at assisted output, you'll see improvement whether or not you're learning.
+MIA: Same as the juniors' satisfaction scores. You'll feel great either way.
+GEORGE: Second, build a tutor mode into your skills.
+MIA: This is my favourite. If you have a Claude skill you use for learning a new method, say a new econometric estimator, give it two modes. Do mode just produces output. Learn mode asks you to predict the result first, explains the reasoning, and only then shows the code.
+GEORGE: That's Bastani's GPT Tutor and Shen and Tamkin's generation-then-comprehension pattern, turned into a configuration.
+MIA: And you can push it into the agent setup. A hook that requires a short written rationale from you before an agent's diff is accepted. Two sentences: why is this right?
+GEORGE: Which keeps the acceptor role a real check rather than a rubber stamp. That's the TRACE point again.
+MIA: Here's my question for you, though. If seniors gain judgment because they argue with the tool, should we design agents that deliberately leave a gap for the human? Like a tutor that refuses to finish the last step. What does that cost in throughput?
+GEORGE: It costs throughput, obviously, and I wouldn't do it everywhere. I'd separate the tasks where you want output from the tasks where you need to stay sharp. For routine work, let the agent finish. For the judgment you're actually responsible for, the stuff you'd be on the hook for if it broke on a Friday, keep a deliberate human step. Remember, the seniors in this study weren't faster. They spent the time and got better.
+MIA: So the throughput cost is the tuition.
+GEORGE: Nicely put. Third, for your research evals specifically: if you use an LLM rater, check per-item correlation with expert ratings, not just whether the aggregate treatment effects line up. Here, an r of point one four on redlining still gave the same headline direction.
+MIA: And then the business idea, because I think there's something real here for the Netherlands.
+GEORGE: Go on.
+MIA: An AI-literacy and skill-retention audit for professional-services firms. Notaries, accountants, tax advisers, patent firms. They all have a junior pipeline to protect, and they all have a literacy obligation under the AI Act. Article four, which, as the AI Act reference texts summarise it, requires providers and deployers to take measures for a sufficient level of AI literacy among their staff. It has applied since the second of February twenty twenty-five.
+GEORGE: And what's the actual product?
+MIA: A small unassisted benchmark, redlining-style: review a flawed AI draft. Run it at onboarding and every quarter, have it scored by blinded seniors, and give management a dashboard that splits results by experience. You pitch it as an HR and quality tool, not a SaaS platform.
+GEORGE: And the paper's methods are the template. Blinded double rating, a rubric, an LLM-use audit with tells.
+MIA: And the pitch practically writes itself: your juniors' assisted output looks great, and that tells you nothing about whether they're becoming partners.
+GEORGE: I'd add one honesty note. The evidence is one three-month study with ninety-one people on the key task. So sell it as measurement, not as a cure.
+MIA: Fair. Measure first. That's the whole paper, really.
+GEORGE: Better work, not necessarily better workers. Unless you design for it.
+MIA: That's it for today. Enjoy the ride, Lucas.

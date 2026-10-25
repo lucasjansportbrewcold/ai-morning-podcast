@@ -9,6 +9,34 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Better Work, Not Better Workers: AI and the Junior Expertise Gap</title>
+      <description>A three-month RCT with 133 patent lawyers finds AI lifts everyone's drafts, juniors most, but when the tool is taken away only seniors come out with better judgment, and junior skill splits into winners and strugglers. We go through the design, the fragile robustness checks and the mechanism (engagement and time on task), and turn it into tutor modes for Claude skills, with-and-without-tool self-checks, and a Dutch AI-literacy audit idea.
+
+Why measuring AI's effect on expertise is hard: AI is easy to operate but hard to evaluate
+The design: 133 patent lawyers at 11 US IP firms, AI-assisted drafting versus unassisted redlining
+Result 1: AI raises drafting quality, juniors gain most, fewer poor drafts
+Result 2: on unassisted redlining only seniors improve; junior scores bifurcate (springboard versus cushion)
+Mechanism: time on task and engagement, with Strömberg et al., Bastani et al. (GPT Tutor) and Shen &amp; Tamkin
+How much to trust it: small sample, no baseline test, Google funding, AI-use audit, firm-drop and threshold checks, LLM-as-rater with low per-item correlation
+Takeaways: with-tool versus without-tool self-checks, tutor mode and rationale hooks for Claude skills, per-item checks for LLM raters
+Dutch business idea: AI-literacy and skill-retention audit for professional-services firms under AI Act Article 4
+
+Sources
+https://www.nber.org/papers/w35720
+https://economics.mit.edu/sites/default/files/2026-10/Does%20AI%20Assistance%20Enhance%20or%20Erode%20Expertise%20Evidence%20from%20a%20Three-Month%20Field%20Experiment%20in%20Patent%20Drafting.pdf
+https://www.socialscienceregistry.org/trials/15823
+https://knowledge.wharton.upenn.edu/article/without-guardrails-generative-ai-can-harm-education
+https://arxiv.org/html/2601.20245v1
+https://artificialintelligenceact.eu/article/4/
+
+Voices: Mia: af_heart, George: bm_george</description>
+      <pubDate>Sun, 25 Oct 2026 04:30:03 +0100</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-10-25</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-10-25/morning-signal-2026-10-25.mp3" length="11768211" type="audio/mpeg"/>
+      <itunes:duration>00:24:31</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Who Watches the Agent? Monitoring Gaps from Inside OpenAI</title>
       <description>External auditors from METR and Redwood spent three weeks inside OpenAI and found that the agent monitor itself was decent, but a big share of traffic never reached it, and agents could switch it off or hide hundreds of actions. We trace the ideas from AI-control research (trusted monitors, audit budgets, resampling) to a two-layer, coverage-checked monitor Lucas can build around his own agents this week.
 
