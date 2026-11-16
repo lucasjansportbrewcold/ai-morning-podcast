@@ -1,0 +1,13 @@
+{
+  "title": "No second run: loop design, effort dials and AI as SME infrastructure",
+  "summary": "Anthropic says to drop \"think hard\" and start Opus 5.5 at Medium, two huge permissively licensed open-weights agent models land, and new NBER papers show embedded AI lifting small sellers' sales by 51.6% and an LLM interviewer beating O*NET on task coverage. The deep dive looks at how a team ran self-improvement loops around a pre-training run it could only do once, and what that teaches about agent loops, verifiers and proxies that lie.",
+  "shownotes": "Effort is the new prompt: Anthropic's Opus 5.5 guide says delete \"think hard\" and start at Medium; Fable 5.2 shows per-token price no longer predicts per-task cost.\nOpen-weights agent models: Meituan's LongCat-2.5 (1.6T total / 48B active, MIT, W4A4) and Thinking Machines' Inkling 2 Small (594B / 17B active, Apache 2.0, variable effort).\nNBER w36003: generative AI embedded in a Chinese e-commerce platform raised small sellers' monthly sales by 51.6%.\nNBER w35987: TaskNet, an LLM interviewer that builds occupational task lists with better coverage than O*NET.\nDeep dive: \"No Second Run\" (GAIR-NLP) on decomposing an unrepeatable pre-training run into verifiable inner loops, context logs of negative results, and proxies that falsely stagnate.\n\nSources\nhttps://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work\nhttps://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5/\nhttps://www.anthropic.com/claude-fable-and-mythos-5-2\nhttps://huggingface.co/meituan-longcat/LongCat-2.5\nhttps://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/\nhttps://thinkingmachines.ai/news/inkling-2-small/\nhttps://mindandmachineweekly.substack.com/p/mind-and-machine-weekly-15-november\nhttps://www.nber.org/papers/w36003\nhttps://www.nber.org/papers/w35987\nhttps://arxiv.org/abs/2611.10719\nhttps://arxiv.org/html/2611.10719\nhttps://github.com/GAIR-NLP/801-30B\nhttps://huggingface.co/datasets/SII-GAIR-NLP/801-30B-A3B-tiny-sft-dataset\nhttps://www.reddit.com/r/LocalLLaMA/comments/1xwt3ri/paper_no_second_run_does_rsi_stop_at_frontier/\n\nVoices: Mia: af_bella, George: bm_george",
+  "date": "2026-11-16",
+  "guid": "morning-signal-2026-11-16",
+  "published": "2026-11-16T04:21:17+01:00",
+  "audio_url": "https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-11-16/morning-signal-2026-11-16.mp3",
+  "audio_bytes": 13054808,
+  "duration_seconds": 1631.7366666666667,
+  "deep_dive": "No second run. How to close self-improvement loops when the expensive experiment cannot be repeated",
+  "voices": "Mia: af_bella, George: bm_george"
+}

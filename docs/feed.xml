@@ -9,6 +9,39 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>No second run: loop design, effort dials and AI as SME infrastructure</title>
+      <description>Anthropic says to drop "think hard" and start Opus 5.5 at Medium, two huge permissively licensed open-weights agent models land, and new NBER papers show embedded AI lifting small sellers' sales by 51.6% and an LLM interviewer beating O*NET on task coverage. The deep dive looks at how a team ran self-improvement loops around a pre-training run it could only do once, and what that teaches about agent loops, verifiers and proxies that lie.
+
+Effort is the new prompt: Anthropic's Opus 5.5 guide says delete "think hard" and start at Medium; Fable 5.2 shows per-token price no longer predicts per-task cost.
+Open-weights agent models: Meituan's LongCat-2.5 (1.6T total / 48B active, MIT, W4A4) and Thinking Machines' Inkling 2 Small (594B / 17B active, Apache 2.0, variable effort).
+NBER w36003: generative AI embedded in a Chinese e-commerce platform raised small sellers' monthly sales by 51.6%.
+NBER w35987: TaskNet, an LLM interviewer that builds occupational task lists with better coverage than O*NET.
+Deep dive: "No Second Run" (GAIR-NLP) on decomposing an unrepeatable pre-training run into verifiable inner loops, context logs of negative results, and proxies that falsely stagnate.
+
+Sources
+https://claude.com/resources/articles/using-claude-opus-5-5-as-your-daily-driver-for-knowledge-work
+https://the-decoder.com/anthropic-says-outdated-prompting-habits-are-slowing-down-claude-opus-5-5/
+https://www.anthropic.com/claude-fable-and-mythos-5-2
+https://huggingface.co/meituan-longcat/LongCat-2.5
+https://the-decoder.com/meituan-releases-a-1-6-trillion-parameter-agent-model-that-never-touched-an-nvidia-gpu/
+https://thinkingmachines.ai/news/inkling-2-small/
+https://mindandmachineweekly.substack.com/p/mind-and-machine-weekly-15-november
+https://www.nber.org/papers/w36003
+https://www.nber.org/papers/w35987
+https://arxiv.org/abs/2611.10719
+https://arxiv.org/html/2611.10719
+https://github.com/GAIR-NLP/801-30B
+https://huggingface.co/datasets/SII-GAIR-NLP/801-30B-A3B-tiny-sft-dataset
+https://www.reddit.com/r/LocalLLaMA/comments/1xwt3ri/paper_no_second_run_does_rsi_stop_at_frontier/
+
+Voices: Mia: af_bella, George: bm_george</description>
+      <pubDate>Mon, 16 Nov 2026 04:21:17 +0100</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-11-16</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-11-16/morning-signal-2026-11-16.mp3" length="13054808" type="audio/mpeg"/>
+      <itunes:duration>00:27:12</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Better Work, Not Better Workers: AI and the Junior Expertise Gap</title>
       <description>A three-month RCT with 133 patent lawyers finds AI lifts everyone's drafts, juniors most, but when the tool is taken away only seniors come out with better judgment, and junior skill splits into winners and strugglers. We go through the design, the fragile robustness checks and the mechanism (engagement and time on task), and turn it into tutor modes for Claude skills, with-and-without-tool self-checks, and a Dutch AI-literacy audit idea.
 
