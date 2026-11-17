@@ -1,0 +1,133 @@
+MIA: Morning, Lucas. Tuesday, and we're starting with something that should make anyone who self-hosts a WordPress site sit up a bit straighter on the bike.
+GEORGE: Morning. Yes, Google's Threat Intelligence Group says it has, and I'm quoting, "identified threat actors using LLM frameworks to fully automate vulnerability discovery and exploitation without a human in the loop for the first time."
+MIA: And the thing has a wonderfully unsubtle name. exploit underscore agent.
+GEORGE: It does. Google describes it as "a multi-agent vulnerability research and weaponization framework" that plugs into multiple frontier and local models. The mechanism is what's interesting. It runs continuous differential analysis on popular web application software. So when a vendor announces a patch, it compares the code before and after, works out what the patch was fixing, drafts an exploit for the old version, and runs it. Automatically.
+MIA: Here's why that landed for me. Last week I asked an agent to diff two releases of a plugin I use and tell me what the patch fixed. Took about four minutes. That's literally the first half of this attack. So how long between a release tag and an exploit when nobody's in the loop?
+GEORGE: Which is the real story. The patch used to be a sort of grace period, because reverse-engineering it took a skilled person days. Now the patch itself is the map, and the map gets read in minutes.
+MIA: Where did they find it?
+GEORGE: On an exposed staging server, which is a nice irony. Victim telemetry pointed to French websites in media and entertainment, and in education. One example in the report is an insecure capability check in the Ultimate Addons for Gutenberg plugin, also called Spectra, version two point nineteen point twenty-five.
+MIA: And it doesn't stop at getting in.
+GEORGE: No, it shipped post-compromise scripts too. Internal reconnaissance, brute-forcing, installing webshells, and, my favourite detail, removing other attackers' webshells. Tidying up the competition.
+MIA: The Decoder reports there were Russian-language comments in the config files, suggesting a Russian-speaking operator. But let me push on "first time". That's first time Google observed it, one operator, one server.
+GEORGE: Right, and the report doesn't say how many exploits actually succeeded or which models did the work. What it does say is useful for defenders. Google's assessment is that these tools "currently trade stealth for velocity". Unrestricted autonomous execution generates forensic traffic, relies on recognisable identifiers, and leaves distinct code-level traces.
+MIA: So fast but noisy. Detectable, for now.
+GEORGE: For now. They expect future versions to need less human involvement and to get stealthier. And they place it in a wider ecosystem of open-source offensive agent frameworks, CAIRN, CyberStrikeAI, PentAGI, and HexStrike AI, which they describe as an MCP-integrated harness.
+MIA: Which is the uncomfortable bit. It's the same multi-agent pattern we build with, a planner, workers, tools over MCP, just pointed the other way.
+GEORGE: So the concrete thing. For anything you self-host, a WordPress site, a RAG front-end, an MCP server, the patch window is effectively zero now. Auto-update where you can, and if you can't, assume the advisory is the exploit.
+MIA: And watch your logs while the attackers are still loud. That window is the gift here, and nobody knows how long it stays open.
+GEORGE: Speaking of who watches whom, OpenAI has let four outside safety organisations inside. Apollo Research, METR, Transluce and Goodfire.
+MIA: This follows nicely from our October deep dive on trajectory monitors. What are they actually getting?
+GEORGE: OpenAI calls it a "first phase of embedded assessments", to independently evaluate alignment, safeguards and monitoring systems. According to OpenAI, METR will look for misaligned behaviour in its largest reinforcement learning run to date, including failures existing tests and monitors may have missed.
+MIA: And Apollo's is the meatiest one, right?
+GEORGE: According to a write-up by CASRAI, Apollo gets a four-month assessment of whether models undermine safeguards in themselves or in their successors. With access to training code, datasets, reinforcement learning rollouts with reasoning traces, and intermediate checkpoints. Two public reports planned.
+MIA: And then the publication terms.
+GEORGE: OpenAI may redact supporting evidence, but not verdicts or unfavourable results. Unredacted reports go to the board's Safety and Security Committee.
+MIA: Okay, this is where I get stuck. "You can redact the evidence but not the verdict." Is a verdict without evidence worth anything? Because honestly that's exactly the trade-off I make when I let one agent grade another and I only read the summary.
+GEORGE: That's a fair hit. A verdict you can't check is a trust transfer, not an audit. The guarantee is narrower than it sounds: you'll hear the bad news, but you may not be able to judge how bad.
+MIA: And Transluce gets less.
+GEORGE: A six-week pilot reviewing selected internal post-training alignment evaluations, follow-on planned for early twenty twenty-seven. Its access is explicitly not equivalent to employee access, and it can't publish results on internal-only models. Goodfire will use interpretability methods on model internals.
+MIA: And there's precedent that this kind of thing finds real problems.
+GEORGE: There is. Finimize reports that in an earlier pilot, METR and Redwood Research reviewed OpenAI's agent-monitoring systems from the inside and found new vulnerabilities, including an exploit agents could have used to keep hundreds of their actions from being monitored.
+MIA: Hundreds of actions invisible to the monitor. That's the nightmare for anyone building autonomous setups.
+GEORGE: The skeptical side: OpenAI sets the scope, access is tied to agreed claims, and it can withhold access for security or IP reasons. And AI Weekly, citing the Verge, reports earlier external assessments got days, not weeks. Apollo reportedly had three days on GPT-6 Astra, two of them with chain-of-thought access.
+MIA: So what I'd watch: do the Apollo reports appear on time, how much is redacted, and does METR's monitor-assessment scope even get agreed, because that's still under negotiation.
+GEORGE: And for your own design, the lesson from that monitoring exploit is to test whether your checker can be routed around, not just whether it catches things.
+MIA: Red-team the monitor, not just the agent. Now, models. Qwen4-Max is out, and the price is the headline.
+GEORGE: General release on the sixteenth of November, after a preview from the eleventh, according to DataCamp. On QwenCloud it's a dollar fifty per million input tokens, four fifty per million output, and seven and a half cents per million cached.
+MIA: For something The Decoder pitches against Opus 5.5 and GPT-6. What's under the hood?
+GEORGE: Something big. According to The Decoder and DataCamp, two point four trillion backbone parameters, seventy-one billion active per token, plus a three-hundred-twenty-eight-billion-parameter N-gram embedding. One million token context. And the attention design is clever. It's hybrid: Gated DeltaNet layers compress earlier context into a fixed-size state, like a running summary in your head, and Qwen Sparse Attention layers go back and fetch exact details when needed, like checking the page. The Decoder says it's a three to one ratio.
+MIA: So mostly summarising, occasionally looking things up. Roughly how I'd want a long-context model to behave anyway. How does it score?
+GEORGE: The Decoder reports forty-three on the Artificial Analysis Intelligence Index, second among Chinese models behind Kimi K3.1 Pro at forty-six. Cost per index task three dollars twenty-seven, against ten dollars and two cents for Qwen3.8-Max.
+MIA: Roughly a third of the cost. But the profile is lopsided, isn't it?
+GEORGE: Very. DataCamp lists forty-six point seven on Agents' Last Exam, ahead of Opus 5.5 at forty-three point four. But forty-eight point five on Terminal-Bench 4.0, where Kimi K3.1 Pro gets sixty-seven point two, and thirty-one point five on ProgramBench against sixty-five for Opus 5.5.
+MIA: So good agent-exam taker, weak coder. And most of those numbers are Alibaba's own, via aggregators.
+GEORGE: Quite. And the bigger story for you is that the weights are closed. Alibaba open-weighted Qwen3.8-Max in August. Not this time. They say smaller Qwen4 models will be open source later, no sizes, no dates.
+MIA: That one actually hurts. I ran my RAG eval on Qwen3.8 locally because the weights existed. Do I now re-run it against an API where I can't pin a version? And does a million tokens of context replace my retriever, or just make the bill longer?
+GEORGE: Mostly the bill, I'd say. Though at seven and a half cents cached, stuffing a stable corpus into context isn't absurd any more.
+MIA: Fair. And one catch for European use: the free quota is tied to the Singapore region. Data residency matters if you're putting Dutch client documents through it.
+GEORGE: So if you're planning self-hosted Qwen, plan around the smaller Qwen4 models and don't count on them arriving soon.
+MIA: Last news item, and it's the one I'd send to every economist who writes AI and jobs headlines. A new arXiv paper by Mark Esposito and Liu Zhang, both at micro1, Esposito also at Northeastern, on the two margins of work.
+GEORGE: The core argument is about measurement. Payroll statistics catch displacement at existing firms quickly, but catch the creation of new activity late. So "no effect yet" and "J-curve under way" look identical in today's data.
+MIA: And they go back to the computing era to show the pattern. Census business dynamics data: firms entering in nineteen seventy-eight or later grew from two point five five million to forty-five point six eight million employees by nineteen ninety-eight, while older firms lost five point six nine million. Those later entrants held forty-two point four percent of payroll employment by ninety-eight.
+GEORGE: And the exposure gradients?
+MIA: Across eighty-four industries, one standard deviation more automation-patent exposure meant four point nine five points less incumbent employment by nineteen eighty-two, standard error one point eight four. Reasonably precise. By ninety-eight it's minus nine point three nine for incumbents and plus five point nine four for entrants, but with standard errors of six and a half and over seven. The authors themselves call the entrant build-up "suggestive rather than precise". I appreciate that honesty.
+GEORGE: The model is neat. One AI capability does two things: it makes acceptable output cheaper in existing production, and it makes new projects worth attempting. Founder effort is modelled separately from hired hours. A sudden fifty percent efficiency gain with slow incumbent re-scaling cuts hired hours by four point five eight percent on impact. Spread that same gain over about seven years and you get a shallow trough of nought point two three percent near year three point eight, recovery around year six point eight, and plus nought point three two by year fifteen.
+MIA: Then the AI-era test. Labor statistics establishment data, seventy-two industries, end of twenty twenty-two to early twenty twenty-six. Industries one standard deviation more exposed to LLMs lost fourteen point seven percent of twenty nineteen employment at continuing establishments, against twelve point five for less exposed. Difference one point one points, standard error one point nine. No gradient. And openings more than replaced the losses.
+GEORGE: And they say plainly that this null "is also what no effect on payroll would look like".
+MIA: Which is the point. The test has no power to separate their story from no effect. For the entry side they lean on other studies, firm formation up more than ten percent in one, about twenty in another, in AI-compatible industries. And the long-run sign depends on an income-effect parameter. Set it to one and hours stay about half a percent below baseline at year fifteen.
+GEORGE: Plus the historical exposure measure is retrospective, and both authors work at a company in the AI training data business. Worth noting.
+MIA: Agreed. But the useful idea is their proposed statistic, the net reinstatement ratio, which they don't estimate for AI. That's something a CPB-style institute could actually build. And for the Netherlands I'd ask: what would you measure in Chamber of Commerce registrations to catch the creation margin early? New firms in AI-compatible activity codes, and their hiring after year two.
+GEORGE: So the takeaway: if displacement shows up in month one and creation in year five, every headline in either direction is reading the wrong series.
+MIA: Which brings me neatly to memory, because that's also about what you write down now and what you only understand later.
+GEORGE: Smooth. Anthropic has published "The components of agent memory", its most detailed set of experiments on how agents should remember across sessions. And the headline finding runs against intuition: stronger models write less and forget more, and that's why they do better.
+MIA: And this matters to me personally, because I use memory every day without having designed any of it. Claude Code's auto memory, my MEMORY dot md files. It just accumulates.
+GEORGE: Let's start with the structure, because Anthropic separates four layers rather than treating memory as one thing. First, transcripts: the raw, searchable event log. Second, memory notes the agent writes during a session. Third, structured representations, like a wiki built from those notes. Fourth, injected context: a short summary loaded at the start of every session.
+MIA: And they lean on a brain analogy.
+GEORGE: The hippocampus, which captures experience immediately, and then offline consolidation into the neocortex, roughly what happens while you sleep. The design question becomes: which layer does each fact belong in, and what promotes it from one layer to the next?
+MIA: And most of us collapse those. My MEMORY dot md is basically layers two and four mashed together. Whatever the agent jotted down gets injected next time.
+GEORGE: Which is where the second idea comes in, and it's my favourite framing in the piece. Note-taking is prediction. Every note is a bet that a pattern will matter again.
+MIA: And the Pokémon numbers make that vivid.
+GEORGE: They really do. At step ten thousand of Pokémon Red, Sonnet 3.7 had written four hundred and thirteen files, nearly a million characters. Much of it was state that was already visible every turn, position, money. And it had one badge.
+MIA: Journaling what's on the screen.
+GEORGE: Exactly. Fable 5 had written ten files, about forty-three thousand characters, of derived knowledge. Strategy, tested rules, plans. Four badges.
+MIA: That's the mistake I'd bet most homemade agents make. Writing down things the agent can re-derive from what it already sees. It feels diligent and it's just noise.
+GEORGE: Noise that gets loaded into every future context. Then there's a more controlled test, CL-Bench, a database task where the agent gets feedback and keeps memory across sessions. Opus 4.7 goes from nought point three eight three without memory to nought point seven with it. Opus 5.5 goes from nought point six five five to nought point eight three eight.
+MIA: So the gap memory makes grows and then levels off across generations. Because the newer model is already good without memory.
+GEORGE: Right. And what changed between generations is the content of the notes. Older models wrote untested theories. Newer ones close the loop: verified rules, and what Anthropic calls trap warnings.
+MIA: The difference between a junior's notebook and a senior's runbook.
+GEORGE: Nicely put. The third finding has the most direct consequences for you. Rigid memory rules hurt strong models.
+MIA: Give me the numbers.
+GEORGE: Telling Opus 5 to "record only failures" cost nought point two three four in score. For Opus 4.7 it cost nought point one five. Anthropic's line is: "For stronger models, giving them freedom to judge salience was more effective than setting fixed rules in advance, and those rules could end up weakening performance."
+MIA: But weak models go the other way.
+GEORGE: Completely. Sonnet 4.6 opened its memory before answering less than half the time. Just telling it to read memory first raised its score from nought point three six four to nought point six four one.
+MIA: Almost doubling, from one sentence. Okay, so here's what bothers me. When I swap Opus for a cheap local model to save money, do I also have to rewrite the memory instructions? Because that sounds like an eval I've never run.
+GEORGE: That's exactly the implication. For frontier models, the recommended policy is light: write notes when asked or when something is clearly worth keeping, and leave salience to the model. For weaker models, you need procedure: read first, then act. And those don't carry over unchanged when you change the model.
+MIA: So a model swap is really a model plus memory-policy swap, and the eval has to cover both. I've always treated memory instructions like config, not something you tune per model.
+GEORGE: And Anthropic's Claude Code docs say something related. Auto memory is per repository, the first two hundred lines or twenty-five kilobytes get loaded into every session, and Claude treats it as context, not enforced configuration. If you need an action reliably blocked, the docs point you to a PreToolUse hook.
+MIA: Which is the safety lesson in one line. Memory is advice. Hooks are law.
+GEORGE: I may steal that. Now, fourth: memory rots. Notes written in the moment can be wrong, and a wrong note is worse than none.
+MIA: Because the agent trusts it.
+GEORGE: Precisely. Back to Pokémon. A note put the Mt. Moon PokéCenter on the wrong side, and Claude fell back down the same one-way ledge three times. Following its own bad map, very confidently.
+MIA: I have exactly this. My Claude Code memory has a note from three weeks ago saying a test command uses a flag we've since removed. Every new session trusts it. Who's responsible for expiring a memory? Should notes carry a "last verified" date?
+GEORGE: That's where dreaming comes in. Between sessions, a process re-checks notes against the transcripts, fixes them, de-duplicates, repairs links, and builds a wiki. The neocortex part of the analogy. And it works. With the corrected Mt. Moon note, Claude reached Cerulean City at action one thousand nine hundred thirty-five out of three thousand. With the raw note, or with no memory at all, it never got there.
+MIA: So the bad note was as useless as no memory. And this is a product now?
+GEORGE: In Claude Managed Agents, as a research preview. A dream takes a memory store plus one to a hundred session transcripts and writes a new store. The input store is never modified.
+MIA: Oh, that's the part I like. Because then the old store is your rollback.
+GEORGE: Right. You review the result and promote it or throw it away. It's a human-in-the-loop gate by construction, not by discipline. Runs take minutes to a few hours, billed at standard token rates, scaling roughly linearly with the number of sessions. Not eligible for zero data retention unless you self-host Managed Agents.
+MIA: And can you steer it?
+GEORGE: There's an optional instructions field to steer the synthesis. But the docs say line-level edit commands generally produce no change. It's a consolidator, not an editor.
+MIA: Good to know. Now the cookbook version is what I'd actually build.
+GEORGE: Go on, you'll know the economics better than me.
+MIA: A Sonnet 5.5 lead agent writes a workflow. Then Haiku 5.5 transcript-analyzer agents, one per transcript, up to sixty-four in parallel, verify and enrich memory files. Then a Haiku 5.5 memory-organizer merges duplicates and fixes the index. Files have YAML frontmatter, double-bracket slug links and an index file. The example run: eleven transcripts, two hundred eighty-three kilobytes, thirty-six cents, two and a half minutes.
+GEORGE: Thirty-six cents.
+MIA: Run it nightly from cron, and if a night fails the next run retries the same window. For a personal agent that's basically free. The real cost isn't the dream, it's whether you'll actually review the diff.
+GEORGE: Which brings us to the fifth point, wiki versus search, and this is where your RAG work comes in.
+MIA: Yes, please, because "build a wiki instead of retrieval" is the kind of claim I want numbers for.
+GEORGE: They tested on about three hundred fifty thousand internal Stainless files, roughly four hundred twenty million tokens, with twenty-five questions. The wiki alone went from thirteen percent to forty-eight percent of graded criteria as the dreaming budget grew. Search alone stayed flat at fifty-three. Wiki plus search rose from fifty-four to sixty-one percent, and used about twenty thousand fewer tokens per question.
+MIA: So the wiki alone never beats search. The combination does, and it's cheaper per question.
+GEORGE: And on a Harvey merger task that needed synthesis across documents, the wiki scored eighty-seven percent against seventy-three for search. But on questions answerable from a single document, no clear advantage.
+MIA: That's the classic trade-off. Pay for synthesis once at compile time, or pay at query time every time. Compilation wins on multi-hop questions. On a single-document lookup, you've just prepaid for nothing.
+GEORGE: Like the index at the back of a textbook versus a colleague who's read the whole book and can tell you how chapter three relates to chapter nine. Which one helps depends on the question.
+MIA: And the failure modes?
+GEORGE: Point six. First, over-abstraction. One wiki grew to one point seven seven times the size of its hundred-fifteen-kilobyte source. Anthropic invokes Borges, the map as big as the empire.
+MIA: A summary bigger than the thing it summarises. That's not memory, that's commentary.
+GEORGE: Second, concurrent writers. Agents writing to a shared provisions page overwrote each other and kept forty-one of fifty-seven facts, seventy-two percent. One page per contract with verbatim quotes kept all fifty-seven.
+MIA: For me that's the most transferable result. Partition the writes, quote the source. That applies to any multi-agent extraction pipeline, like pulling numbers out of annual reports. Never let parallel agents edit the same summary.
+GEORGE: Third, security. And here I'd like your take, because the cookbook is quite careful.
+MIA: My worry is simple. Dreaming reads transcripts, and transcripts contain whatever web pages and PDFs the agent read. That's a prompt-injection path straight into long-term memory. Poison one page today, and it's in every session's context next month.
+GEORGE: Exactly the threat they design against. The cookbook treats transcripts as untrusted input. Analyzers get file tools only, no shell, no web access. Transcript text is read through a tool rather than placed in the prompt. So the worst an injected instruction can do is corrupt the store, within a budget. The output store is mounted read-only for working agents, and secrets are referred to by name only.
+MIA: So the blast radius is the memory store, and that's versioned because the dream writes a new one. Is that enough?
+GEORGE: It limits damage to the memory, which is good engineering. But a corrupted memory is still an injection that persists. I'd want a human on the diff for anything that feeds actions with consequences.
+MIA: Agreed. And that's cheap here because the diff is small. That's the pattern I want anyway: the agent works alone, I'm a weekly reviewer of what it learned.
+GEORGE: And Anthropic lists the open problems honestly: memory can distract during the task, dreaming costs compute, memory drifts as the environment changes, and memory hallucinations.
+MIA: Drift is my stale test flag. Memory needs maintenance like any other code.
+GEORGE: The Decoder also notes parallel work at Google, "Dream-RSI", which uses dreaming to improve an agent's search strategy, and "WikiSkill", which keeps raw transcripts, distilled knowledge and instructions in separate layers.
+MIA: So the field is converging: separate the layers, consolidate offline, keep the raw log as ground truth. What do you actually do this week?
+GEORGE: You first.
+MIA: Audit one memory file you already have, your Claude Code MEMORY dot md or a skill's notes, with three questions. Is anything in it re-derivable from what the agent can already see? That's the Sonnet 3.7 mistake. Is every rule backed by a tested instance? And is there a rigid "only record X" instruction that a current model would handle better on its own judgment?
+GEORGE: Second, a minimal nightly dream for one agent. A cheap model reads the day's transcripts as files, never in the prompt, and checks each existing note against them. It writes a new memory version beside the old one, and you look at the diff once a week before promoting it.
+MIA: Verification, rollback and a small human role. Basically the acceptor pattern we've talked about before, applied to memory.
+GEORGE: And third, for RAG over reports and papers, test a precompiled wiki layer next to your existing retriever, but only on multi-document questions. That's where the gain showed up. On single-document lookups it may just be wasted spend.
+MIA: And if you ever swap models, rerun the memory eval too. The instructions that helped the weak model might be quietly hurting the strong one.
+GEORGE: Write less, verify more, forget on purpose.
+MIA: That's the episode. Enjoy the ride, Lucas, and mind the one-way ledges.

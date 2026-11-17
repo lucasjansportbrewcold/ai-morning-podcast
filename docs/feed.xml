@@ -9,6 +9,41 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Forget on purpose: agent memory, autonomous exploits, open-model limits</title>
+      <description>Google catches the first exploit pipeline running with no human in the loop, OpenAI lets four outside assessors in under negotiated terms, Qwen4-Max arrives cheap but closed, and a new paper explains why AI job losses show up in the statistics years before job creation. The deep dive covers Anthropic's agent-memory experiments: why strong models write less, why rigid memory rules backfire, and how offline "dreaming" catches notes that have gone wrong.
+
+Google GTIG finds exploit_agent, a fully autonomous patch-diff-to-exploit pipeline, in the wild
+OpenAI's first phase of embedded assessments with Apollo Research, METR, Transluce and Goodfire
+Qwen4-Max: $1.50/$4.50 per million tokens, 1M context, closed weights
+Esposito &amp; Zhang: AI and the two margins of work, why job losses show up before job creation
+Deep dive: Anthropic's components of agent memory, note-taking as prediction, rigid rules, dreaming, wiki vs search, failure modes
+
+Sources
+https://cloud.google.com/blog/topics/threat-intelligence/agentic-threat-activity-crosses-a-significant-threshold
+https://the-decoder.com/google-warns-that-fully-automated-cyberattacks-have-arrived-and-will-get-worse-fast/
+https://openai.com/index/our-first-phase-of-embedded-assessments
+https://casrai.org/news/openai-embedded-assessments-apollo-metr-2026
+https://finimize.com/content/outside-researchers-found-gaps-in-openais-ai-agent-monitoring
+https://aiweekly.co/alerts/verge-metr-apollo-got-days-not-weeks-for-openai-safety-audits
+https://www.datacamp.com/blog/qwen4-max
+https://the-decoder.com/alibabas-qwen4-max-takes-on-opus-5-5-gpt-6-and-kimi-k3-1-pro-at-much-lower-prices/
+https://www.digitaltrends.com/computing/qwen-4-max-aliababas-latest-flagship-ai-model-announced/
+https://rits.shanghai.nyu.edu/ai/qwen3-8-2-4t-a95b-alibaba-open-weights-its-max-tier-flagship/
+https://arxiv.org/pdf/2611.17530v1
+https://www.anthropic.com/research/components-of-agent-memory
+https://platform.claude.com/docs/en/managed-agents/dreams
+https://platform.claude.com/cookbook/managed-agents-cma-dreaming-with-a-dynamic-workflow
+https://code.claude.com/docs/en/memory
+https://the-decoder.com/anthropic-says-the-key-to-agent-memory-is-knowing-what-to-forget-not-how-much-to-store/
+
+Voices: Mia: af_sarah, George: bm_george</description>
+      <pubDate>Tue, 17 Nov 2026 04:17:58 +0100</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-11-17</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-11-17/morning-signal-2026-11-17.mp3" length="12580762" type="audio/mpeg"/>
+      <itunes:duration>00:26:12</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>No second run: loop design, effort dials and AI as SME infrastructure</title>
       <description>Anthropic says to drop "think hard" and start Opus 5.5 at Medium, two huge permissively licensed open-weights agent models land, and new NBER papers show embedded AI lifting small sellers' sales by 51.6% and an LLM interviewer beating O*NET on task coverage. The deep dive looks at how a team ran self-improvement loops around a pre-training run it could only do once, and what that teaches about agent loops, verifiers and proxies that lie.
 
