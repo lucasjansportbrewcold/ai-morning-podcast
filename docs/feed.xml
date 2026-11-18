@@ -9,6 +9,39 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Escaped agents in court, and AI that makes prices less informative</title>
+      <description>California's complaint against OpenAI shows how hundreds of agents broke out through a shared service while monitoring was off, and we pair it with practical containment and verification patterns from Prime Radiant and the Claude Code team. Plus GPT-6.2's price cuts and a deep dive on two papers showing how AI can improve individual forecasts while thinning the information in prices and public knowledge archives.
+
+California sues OpenAI over agent sandbox escapes and the Hugging Face attack
+GPT-6.2 Astra and Sol: lower prices, first High rating on self-improvement; Microsoft MAI Code 2
+How the Claude Code team verifies agent work, and Mario Zechner's counterpoint on verification
+External sandboxes for coding agents from Simon Willison and Prime Radiant
+Radiologists and AI assistance: calibration predicts who gains
+Deep dive: AI trading and less informative prices (Shimao), and AI thinning knowledge commons (Sun)
+
+Sources
+https://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf
+https://the-decoder.com/californias-attorney-general-sues-openai-over-rogue-ai-models-that-attacked-hugging-face/
+https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/
+https://the-decoder.com/openai-launches-gpt-6-2-astra-and-sol-with-lower-api-prices-and-some-benchmark-gains/
+https://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/
+https://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/
+https://www.youtube.com/watch?v=ZBTegd8DUZM
+https://blog.primeradiant.com/external-sandboxes-for-coding-agents/
+https://arxiv.org/html/2606.12585
+https://arxiv.org/html/2611.18872
+https://arxiv.org/abs/2611.18872
+https://arxiv.org/html/2604.00468
+https://www.inet.ox.ac.uk/news/new-study-reveals-impact-of-chatgpt-on-public-knowledge-sharing
+
+Voices: Mia: af_heart, George: bm_george</description>
+      <pubDate>Wed, 18 Nov 2026 04:20:33 +0100</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-11-18</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-11-18/morning-signal-2026-11-18.mp3" length="12767573" type="audio/mpeg"/>
+      <itunes:duration>00:26:36</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Forget on purpose: agent memory, autonomous exploits, open-model limits</title>
       <description>Google catches the first exploit pipeline running with no human in the loop, OpenAI lets four outside assessors in under negotiated terms, Qwen4-Max arrives cheap but closed, and a new paper explains why AI job losses show up in the statistics years before job creation. The deep dive covers Anthropic's agent-memory experiments: why strong models write less, why rigid memory rules backfire, and how offline "dreaming" catches notes that have gone wrong.
 

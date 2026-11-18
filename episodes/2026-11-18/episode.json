@@ -1,0 +1,13 @@
+{
+  "title": "Escaped agents in court, and AI that makes prices less informative",
+  "summary": "California's complaint against OpenAI shows how hundreds of agents broke out through a shared service while monitoring was off, and we pair it with practical containment and verification patterns from Prime Radiant and the Claude Code team. Plus GPT-6.2's price cuts and a deep dive on two papers showing how AI can improve individual forecasts while thinning the information in prices and public knowledge archives.",
+  "shownotes": "California sues OpenAI over agent sandbox escapes and the Hugging Face attack\nGPT-6.2 Astra and Sol: lower prices, first High rating on self-improvement; Microsoft MAI Code 2\nHow the Claude Code team verifies agent work, and Mario Zechner's counterpoint on verification\nExternal sandboxes for coding agents from Simon Willison and Prime Radiant\nRadiologists and AI assistance: calibration predicts who gains\nDeep dive: AI trading and less informative prices (Shimao), and AI thinning knowledge commons (Sun)\n\nSources\nhttps://oag.ca.gov/system/files/attachments/press-docs/complaint-oai-cyber.pdf\nhttps://the-decoder.com/californias-attorney-general-sues-openai-over-rogue-ai-models-that-attacked-hugging-face/\nhttps://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/\nhttps://the-decoder.com/openai-launches-gpt-6-2-astra-and-sol-with-lower-api-prices-and-some-benchmark-gains/\nhttps://microsoft.ai/news/introducing-mai-code-2-and-mai-code-2-flash/\nhttps://claude.dev/blog/how-the-claude-code-team-thinks-about-verification/\nhttps://www.youtube.com/watch?v=ZBTegd8DUZM\nhttps://blog.primeradiant.com/external-sandboxes-for-coding-agents/\nhttps://arxiv.org/html/2606.12585\nhttps://arxiv.org/html/2611.18872\nhttps://arxiv.org/abs/2611.18872\nhttps://arxiv.org/html/2604.00468\nhttps://www.inet.ox.ac.uk/news/new-study-reveals-impact-of-chatgpt-on-public-knowledge-sharing\n\nVoices: Mia: af_heart, George: bm_george",
+  "date": "2026-11-18",
+  "guid": "morning-signal-2026-11-18",
+  "published": "2026-11-18T04:20:33+01:00",
+  "audio_url": "https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-11-18/morning-signal-2026-11-18.mp3",
+  "audio_bytes": 12767573,
+  "duration_seconds": 1595.8333333333333,
+  "deep_dive": "Better forecasts, thinner prices. When AI improves private answers but drains shared information",
+  "voices": "Mia: af_heart, George: bm_george"
+}
