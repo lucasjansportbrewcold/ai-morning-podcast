@@ -1,0 +1,133 @@
+MIA: Morning, George. Google shipped another Gemini this week, and I think it's the first launch where the pricing page is more interesting than the benchmarks.
+GEORGE: Morning, Mia. Gemini 4 Neon. And yes, the pricing is a bit of a puzzle. Shall I lay out the lineup first?
+MIA: Please, because I've honestly lost track.
+GEORGE: Understandable. Neon is the fourth Gemini 4 model in about seven weeks, and Argon has already been retired. So the ladder is now Carbon at the top, for the hardest, longest-horizon projects. Hydrogen at the bottom, for fast everyday execution. And Neon in the middle, which Google pitches as balancing depth and efficiency for, quote, complex, high-frequency workflows.
+MIA: And the price for that middle slot?
+GEORGE: Three dollars per million input tokens, fifteen cents if cached, and fifteen dollars per million output tokens. A one million token context window, and four configurable thinking levels.
+MIA: Here's the funny part. Simon Willison pointed out that Carbon is half price right now, two dollars in and ten out, until the first of December, when it doubles to four and twenty. Hydrogen is a dollar fifty in and seven fifty out. So today the mid-tier model is the most expensive per token of the three.
+GEORGE: Which is a strange sentence to say out loud. But Google's argument is that tokens are the wrong unit. They say that at the default high setting, Neon costs thirty-two percent less per task than Carbon.
+MIA: Which is where we landed on Monday. Price per task is the number that matters. I ran my RAG eval set over all three tiers last week, and Neon's answers were as good as Carbon's. Then I realised that on the first of December the cheapest option flips again. So do you hard-code a model ID, or do you route on cost per solved task?
+GEORGE: I'd route, but only if you can actually measure solved. And there's a nice cautionary result on exactly that. According to Latent Space's summary of the Vals numbers, on Vals' Code Migration task Neon used a hundred and sixty turns on average. Carbon used two hundred and thirty-four, Hydrogen five hundred and seventy-four.
+MIA: So Neon was by far the most efficient.
+GEORGE: And it scored lower than both.
+MIA: Fewer turns, cheaper run, worse work.
+GEORGE: Precisely. Finishing quickly isn't the same as finishing. If your router only sees tokens burned, it will happily pick the model that gives up early.
+MIA: What about the headline scores?
+GEORGE: Google reports sixty-five point two percent on Terminal-Bench four point one, ninety point five percent on SEC-bench Pro, second place on Agent Arena with a score of thirteen thirty-six, and second on the Vals Index. Latent Space, again summarising Vals, puts it at seventy point nine percent on that index, about zero point four points behind Fable five point two, at less than half the cost per task.
+MIA: That last comparison is the real headline for me, if it holds up.
+GEORGE: There's a small disagreement on the Artificial Analysis Intelligence Index, though. Google says sixty-one, third place. Latent Space's reading of Artificial Analysis says Neon at high effort matched Carbon's sixty, at three dollars seventy-four per task. Either way, it sits right in Carbon's neighbourhood.
+MIA: And the safety numbers? I saw zero percent prompt injection and my marketing alarm went off.
+GEORGE: Rightly so. Google reports a zero point zero nine percent misaligned-action rate on its own agentic safety suite, and zero point zero percent indirect prompt-injection success on Gray Swan's benchmark. That's one benchmark, one set of attacks, one set of tools. It tells you nothing about your toolset, your documents, your MCP servers.
+MIA: So keep the guardrails.
+GEORGE: Keep every guardrail. And one more thing: Arena counted twenty-eight days between models, then fifteen, then six. Any eval you run now has a shelf life of weeks.
+MIA: So the concrete move: a small eval set that scores solved tasks, not pretty answers. Model ID behind a config value. Rerun it on the second of December when Carbon's price doubles.
+GEORGE: And log turns next to cost per solved task, so that Code Migration pattern shows up in your own data first.
+MIA: Switching to economics, because there's a paper this week I really liked, partly because it's so careful about what it claims. It's on arXiv, "AI, Specialization, and the Organization of Knowledge Work: Evidence from Legal Services", by Liu Zhang, Mark Esposito and Isabel Yang.
+GEORGE: The legal markets one. Set up the puzzle for me.
+MIA: The puzzle is that AI makes legal expertise cheaper, yet the top firms are charging more. Am Law 100 gross revenue rose thirteen percent in fiscal 2025. Billable hours in a fifty-firm Thomson Reuters sample rose zero point one percent. Worked rates rose about nine point three percent. Meanwhile midsize firms saw about five percent hours growth in the second half of 2025.
+GEORGE: So the big firms got paid more for the same hours, and the extra volume went somewhere else.
+MIA: That's their story. And the mechanism is a selection argument. Split legal work into flexible work, which a cheaper AI-enabled challenger can do, and restricted work, which stays with the premium firm. When challengers get better at the flexible work, it leaves. But that flexible work was the more price-sensitive part. So the demand the premium firm has left is less elastic, and the optimal markup goes up while volume falls.
+GEORGE: Like a pub losing its casual drinkers to the supermarket. What's left are the regulars who'll pay nearly anything for a pint, so the landlord can raise the price.
+MIA: Exactly that. And the authors say explicitly it's "a conditional selection result, not a claim that AI always raises premium prices".
+GEORGE: What's the identification? Because revenue tables are descriptive.
+MIA: Right, and that's the honest bit. The causal part is about self-representation. Difference-in-differences across eighty-nine federal districts. Non-prisoner civil cases are treated, prisoner petitions are the comparison, with district-by-group and district-by-year fixed effects, fiscal 2010 to 2025, with 2016 excluded.
+GEORGE: And the effect?
+MIA: Self-representation rises by zero point three percentage points in 2023, standard error zero point seven, so nothing. One point five points in 2024, standard error zero point seven. Then six point five five points in 2025, standard error zero point eight nine. Strip out the pre-2022 linear trend and the 2025 effect is five point seven points.
+GEORGE: So more people represent themselves, and the timing tracks the tools. The comparison group being prisoners makes sense, presumably they have much less access to AI.
+MIA: That's the logic. But rising self-representation doesn't tell you how much paid work was actually displaced. Some of those people might never have hired a lawyer anyway.
+GEORGE: And the firm-level findings?
+MIA: Descriptive, and the two data sources cover different sets of firms. Across forty-one firms, reported AI integration is stronger at firms with lower revenue per lawyer, a Spearman correlation of zero point three two, p-value zero point zero four. And one finding cuts against a popular story: companies aren't bringing legal work in-house. The in-house share of private-sector lawyers went from twenty-two point eight percent in 2010 to twenty-eight point seven in 2019 to twenty-nine point zero in 2024. Most of that growth predates generative AI, and sector-level AI adoption shows no association with in-house hiring.
+GEORGE: They also give some capability context. Harvey's Legal Agent Benchmark, where the all-pass score went from about seven percent in May to twenty-five percent in October. And LegalBench reasoning scores at eighty-nine percent.
+MIA: So the reasoning is largely there, but end-to-end agent work is a quarter of the way. Which fits: the flexible work moves first.
+GEORGE: So what for someone running a small research or advisory firm in the Netherlands?
+MIA: It's a strategy question. If AI takes the easy, price-sensitive work, you either compete on price for the routine stuff with heavy automation, or you charge more for restricted, high-stakes work where clients pay for judgement and accountability. The worst place to be is the middle, doing routine work at premium rates. It's a partial equilibrium model, so I wouldn't bet the firm on it. But it's a good exercise: list your work, mark what's flexible, and ask what happens to your pricing when that part leaves.
+GEORGE: Speaking of Dutch firms, there's a nice case from Emerce AI Live in Rotterdam on the seventeenth, which drew two thousand two hundred and thirty-one visitors.
+MIA: Cameranu, the camera retailer. I love this one because it starts with a failure.
+GEORGE: According to Emerce's report of the talk, they launched a chatbot called Flits just before Black Friday a year ago, and it flopped. It was built for transactional questions: order status, cancellations, returns. And customers asked product questions instead, plus things nobody planned for, like store opening hours.
+MIA: And their AI specialist, Andy Luijendijk, said: "We hadden te weinig focus en commitment. Het lag niet aan de AI-tool zelf." We lacked focus and commitment, it wasn't the AI tool itself.
+GEORGE: So the fix was organisational as much as technical. One project owner, structured analysis of conversations, and one role per agent. Separate agents for order status, for cancellations, and for lens-to-camera compatibility.
+MIA: And the numbers, as Emerce reports them: the order-status agent went from about forty percent success to sixty-seven, and response time dropped from six seconds to three. Simple, well-scoped questions resolve at around ninety percent. Flits now handles twenty-five percent of all customer contacts, sixty percent of those fully autonomously, with a handover to a human available.
+GEORGE: I'd point out that sixty-seven percent success also means a third of order-status chats still fail. And the report doesn't say how success is defined. Resolved? No follow-up contact?
+MIA: My bigger question is the router. When you split into narrow agents, the hard problem moves to whatever decides which agent gets the chat. Is it an LLM classifier? Buttons? And how do you notice the questions nobody owns, like the opening hours?
+GEORGE: That's where the conversation analysis earns its keep. A narrow agent is easy to evaluate because you know exactly what it's for. The gaps show up in the logs as conversations that bounce between agents or end in a handover.
+MIA: So the playbook for a Dutch small business: one owner, read the transcripts every week, one job per agent, and a bucket for unowned questions that someone actually reviews. Their next step is email support for Black Friday this year, with AI drafting replies and a human reviewing before anything goes out.
+GEORGE: Draft first, autonomy later. A sensible order. CM.com was the tech partner, for anyone wondering.
+MIA: Last news item, and it's a big one. Anthropic priced its IPO at eighty-three dollars a share. Ticker ANT on the Nasdaq Global Select Market, trading from today, closing expected tomorrow. Goldman Sachs and Morgan Stanley lead.
+GEORGE: Nine hundred and eighty million shares offered, of which about nine hundred and fifty-six million are Anthropic's own. At eighty-three dollars, that comes to roughly seventy-nine billion dollars in gross proceeds for the company.
+MIA: But I care less about the headline than the S-1, because it's the first audited look at how a frontier lab's costs break down. According to Latent Space's walkthrough with Tanay Jaipuria, about seventy percent of compute goes to training and research, and thirty percent to inference. Eighty-five percent gross margins on paid inference. And roughly a hundred and thirty-two billion of the around hundred and forty billion raised is still on the balance sheet.
+GEORGE: And revenue?
+MIA: They give an October run rate of eighty to eighty-one billion, about eighty percent consumption and twenty percent subscriptions. So mostly an enterprise API business. And the number that jumped out at me: about eighty percent of usage comes from models released in the last six months.
+GEORGE: That's a churn statistic in disguise. Customers move to the newest model almost immediately. Wonderful while you lead, brutal if you fall behind. Same lesson as Gemini: nobody is loyal to a model ID.
+MIA: Then there's Tyler Cowen's take, with the disclosure that Cowen sits on Anthropic's advisory board. Cowen reads the IPO as a bearish signal on near-term "extreme superintelligence". If the returns on compute were that high, it would be rational to borrow, at roughly ten to eleven percent debt cost, rather than share the upside by selling equity.
+GEORGE: It's a very economist's argument, and I like it. The weakness is that it assumes Anthropic could borrow at that scale, and it ignores liquidity for employees and investors, which is half the reason anyone goes public.
+MIA: Agreed. But as a lens for reading capex, it's useful. And the so what for builders: a company living on consumption revenue from enterprises has every reason to keep investing in the agent tooling, skills, hooks, plugins, that drives that consumption.
+GEORGE: Which is a decent bridge, because today's deep dive is about exactly that kind of tooling, and about how small you can make your own role.
+MIA: Matt Pocock. The skills repo is at about three hundred and twenty-seven thousand GitHub stars, and Pocock just published a full real-world run with it. One feature, about thirty sessions, a twenty-one thousand line pull request.
+GEORGE: And what I find interesting is where the human effort sits. Almost all of it is at the start, aligning on what to build, and at the end, reviewing in a way that changes the system. The middle runs unattended.
+MIA: We've done verification, monitors and durable agents this autumn. Those were all about controlling the agent while it runs.
+GEORGE: This is the other side of that. Shrinking the decisions the agent has to make before it starts. Pocock puts it bluntly: "as soon as you ask an agent to make a decision, it might make a bad decision. So, the more decisions you give it, the more likely it is to choose a bad one."
+MIA: Sounds obvious, but most people do the opposite. A two-line prompt, and the agent figures out the design.
+GEORGE: Think of it as an error budget. Every unresolved design choice is a fork in the road where the agent can go the wrong way. Settling a fork in conversation costs you two minutes. Settling it after the agent has built three thousand lines down the wrong branch costs a review, a revert and a rebuild. So you move human effort to before the code exists, where it's cheapest.
+MIA: And the first step is what Pocock calls grilling.
+GEORGE: There's a skill called grill-with-docs. It interviews you about what you want, but you do the steering. And as it goes, it maintains two artifacts. A glossary, which in this repo is five hundred and sixty lines. And architecture decision records, written whenever a decision is non-obvious, involves a real trade-off, and is hard to reverse.
+MIA: Why does the glossary matter that much? I'd have filed it under documentation nobody reads.
+GEORGE: Because the agent reads it, every single session. And the terms become the code: glossary words turn into database tables and module names. There's a lovely moment in the video. The agent proposes "thumbnail drawing" for a feature. Pocock rejects it, and the agent runs what it calls a scenario test, trying candidate terms in realistic sentences to see which one reads right. They settle on "thumbnail diagram", plus a decision record explaining why it's not a "diagram" in the system's sense.
+MIA: Because "diagram" already means something else in that codebase.
+GEORGE: Exactly. And that record works as a Chesterton's fence. You find a strange fence in a field, you don't tear it down until you know why it was put there. A decision record is the written reason behind every odd constraint, so the next agent run doesn't helpfully rip it out.
+MIA: That's a failure mode I know well. I've had an agent tidy away a workaround that existed for a very good reason, because nothing in the repo said what the reason was.
+GEORGE: And the fix is about the cheapest thing in software. One paragraph, written while you still remember why.
+MIA: My problem with grilling, when I tried it, was the agent firing forty questions at me at once. I glazed over by question twelve.
+GEORGE: Pocock's answer is that you drive. You can just tell it, one question at a time.
+MIA: Sure, but how do you know when you've removed enough decision space? There's no stopping rule.
+GEORGE: There isn't a formula, no. But the later steps give you a practical test. If you can't write acceptance criteria for a ticket, there's still a decision hiding in it. So the grilling is done when the tickets can be written without hand-waving.
+MIA: So the ticket is the proof the grilling worked. Then there's the prototype step, which surprised me.
+GEORGE: Some questions simply can't be answered in conversation. How does it feel to use? So there's a prototype skill that builds throwaway variants while the grilling continues. In this run, three interface variants. Pocock rejected two of them.
+MIA: And the rejections are information. Seeing what you dislike tells the agent more than any description of what you like.
+GEORGE: Right. Plus a nice side story: a white bar at the edge of the prototype turned out to be Chrome rendering at one hundred and twenty-five percent Windows scaling. Found in a throwaway, not in production.
+MIA: And the prototype doesn't get binned completely, does it?
+GEORGE: No, it becomes the reference implementation for the interface in the spec. Which is step three: turning alignment into a task graph. A skill called to-spec turns the whole conversation into what Pocock calls a destination document. Here, a GitHub issue with forty-seven user stories and an out-of-scope list.
+MIA: The out-of-scope list is underrated. That's where you kill the agent's urge to gold-plate everything.
+GEORGE: Then to-tickets cuts the spec into nine tracer-bullet tickets. The skill describes a tracer bullet as a "narrow but COMPLETE path through every layer". So each ticket is a vertical slice through schema, API, interface and tests, rather than "do all the database work", then "do all the front end".
+MIA: Why vertical, though? Splitting by layer feels more natural.
+GEORGE: Because a horizontal slice can't be verified on its own. A database layer with no callers passes every test you'd think to write for it. A vertical slice either works end to end or it doesn't, so the acceptance criteria actually mean something. Each ticket is also sized to fit one fresh context window, has explicit "blocked by" edges, and refactoring is ordered first. The skill quotes the old line, "make the change easy, then make the easy change". And for wide refactors it uses expand-contract: add the new thing alongside the old, move the callers over, then remove the old.
+MIA: And no file paths in the tickets, which I found odd at first.
+GEORGE: File paths go stale. By ticket six, the file ticket two mentioned may have moved. So they're left out by default, unless a prototype has pinned down a key type or a state machine.
+MIA: Okay. Then the part where you walk away from the keyboard.
+GEORGE: A skill called implement-spec. It treats the tickets as a graph. Whenever a ticket finishes, it recomputes the "ready frontier", meaning the tickets whose blockers are all done, and starts new subagents for them. Each gets its own worktree and a fresh context, and runs test-driven development on its ticket.
+MIA: So parallel workers that can't trample each other's files. Like a kitchen where every cook has their own station, and a dish only goes out once the sauce it depends on is ready.
+GEORGE: I'll steal that. And they pass pointers rather than copying context around: the spec link, the ticket, the relevant commits. Then a separate, fresh merger subagent integrates the work onto one integration branch. Code review runs after all tickets are in, fixes happen in one extra subagent pass, and the worktrees are removed at the end.
+MIA: Tell me about the review, because "two reviewers" sounds like either something clever or theatre.
+GEORGE: The design is the clever bit. Two reviewers run in parallel, each with a fresh context, and neither sees the other's output. One checks standards: the repo's own rules, with Fowler's code smells as a baseline. The repo's rules win where they conflict, and anything already enforced by tooling is skipped. The other reviewer checks faithfulness to the spec. Each reports in under four hundred words. Findings are labelled either hard violations or judgement calls, and the two axes are deliberately not ranked against each other.
+MIA: Why not rank them? I'd want one prioritised list.
+GEORGE: Because they answer different questions. Clean code that builds the wrong thing, and messy code that builds the right thing, are both failures. Merge the lists and the louder axis drowns out the quieter one. Style nitpicks are always more numerous, so spec drift gets buried.
+MIA: That I buy. Same logic as independent referee reports. You don't want them anchoring on each other.
+GEORGE: Then there's context hygiene. Before the unattended part starts, Pocock compacts the grilling session, and calls that "almost free" once the conversation has become a document.
+MIA: And the dumb zone.
+GEORGE: Yes. At one point a subagent reused a two hundred and sixty thousand token context, and was, in Pocock's words, "punching pretty deep into its dumb zone". The smart zone and dumb zone idea is credited to Dex Horthy: work quality degrades as the context grows. And Pocock now frames it as a cost and quality optimisation, rather than mainly a hallucination risk.
+MIA: So a fresh context per ticket isn't just a cost choice.
+GEORGE: It's a quality choice. You keep every worker in the part of the window where it's sharp.
+MIA: What was the actual setup?
+GEORGE: Claude Code with Opus five point five at medium effort, dictation through Whisper Flow, that five hundred and sixty line glossary, and a stack of seven pull requests, with automerge on passing tests for the low-risk ones.
+MIA: Medium effort, not high. My hunch is that's the whole thesis showing up in the settings. If the decisions are made upfront, the model doesn't need to think as hard per ticket.
+GEORGE: Plausible, though that's your hunch, not something the run tests. Now the end of the run, which I think matters most. Twenty-one thousand lines, split into stacked diffs, ordered by reversibility. "Two-way doors", easy to revert, go first. The "one-way door", a schema migration and then a feature-flag flip, goes last.
+MIA: And only the migration got mandatory review.
+GEORGE: Only that one. The reversible ones could automerge once the tests passed.
+MIA: So Pocock reviews twenty-one thousand lines mostly to improve the system, not the code. Would I trust automerge on my own agent's reversible pull requests? For a codebase with good tests, yes. For my RAG pipelines, I'm honestly not sure my tests are good enough to call anything reversible.
+GEORGE: That's the right worry. Automerge is only as safe as the tests that gate it. And reversible in git doesn't mean reversible in the world. If the change has already sent emails or written to a shared database, the revert button doesn't undo that.
+MIA: So what did the review actually produce?
+GEORGE: Rules. Review comments became a lint rule banning the TypeScript "as" cast outside shared utilities. A ban on useSearchParams with magic strings, to be tightened over time. And coding-standard limits on comments. Then a retro skill reads the session transcripts and the twelve review comments, and proposes improvements to the agent's environment, ordered by severity.
+MIA: That's the bit I want to steal. Every review comment is either a one-off fix or a rule. And a one-off fix is one you'll make again next week.
+GEORGE: Exactly. The human's job becomes maintaining the environment that produces the code. Like a head chef who stops correcting each plate and rewrites the recipe card instead.
+MIA: Let me translate this into research. Two-way doors first, one-way door last. What's the one-way door in a research pipeline? Publishing a figure?
+GEORGE: I'd say anything that leaves your hands. A figure in a published report, a number sent to a client, a dataset other people build on. Rerunning an extraction internally is a two-way door. Overwriting the only copy of the raw data is a one-way door.
+MIA: So the review budget goes where the irreversibility is. Automate the reversible steps, and put your own eyes on the last step before anything goes out.
+GEORGE: Shall we make it concrete?
+MIA: Go on. Say you want to hand off a data-extraction pipeline from reports.
+GEORGE: Before any agent writes code, spend twenty minutes being grilled. The session has to produce three things. A glossary of the key terms: what counts as a "series", what counts as a "revision", what a "source table" is. One decision record for the least obvious choice. And three to six vertical tickets, each with acceptance criteria and blocked-by edges.
+MIA: And the glossary is exactly where economists get burned. Is a revised figure a new series, or a new vintage of the same series? If you don't decide, the agent will. And it'll decide differently in ticket three and ticket five.
+GEORGE: Then run each ticket in a fresh context. When you review, every comment becomes a rule: a lint, a test, or a line in the Claude dot M D file. Never just a one-off fix.
+MIA: And measure one number: how many decisions the agent still had to escalate to you. If that drops over a few weeks, the grilling is working.
+GEORGE: A fair caveat, though: this is one person's workflow on one feature. A well-documented case, not a controlled study.
+MIA: Agreed. But it's the most concrete picture I've seen of what "my role stays small" looks like in practice. Small, but at both ends.
+GEORGE: Front-load the human, and let the middle run.
+MIA: Enjoy the ride, and grill something before you hand it off.
