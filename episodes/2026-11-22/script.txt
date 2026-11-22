@@ -1,0 +1,154 @@
+MIA: Morning George. Rough week to be holding anything with a chip in it.
+GEORGE: Morning Mia. Rough is generous. According to the FT, the Nasdaq one hundred fell ten point four percent over the week, five point six of that on Friday alone, and it's now twenty percent below its October peak. Bear market territory.
+MIA: And Nvidia dropped fourteen percent in a single day. The Wall Street Journal reports that the SEC has opened a civil investigation into how Nvidia disclosed chip sales in Asia, after it stopped reporting Singapore separately. The US semiconductor index lost ten point seven percent. And Anthropic, which we talked about on Thursday, fell nine point one percent the day after its market debut.
+GEORGE: So naturally everyone is asking whether it's a bubble.
+MIA: Which is the wrong question for an economist. A bubble is a label you stick on things afterwards. The questions I actually care about are: how big is the physical investment, who has paid for it, how much revenue does it need to earn, and if that revenue doesn't show up, whose balance sheet takes the hit.
+GEORGE: And conveniently, someone has written a paper answering exactly those four questions.
+MIA: Stijn Van Nieuwerburgh, at Columbia Business School. "Financing the AI Buildout", written for the fall Brookings Papers on Economic Activity, and since October also an NBER working paper. Plus a follow-up with Zijin Su this month called "Clouds of Credit". And on the Dutch side, DNB economists published a correction scenario in ESB in October. So today is the whole capital stack, from a single server rack up to your pension.
+GEORGE: Let's start at the rack, because that's where the paper starts, and I think it's the most underrated part.
+MIA: Go on then, build me a data centre.
+GEORGE: He builds a representative campus. Two hundred megawatts of grid connection. Now, not all of that reaches the computers. Some goes to cooling, power conversion and so on. The ratio is called power usage effectiveness, and he assumes one point two. So two hundred divided by one point two gives you about a hundred and sixty-six point seven megawatts of actual IT load.
+MIA: And then you fill that with racks.
+GEORGE: Right, and this is where things have changed physically. A traditional CPU rack draws five to ten kilowatts. Current AI racks draw, in his words, "well above a hundred kilowatts". An Nvidia GB three hundred NVL seventy-two rack draws about a hundred and forty-two kilowatts. So you divide, and you fit roughly eleven hundred and seventy racks into that campus.
+MIA: For scale, how much power is two hundred megawatts running around the clock?
+GEORGE: About as much electricity per year as a hundred and seventy thousand average US households. One campus.
+MIA: Okay. And the price tag?
+GEORGE: The bare GB three hundred system is four million dollars per rack. He adds twenty percent for networking, storage and integration, so four point eight million installed. Times eleven hundred and seventy racks, that's about five point six billion dollars of IT equipment. Then the building: eleven million dollars per megawatt, so two point two billion for the facility. Plus about four hundred million for extra power infrastructure. All in, roughly eight point two billion dollars for one campus.
+MIA: And the split is what struck me. Sixty-eight percent of that is IT equipment. Only about a third is the building and the power.
+GEORGE: Which flips the usual intuition. When people hear "data centre" they picture concrete and transformers, things that last for decades. But the economic centre of gravity is the part that wears out fastest.
+MIA: It's like buying a house where two thirds of the price is the furniture, and the furniture is out of fashion in five years.
+GEORGE: That's better than the analogy I had ready, so I'm taking it. The building is a twenty-year asset. The racks, in his base case, are a six-year asset. And that mismatch ends up driving almost everything else in the paper.
+MIA: Hold that thought, because it comes back when we get to revenue. So that's one campus. How does he get from there to the whole country?
+GEORGE: He uses a project database from Cleanview, pulled in July. Two thousand nine hundred and thirty-three projects, operational or planned, after throwing out thirty-nine cancelled ones. About fifty-seven gigawatts already running, and a planned pipeline of about five hundred and nine. Including the existing stock, five hundred and sixty-six gigawatts.
+MIA: Against thirty-nine gigawatts at the end of twenty twenty-four.
+GEORGE: Yes. Which obviously isn't all going to get built.
+MIA: And this is the part I liked, because it's what I'd want from anyone working off a scraped pipeline. He doesn't take the list at face value.
+GEORGE: No. He gives each cohort a realisation rate, by planned completion year. For example, ninety percent of projects slated for twenty twenty-six with a reported capacity get finished by twenty thirty-two. For projects with no date at all, only twenty percent.
+MIA: And some don't even report a capacity.
+GEORGE: Four hundred and thirty-two of them. Those he imputes with a ridge-regularised regression, penalty chosen by cross-validation, fitted in logs with an R squared of zero point eight four six, plus a smearing correction to get back from logs to levels properly.
+MIA: Which, as someone who builds extraction pipelines, I appreciate. Missing fields are a modelling choice, not a footnote.
+GEORGE: The output is his central scenario. About a hundred and eighty-three gigawatts operational by twenty thirty-two, a hundred and seventeen gigawatts after that, and about two hundred and twenty-seven gigawatts that never get built.
+MIA: And in money?
+GEORGE: Forty-one million dollars per megawatt in twenty twenty-five, rising four percent a year, with costs spread over the three years before completion. That gives ten point three trillion dollars over twenty twenty-five to twenty thirty-two. On average three point six three percent of US GDP per year, peaking in twenty thirty-two at just over two trillion dollars, five point one percent of GDP.
+MIA: And then the historical comparison, which is the chart everyone will share.
+GEORGE: Average annual capex as a share of GDP. Canals in the late eighteen-thirties: zero point six six percent. Railroads, eighteen seventy to eighteen ninety: two point two four. Electrification: zero point five. The highway programme of the fifties and sixties: one point one three. The telecom and fibre boom around the dot-com years: one point one. And now AI at three point six.
+MIA: So relative to the economy, bigger than the railroads. That's the headline. But I want to push on it straight away.
+GEORGE: Please.
+MIA: First, everything hangs on those realisation rates. Twenty percent for undated projects is an assumption, not an estimate. And the undated category is enormous.
+GEORGE: Three hundred and fifty-three point six gigawatts undated, of which he assumes only fifty-nine point seven get done by twenty thirty-two. He's upfront about it. He calls the result "a scenario rather than a forecast".
+MIA: And second, he's already moved the number himself. The version presented in September says ten point three trillion. The NBER version from October says a hundred and eighty-eight gigawatts, "nearly nine trillion dollars", and three point two percent of GDP per year.
+GEORGE: With the same cost per gigawatt, about forty-one billion. And three point two is still well above the railroads.
+MIA: Fair. The conclusion survives the revision.
+GEORGE: There's one more caveat he raises himself that I think matters more. A canal lasts a century. Fibre lasts decades. GPUs can be economically obsolete in three to six years. So each dollar of gross investment creates much less lasting capital than a railroad dollar did.
+MIA: Although, cutting the other way, his numbers leave out refreshing the hardware later.
+GEORGE: Right. So over a longer horizon the true spend is higher. More gross investment, evaporating faster.
+MIA: Okay, here's where it becomes my favourite part, because it's finance. Who is actually paying for this?
+GEORGE: Start with the big five. Oracle, Microsoft, Amazon, Meta, Alphabet.
+MIA: Combined capex of about ninety-seven billion dollars in twenty twenty. Over four hundred billion in twenty twenty-five. Projected around eight hundred billion this year. And twenty twenty-six is the first year that their capex exceeds their combined operating cash flow.
+GEORGE: To be fair, those twenty twenty-six figures mix reported results, guidance and analyst estimates.
+MIA: Sure, but the direction is the point. Until now they could fund this out of cash flow. Now they can't. So the money has to come from outside.
+GEORGE: How much from outside?
+MIA: The paper cites Morgan Stanley. Of roughly two point nine trillion dollars in incremental hyperscaler compute needs from twenty twenty-five to twenty twenty-eight, more than half comes from external capital. Roughly sixty-forty equity to debt. And within the debt, private credit is the big one, about eight hundred billion. Corporate debt about two hundred billion, structured finance about a hundred and fifty.
+GEORGE: Sixty-forty doesn't sound alarming.
+MIA: At the group level it doesn't. That's the trick. Leverage at the asset level is much higher. The money flows through leases, joint ventures, project debt, securitisations and special purpose vehicles.
+GEORGE: Let me sketch the chain, because it's neat. The frontier labs, OpenAI and Anthropic, have no investment-grade credit rating of their own. Nobody lends them twenty-year money at a good rate to build a gigawatt campus. So they sign compute contracts with a hyperscaler. The hyperscaler signs a lease with a vehicle. And the vehicle borrows against that lease.
+MIA: So the lab is effectively borrowing the hyperscaler's credit rating.
+GEORGE: Exactly. Like a student renting a flat with their parents as guarantor. The landlord's bank cares about the parents, not the student.
+MIA: And the parents would rather the guarantee didn't show up on their own mortgage application.
+GEORGE: Which brings us neatly to Meta.
+MIA: Hyperion. About two gigawatts, about thirty billion dollars. Let me walk through the structure, because it's elegant in a slightly unsettling way.
+GEORGE: Go ahead.
+MIA: Meta set up a joint venture called Beignet. Blue Owl bought an eighty percent stake for about two point five billion dollars, and Meta keeps twenty percent. The joint venture then raised twenty-seven billion dollars of debt in October twenty twenty-five. Rated A plus by S and P, one notch below Meta itself. Described as the largest single investment-grade corporate bond issue in US history.
+GEORGE: So on a thirty billion dollar asset, about ninety percent is debt.
+MIA: Ninety percent. Compare that with Meta's own leverage at the end of twenty twenty-five: about twenty-five percent against book equity, about four percent against market equity.
+GEORGE: And the cushion is thin. The debt service coverage ratio is one point one two. Meaning the rent coming in covers the interest and principal going out by only twelve percent. For a project financing, that's tight.
+MIA: So how does that get an A plus?
+GEORGE: Through the lease. Meta leases the campus back. But it's not one long lease. It's five four-year terms, running from twenty twenty-nine until the bond matures in twenty forty-nine. At each renewal, Meta can walk away.
+MIA: Which should make the bond much riskier, surely.
+GEORGE: Except for the second piece: a residual value guarantee. If Meta terminates, the assets are sold, and Meta pays any shortfall below a contractual minimum value. So bondholders are covered either way. Either Meta keeps paying rent, or Meta tops up the sale price.
+MIA: And neither of those sits on Meta's balance sheet.
+GEORGE: Under GAAP, no. A future lease term that hasn't started isn't recognised, and the guarantee isn't recognised until it's triggered. Even though one of the two is certain to happen. That's what I find remarkable. You take one certain obligation, split it into two uncertain halves, and each half is invisible.
+MIA: Like a coin where you owe money on heads and on tails, but the accountant only writes it down once it lands.
+GEORGE: Precisely that.
+MIA: And here's the economics, which I think is the real finding. It's not cheaper. Beignet's yield was six point five eight percent, at least a hundred basis points above what Meta would likely pay on its own unsecured debt. Over the life of the bond, that's more than five billion dollars of extra interest.
+GEORGE: So Meta pays five billion dollars for...
+MIA: For appearances, basically. The paper puts it plainly: "The economic rationale for Meta is therefore not cheaper financing, but preservation of an asset-light corporate profile."
+GEORGE: Is that irrational, though? I can see the argument. If your equity is priced like a software company, keeping the balance sheet looking like a software company might be worth five billion.
+MIA: Maybe. But then you have to believe the market doesn't see through it. And there's a number in the paper that suggests it partly does. The market beta of US data-centre REITs, so how much they move with the overall market, went from about zero point five to about one, over a window running from twenty eighteen to early twenty twenty-six.
+GEORGE: So data centres used to behave like infrastructure. Boring, defensive, a bit like a utility.
+MIA: And now they move one for one with the market. They've become part of the same bet. You can keep the debt off the balance sheet, but you can't keep the risk out of the prices.
+GEORGE: So five billion for a cosmetic effect that the market has at least partly priced in already.
+MIA: I'd call it rational for management and a bit of a puzzle for shareholders. But the cosmetics matter less than the template.
+GEORGE: Because it's not a one-off. The template's been copied.
+MIA: Sopaipilla, in El Paso. Nine hundred and sixty megawatts, Meta again, this time with BlackRock. Twelve point three billion dollars of A plus rated bonds in July this year.
+GEORGE: Someone in that deal team was clearly hungry.
+MIA: Clearly. But the aggregate is what matters. Moody's counts about nine hundred and seventy billion dollars of hyperscaler lease commitments, of which about six hundred and sixty billion is for future leases not yet on the balance sheet. And a Wall Street Journal analysis cited in the paper goes further. For Microsoft, Alphabet, Amazon and Meta: two point four trillion off balance sheet. That's nine hundred and four billion of future leases plus one point five two trillion of purchase commitments, mostly chips. Against six hundred and four billion on balance sheet.
+GEORGE: So of roughly three trillion dollars of data-centre-related obligations, about one fifth is visible.
+MIA: One fifth. Keep that in mind for later, because it's a build opportunity.
+GEORGE: Right. Now the number I think is worth remembering from this whole episode. The revenue requirement.
+MIA: Appendix D. Honestly my favourite page of the paper.
+GEORGE: The logic is how a utility regulator would think. You've built a capital base. What does it have to earn each year to pay back the capital plus a reasonable return? He takes the hundred and eighty-three gigawatts. That's about eight point five four trillion dollars of cost, or nine point six one trillion once you include the return investors need during the construction years.
+MIA: Because money tied up in a half-built campus isn't free.
+GEORGE: Exactly. Then he asks for a ten percent unlevered return. The IT share, sixty-eight percent, has to be paid back over six years. The building and power over twenty. Blend those two annuities and the annual capital charge is nineteen point three seven percent of the capital base.
+MIA: So almost a fifth of the whole thing, every single year.
+GEORGE: Which means one point eight six trillion dollars of operating cash flow per year. And if the whole chain runs at a fifty percent cash-flow margin, that's about three point seven trillion dollars of revenue by twenty thirty-two. Nine point two percent of US GDP.
+MIA: Let me anchor that. OpenAI and Anthropic together are at roughly a hundred billion dollars of revenue. To get to three point seven trillion by twenty thirty-two, revenue would have to grow about eighty percent a year. Every year.
+GEORGE: Now the clever bit is that he translates it into units you can actually check. The buildout is about seventy-seven million GPUs. Spread the revenue across them and you need five dollars fifty per installed GPU-hour at full utilisation. Six ninety at eighty percent utilisation. Seven ninety at seventy.
+MIA: Worth pausing there, because the gap between five fifty and seven ninety is purely utilisation. Same hardware, same debt. An idle rack still pays interest.
+GEORGE: It's the airline problem. An empty seat earns nothing, but the lease on the plane doesn't care.
+MIA: And current on-demand prices for high-end Nvidia capacity, according to the paper, run from roughly six to over ten dollars an hour.
+GEORGE: So today's price is fine.
+MIA: Today's price is fine. That's the counterintuitive part. The risk isn't that GPUs are rented too cheaply right now. The risk is whether that price holds while a hundred and eighty gigawatts of new capacity comes online.
+GEORGE: And this is where the rack from the start comes back. The bonds run twenty years, but the equipment earning the revenue is, in his base case, good for six. If IT lasts three years instead of six, the requirement rises to about six trillion. Fourteen point eight percent of GDP. Eight dollars eighty per GPU-hour.
+MIA: I played with that myself. Halving the life doesn't quite double the IT charge, because of how annuities work, but it's close enough to hurt. And it's the question I'd turn on anyone building agents. What do your own projects assume about how long the model or the hardware you build on stays current? For most of us, honestly, the answer is eighteen months at best.
+GEORGE: It's a bit like a taxi firm taking a twenty-year loan to buy cars that will be outclassed in three. Fine if fares hold. Painful if a cheaper car floods the streets.
+MIA: And the sensitivity range is wide. At a five percent return and a sixty-seven percent margin, two point two nine trillion. At fifteen percent and a thirty-three percent margin, six point seven two trillion.
+GEORGE: I'd add two skeptical points. First, everything is costed per megawatt, not per unit of compute. If chips get much more efficient, capex per megawatt stays the same, but what the market will pay per megawatt can fall.
+MIA: He answers that with Jevons in a Brookings podcast. Cheaper compute, more demand.
+GEORGE: Which might well be right, but it's a hypothesis, not evidence. Second, that fifty percent margin is across the whole chain. Who actually captures it? The chip maker, the hyperscaler, the lab, the end user? This paper doesn't model that.
+MIA: And that's not a detail. If the chip maker keeps fat margins and the labs compete on price, the infrastructure owner in the middle gets squeezed. Which is exactly the vehicle carrying ninety percent debt.
+GEORGE: So where do the losses land if it goes wrong? He names four vulnerabilities.
+MIA: Tenant concentration: a handful of tenants, a handful of labs behind them. Obsolescence, which we just did. Execution, so actually getting things built. And circular financing.
+GEORGE: Explain the circular one, because that's the one people love to post about.
+MIA: In August, Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs and KKR put together a five hundred billion dollar credit facility to finance Nvidia chips. And Nvidia gives a twenty-five percent residual value guarantee. Up to a hundred and twenty-five billion dollars of backstop. Google and Broadcom have a similar arrangement for TPUs.
+GEORGE: So the chip maker is partly underwriting its own customers' purchases. A vendor financing loop.
+MIA: Which is fine while the chips hold their value. And correlated in the worst way if they don't, because whatever triggers the guarantee is the same thing that hurts Nvidia's sales.
+GEORGE: But he's careful. He says it's "premature" to call this systemic risk. His line is: "The relevant question is therefore not whether AI infrastructure is already systemically risky, but under what conditions project-level losses could become correlated and propagate."
+MIA: In that Brookings podcast he goes a bit further. He says about one point four trillion dollars of debt has been issued on these structures, roughly half held by banks. And he sees "a real parallel" with the structured investment vehicles before two thousand eight, in terms of off-balance-sheet risk.
+GEORGE: With two differences he points out himself. Less short-term funding. And the tenants are investment grade.
+MIA: My issue with "premature" is that the bulk of the financing is private credit and syndicated loans, and that data isn't public. The paper says so itself. So the most important exposure is also the least visible one.
+GEORGE: Which is the honest reading. It's not "this is fine". It's "we can't see enough to say".
+MIA: Then the follow-up, "Clouds of Credit", tries to put numbers on the bad case.
+GEORGE: From the abstract: equity cushions do protect creditors against the obligations outstanding in mid twenty twenty-six. But, quote, "concentrated exposures and interconnected claims create weak links". Debt finances nearly sixty percent of the expansion. And in a low-productivity state, losses reach sixteen point eight trillion dollars across shareholders and creditors, with forty percent loss given default on the debt.
+MIA: There's a nice economics result in there too. Equilibrium investment exceeds the social optimum, because each firm ignores that its own capacity drags down its competitors' revenues.
+GEORGE: The classic overbuilding externality. Everyone races to build, and collectively they build too much.
+MIA: And if you suppress the contractual payment spillovers between the key firms, private losses drop by about thirty percent. So the wiring matters, not just the size.
+GEORGE: Which fits his policy recommendation. Not banning off-balance-sheet financing. Measuring it. Disclosure of the whole capital stack: project debt, joint venture stakes, future leases, residual value guarantees, tenant concentration. Transparency, not prohibition.
+MIA: Let's bring it home. Because if you're in the Netherlands, this can sound like an American problem.
+GEORGE: And DNB's answer is: through your pension, it isn't.
+MIA: The ESB piece is by De Vette, Serrano Ascandoni and Hoeberichts. Dutch pension funds hold about two hundred and seventy billion euros in US equities and fund participations. About a hundred and sixty billion euros in tech companies, of which about a hundred and ten billion is American. That's roughly forty-five percent of their listed equity portfolio, and about nine percent of total assets.
+GEORGE: Forty-five percent of listed equity in tech. That's less a portfolio than a sector bet.
+MIA: It is. So a Dutch pension participant who has never opened a chatbot is carrying a slice of AI infrastructure risk. On top of that, households have about nineteen billion euros of direct exposure to the US private sector.
+GEORGE: And the scenario itself?
+MIA: They raise the equity risk premium from about four point four percent to its twenty oh two to twenty twenty-five average of six point eight. So plus two hundred and forty basis points, run through the NiGEM model. Dutch equities fall just over thirty percent. GDP ends up zero point eight percent below baseline in year one. Unemployment up zero point two percentage points. Business investment about three percent below baseline, almost five percent a year later. The ECB cuts by fifty basis points. And after three years, GDP is still zero point four percentage points below baseline.
+GEORGE: Painful, not catastrophic.
+MIA: And their conclusion is the line I'd underline: the main Dutch vulnerability is concentrated financial risk in a few tech firms, not direct dependence on AI.
+GEORGE: One skeptical note, though. That scenario holds expected profits constant and only moves the risk premium. Investors get more nervous, but the companies still earn what was expected.
+MIA: Right, and what Van Nieuwerburgh describes is the other kind of correction. AI revenue disappoints, profits fall. That's a different shock, and potentially a bigger one. So I'd read the DNB numbers as a floor, not a ceiling.
+GEORGE: And the broader DNB study from the start of November?
+MIA: More upbeat. The Netherlands is well positioned and among the European frontrunners in AI use. But adoption is uneven. Large firms and digitally intensive sectors lead. Small firms, construction, transport and hospitality lag. And one recommendation I liked: keep reliable, affordable access to compute, and avoid vendor lock-in.
+GEORGE: The uneven part is the interesting half, if you're looking for work to do.
+MIA: It is. The laggards are where automation is under-supplied. And they're also the firms least able to absorb a sudden jump in what compute costs, so if you build for them, portability isn't a nice-to-have. It's part of the product.
+GEORGE: Which ties straight back to the GPU-hour numbers.
+MIA: It does. So, what do you do with all this if you're building? Three things.
+GEORGE: Go.
+MIA: One. Rebuild Appendix D as a small model, in a spreadsheet or a bit of Python. Capital base, times sixty-eight percent of a six-year annuity factor plus thirty-two percent of a twenty-year one, divided by the margin. Then vary the IT life, three, four, six years, plus utilisation and margin. An hour of work, and you have better intuition than any bubble op-ed, plus a tool you can reuse every time a new capex number gets announced.
+GEORGE: Two is the one I'd actually build.
+MIA: Two. The paper's policy ask is better measurement of the capital stack. That's an extraction problem. An agent pipeline over ten-K and ten-Q filings that pulls out future lease commitments, purchase commitments and residual value guarantees, with a source citation on every number and a human who accepts or rejects.
+GEORGE: And the citations are non-negotiable. This is exactly the kind of task where a model will hand you a confident lease total that's off by one footnote, and nothing in the output tells you.
+MIA: So you design for verifiability. Every extracted figure points to the page and the sentence it came from, and the human's job shrinks to checking what doesn't reconcile. Moody's and the Wall Street Journal are doing this kind of work by hand, and Atrium A I does it commercially. And a Dutch pension fund analyst, or DNB itself, might well want exactly that view.
+GEORGE: And three?
+MIA: Your own stack. Five fifty to eight eighty per GPU-hour is roughly the floor the infrastructure owners have to earn back. If a model API is priced structurally below that, somebody is subsidising it. So keep your model choice portable, which is DNB's lock-in point again, and route on cost per solved task.
+GEORGE: Because subsidies end.
+MIA: Usually right around when the bonds come due.
+GEORGE: On that cheerful note, enjoy your Sunday, and we'll see you on the next ride.
