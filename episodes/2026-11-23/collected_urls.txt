@@ -1,0 +1,17 @@
+https://claude.ai/artifact/CtQyX8qfYAF822bgHJHHE3
+https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth
+https://simonwillison.net/2026/Nov/22/select-styling/
+https://marginalrevolution.com/marginalrevolution/2026/11/sunday-assorted-links-591.html?utm_source=rss&utm_medium=rss&utm_campaign=sunday-assorted-links-591
+https://openai.com/index/perplexity-and-intelligence/
+https://the-decoder.com/ai-coding-agents-ace-isolated-tests-but-complete-fewer-than-one-in-ten-tasks-in-a-simulated-workplace/
+https://the-decoder.com/perplexitys-new-monitor-api-turns-web-search-from-a-one-off-query-into-a-nonstop-watchdog/
+https://github.com/gulivan/worker755
+https://www.lennysnewsletter.com/p/first-principles-what-it-takes-to
+https://the-decoder.com/ai-is-getting-better-faster-than-experts-can-reliably-test-whether-new-systems-are-safe-metr-warns/
+https://the-decoder.com/security-researchers-show-how-cheap-ai-inference-providers-steal-keys-and-snoop-on-users/
+https://the-decoder.com/lean-and-mathlib-community-officially-confirms-levent-alpoges-proof-of-the-riemann-hypothesis-is-correct/
+https://the-decoder.com/gpt-6-2-astra-and-sol-get-to-the-point-faster-but-score-lower-on-transparency-than-claude/
+https://www.noahpinion.blog/p/ai-people-are-very-very-very-very
+https://marginalrevolution.com/marginalrevolution/2026/11/will-ai-growth-reach-the-developing-world.html?utm_source=rss&utm_medium=rss&utm_campaign=will-ai-growth-reach-the-developing-world
+https://www.exponentialview.co/p/ev-611
+https://openai.com/index/perplexity-and-intelligence
