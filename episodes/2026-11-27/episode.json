@@ -1,0 +1,13 @@
+{
+  "title": "Agents get a narrower door, fake wins, and CFO digital twins",
+  "summary": "Google will require AI agents to use its MCP servers to reach Gmail and Drive, Microsoft dissects the ARTEX attack agent and the \"fake win\" defences against it, Clay explains why its first agent failed, and Jones and Tonetti put a speed limit on the growth explosion. In the deep dive, Graham, Harvey and Jha's \"CFOs Meet LLMs\" shows silicon samples work person by person when conditioned on each respondent's own history, and where that breaks.",
+  "shownotes": "Google's Workspace AI Tools Addendum: agents must use Google MCP servers for Gmail, Drive and Calendar, enforcement from 1 February 2027\nMicrosoft on ARTEX: an open-source multi-agent attack framework, and why fake wins, tarpits and honeytokens work against it\nClay's head of AI on rebuilding its agent as a coding agent with a CLI in a sandbox, evals that measured the wrong thing, and BullMQ orchestration\nJones and Tonetti (NBER w36050): past automation, weak links and the limits of the growth explosion\nDeep dive: Graham, Harvey and Jha, \"CFOs Meet LLMs\" (NBER w36057): digital twins of survey respondents conditioned on their own history, the Gemma replication, and a Dutch COEN angle\n\nSources\nhttps://workspace.google.com/terms/ai-tools\nhttps://cloud.google.com/blog/products/identity-security/deploying-agents-safely-in-your-enterprise\nhttps://techstackups.com/articles/google-workspace-ai-agents-mcp/\nhttps://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/\nhttps://the-decoder.com/microsoft-details-how-state-backed-hackers-use-the-artex-ai-framework-to-automate-cyberattacks/\nhttps://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/\nhttps://www.nber.org/papers/w36050\nhttps://www.youtube.com/watch?v=Em6tbhj9o6A\nhttps://arxiv.org/pdf/2606.13812\nhttps://www.cbs.nl/nl-nl/longread/rapportages/2026/conjunctuurenquete-nederland-vierde-kwartaal-2026?onepage=true\n\nVoices: Mia: af_heart, George: bm_george",
+  "date": "2026-11-27",
+  "guid": "morning-signal-2026-11-27",
+  "published": "2026-11-27T04:17:46+01:00",
+  "audio_url": "https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-11-27/morning-signal-2026-11-27.mp3",
+  "audio_bytes": 13054991,
+  "duration_seconds": 1631.7753333333333,
+  "deep_dive": "Digital twins of survey respondents. What \"CFOs Meet LLMs\" shows about silicon samples that are conditioned on a person's own history",
+  "voices": "Mia: af_heart, George: bm_george"
+}

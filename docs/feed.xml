@@ -9,6 +9,35 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Agents get a narrower door, fake wins, and CFO digital twins</title>
+      <description>Google will require AI agents to use its MCP servers to reach Gmail and Drive, Microsoft dissects the ARTEX attack agent and the "fake win" defences against it, Clay explains why its first agent failed, and Jones and Tonetti put a speed limit on the growth explosion. In the deep dive, Graham, Harvey and Jha's "CFOs Meet LLMs" shows silicon samples work person by person when conditioned on each respondent's own history, and where that breaks.
+
+Google's Workspace AI Tools Addendum: agents must use Google MCP servers for Gmail, Drive and Calendar, enforcement from 1 February 2027
+Microsoft on ARTEX: an open-source multi-agent attack framework, and why fake wins, tarpits and honeytokens work against it
+Clay's head of AI on rebuilding its agent as a coding agent with a CLI in a sandbox, evals that measured the wrong thing, and BullMQ orchestration
+Jones and Tonetti (NBER w36050): past automation, weak links and the limits of the growth explosion
+Deep dive: Graham, Harvey and Jha, "CFOs Meet LLMs" (NBER w36057): digital twins of survey respondents conditioned on their own history, the Gemma replication, and a Dutch COEN angle
+
+Sources
+https://workspace.google.com/terms/ai-tools
+https://cloud.google.com/blog/products/identity-security/deploying-agents-safely-in-your-enterprise
+https://techstackups.com/articles/google-workspace-ai-agents-mcp/
+https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/
+https://the-decoder.com/microsoft-details-how-state-backed-hackers-use-the-artex-ai-framework-to-automate-cyberattacks/
+https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/
+https://www.nber.org/papers/w36050
+https://www.youtube.com/watch?v=Em6tbhj9o6A
+https://arxiv.org/pdf/2606.13812
+https://www.cbs.nl/nl-nl/longread/rapportages/2026/conjunctuurenquete-nederland-vierde-kwartaal-2026?onepage=true
+
+Voices: Mia: af_heart, George: bm_george</description>
+      <pubDate>Fri, 27 Nov 2026 04:17:46 +0100</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-11-27</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-11-27/morning-signal-2026-11-27.mp3" length="13054991" type="audio/mpeg"/>
+      <itunes:duration>00:27:12</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Riemann proved with Claude, leaky routers, and agents that say "done"</title>
       <description>A Claude-assisted, Lean-verified proof of the Riemann Hypothesis shows how to trust research no human has fully read yet, while Dragos's canary sweep shows that cheap inference routes leak prompts and keys. Then METR's capability update and OpenAI's perplexity yardstick, NBER on AI and developing economies, and a deep dive on SWE-CoWork: coding agents find the right colleague but lose track of requirements, and 31% of what they report as done fails its tests.
 
