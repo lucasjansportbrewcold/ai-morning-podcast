@@ -9,6 +9,32 @@
     <itunes:block>Yes</itunes:block>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>Thinking in loops: Inkling 2 Mini, Dory and latent reasoning</title>
+      <description>Looped transformers reuse the same layers several times per token, trading chain-of-thought tokens for hidden computation, and Inkling 2 Mini and NVIDIA's Dory are the first serious open models built this way. We explain the mechanism, the cost and caching trade-offs, what it means for monitorability, and how to test whether a local looped model beats a dense one on your own tasks.
+
+The mechanism: a sandwich of input block, shared recurrent block and output block; Inkling 2 Mini runs 24 stored layers as 48, Dory runs 72 layers as 32 + 40k
+Making loops trainable: Inkling's closed-start learned gate, Dory's input re-injection on a normalised transformer, sampled loop counts and truncated backprop for elastic depth
+Where to loop and what it buys: middle-layer looping beats last-layer looping; looping improves reasoning, coding and agentic tasks but not stored knowledge, so pair it with retrieval
+The cost maths: more loops, fewer tokens and turns; Dory at two loops costs 1.03-1.25x one loop but recovers most of the four-loop gain; measure cost per solved task
+The serving catch: per-loop KV caches, last-loop caching, self-speculative decoding, quantisation-aware distillation and young local runtime support
+Monitorability: no-CoT time horizon rises from 16 to 37 seconds, but LinuxArena stealth shows no clear trend at this scale
+This week: a local bake-off of Inkling 2 Mini or Dory at two loops against your current dense model, with Dutch inputs tested separately, capped turns and a sandbox
+
+Sources
+https://huggingface.co/thinkingmachines/Inkling-2-Mini
+https://thinkingmachines.ai/news/inkling-2-mini/
+https://www.youtube.com/watch?v=W8MYFyGxSas
+https://arxiv.org/pdf/2611.03998
+https://arxiv.org/html/2510.25741v2
+
+Voices: Mia: af_bella, George: bm_george</description>
+      <pubDate>Sat, 28 Nov 2026 04:25:19 +0100</pubDate>
+      <guid isPermaLink="false">morning-signal-2026-11-28</guid>
+      <enclosure url="https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-11-28/morning-signal-2026-11-28.mp3" length="11854799" type="audio/mpeg"/>
+      <itunes:duration>00:24:42</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
       <title>Agents get a narrower door, fake wins, and CFO digital twins</title>
       <description>Google will require AI agents to use its MCP servers to reach Gmail and Drive, Microsoft dissects the ARTEX attack agent and the "fake win" defences against it, Clay explains why its first agent failed, and Jones and Tonetti put a speed limit on the growth explosion. In the deep dive, Graham, Harvey and Jha's "CFOs Meet LLMs" shows silicon samples work person by person when conditioned on each respondent's own history, and where that breaks.
 

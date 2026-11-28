@@ -1,0 +1,13 @@
+{
+  "title": "Thinking in loops: Inkling 2 Mini, Dory and latent reasoning",
+  "summary": "Looped transformers reuse the same layers several times per token, trading chain-of-thought tokens for hidden computation, and Inkling 2 Mini and NVIDIA's Dory are the first serious open models built this way. We explain the mechanism, the cost and caching trade-offs, what it means for monitorability, and how to test whether a local looped model beats a dense one on your own tasks.",
+  "shownotes": "The mechanism: a sandwich of input block, shared recurrent block and output block; Inkling 2 Mini runs 24 stored layers as 48, Dory runs 72 layers as 32 + 40k\nMaking loops trainable: Inkling's closed-start learned gate, Dory's input re-injection on a normalised transformer, sampled loop counts and truncated backprop for elastic depth\nWhere to loop and what it buys: middle-layer looping beats last-layer looping; looping improves reasoning, coding and agentic tasks but not stored knowledge, so pair it with retrieval\nThe cost maths: more loops, fewer tokens and turns; Dory at two loops costs 1.03-1.25x one loop but recovers most of the four-loop gain; measure cost per solved task\nThe serving catch: per-loop KV caches, last-loop caching, self-speculative decoding, quantisation-aware distillation and young local runtime support\nMonitorability: no-CoT time horizon rises from 16 to 37 seconds, but LinuxArena stealth shows no clear trend at this scale\nThis week: a local bake-off of Inkling 2 Mini or Dory at two loops against your current dense model, with Dutch inputs tested separately, capped turns and a sandbox\n\nSources\nhttps://huggingface.co/thinkingmachines/Inkling-2-Mini\nhttps://thinkingmachines.ai/news/inkling-2-mini/\nhttps://www.youtube.com/watch?v=W8MYFyGxSas\nhttps://arxiv.org/pdf/2611.03998\nhttps://arxiv.org/html/2510.25741v2\n\nVoices: Mia: af_bella, George: bm_george",
+  "date": "2026-11-28",
+  "guid": "morning-signal-2026-11-28",
+  "published": "2026-11-28T04:25:19+01:00",
+  "audio_url": "https://github.com/lucasjansportbrewcold/ai-morning-podcast/releases/download/ep-2026-11-28/morning-signal-2026-11-28.mp3",
+  "audio_bytes": 11854799,
+  "duration_seconds": 1481.7373333333333,
+  "deep_dive": "Looped transformers. Thinking in depth instead of in tokens, and what it means for local agents",
+  "voices": "Mia: af_bella, George: bm_george"
+}

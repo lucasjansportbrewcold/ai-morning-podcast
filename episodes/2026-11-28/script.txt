@@ -1,0 +1,132 @@
+MIA: Morning, Lucas. It's Saturday, so no headlines, just one long conversation. And George, I want to open with a number that bugged me all week. NVIDIA's new four billion parameter model, run on an agent task with four loops instead of one, used about eighty-five thousand output tokens per attempt instead of two hundred and twelve thousand. The supposedly expensive setting looks like the cheap one.
+GEORGE: Morning. And that number is a good doorway into the whole topic, which is looped transformers. Two of them landed this month that you can actually download and run. Inkling 2 Mini from Thinking Machines, released on the twentieth of November, and NVIDIA's Dory one point oh, four B, the first looped model in their Nemotron Labs family.
+MIA: Inkling 2 Mini is the one that made me sit up. Twenty-six point four billion parameters, open weights, Apache two point oh licence, and it runs on a Mac with thirty-two gigabytes of memory. That's exactly the "local agent on sensitive data" scenario.
+GEORGE: So here's the framing. Until now you had two dials for spending compute. Make the model bigger, or let it write a longer chain of thought. Looping adds a third dial. You run the same layers several times for every token, and that extra thinking happens inside the hidden state instead of showing up as text.
+MIA: Which immediately sets off my monitoring alarm. But let's earn that. Start with the mechanism.
+GEORGE: Right. A normal transformer is a stack of layers, each with its own weights. A token goes in at the bottom, gets refined layer by layer, and a prediction comes out the top. If you want more capability, you add layers, which means more weights and more memory. A looped model stores a block of layers once and sends each token's hidden state through that block several times.
+MIA: So depth without parameters.
+GEORGE: Depth without stored parameters, yes. The usual shape is a sandwich. An input block runs once and translates tokens into the model's internal representation. Then a shared recurrent block in the middle runs k times. Then an output block runs once and turns the final state back into token predictions.
+MIA: Give me the actual layouts, because I think the two models are quite different designs.
+GEORGE: They are. Inkling 2 Mini has twenty-four layers in four blocks of six. Block one, the prelude, and block four run once. Blocks two and three run three times. So twenty-four stored layers become forty-eight layer applications per token.
+MIA: And it's a mixture of experts on top of that.
+GEORGE: Yes, so it's a bit of a layer cake. Twenty-six point four billion parameters in total, three point four billion active, and once you count the loop it's about five point four billion weight activations per token. Each token goes to eight of a hundred and twenty-eight experts per layer, and attention is a hybrid of local and global layers.
+MIA: And Dory?
+GEORGE: Much smaller and much deeper. Seventy-two physical layers: a sixteen-layer input block, a forty-layer shared recurrent block, and a sixteen-layer output block. So the effective depth is thirty-two plus forty times the number of loops. One loop, seventy-two layers. Four loops, a hundred and ninety-two.
+MIA: A hundred and ninety-two layers deep on a four billion parameter model. That's a strange-looking animal.
+GEORGE: It is, but the idea isn't new. It goes back to Universal Transformers, Dehghani and colleagues in twenty nineteen, and the key recent step was Ouro, from ByteDance Seed and others in twenty twenty-five. Those were research models. What's new now is that these two are post-trained, agent-capable, and you can pull them today.
+MIA: My mental picture, tell me if it's wrong: it's like rereading the same paragraph three times. No new information, but you understand it a bit better each pass.
+GEORGE: That's close, and it actually predicts one of the main results we'll get to. The one tweak I'd make: it's the same reader every time. The weights don't change between passes, only the state you're carrying forward.
+MIA: Here's my builder question though. If it's that simple, why didn't everyone do this years ago?
+GEORGE: Because naively looping a network is unstable. Ouro trained with four recurrent steps. When they tried eight, they got loss spikes and went back to four. You're feeding a network its own output over and over, and small deviations can build up, a bit like a microphone held too close to its speaker.
+MIA: Feedback.
+GEORGE: Exactly. And the two new models fix it in different ways. Inkling 2 Mini does something I find quite elegant. Every pass restarts from the prelude output, so the middle block always sees the original input. Passes two and three additionally receive a "message" from the previous pass, merged in through a learned gate. And that gate starts fully closed.
+MIA: So early in training each loop is basically an ordinary non-looped model.
+GEORGE: Right. It behaves like a normal network, and the gate opens as training finds it useful to pass information forward. You don't start in the unstable regime, you grow into it.
+MIA: And NVIDIA?
+GEORGE: Dory re-injects the input block's output before every loop, so again the recurrent block never drifts too far from the original input. And it's built on a normalised transformer backbone, with L2 normalisation keeping the hidden states on a fixed scale, so the representation can't blow up as it goes round.
+MIA: The training recipe for Dory was the bit I found most interesting. Six trillion tokens of pretraining. The first four and a half trillion or so as a completely normal non-looped model, in four-bit NVFP4, which they say is about twenty percent faster than BF16. Then about one and a half trillion tokens in BF16 where the loop count is sampled from one, two, three or four. Then a context extension to two hundred and fifty-six thousand tokens over about three hundred billion tokens. So the looping is bolted on fairly late.
+GEORGE: And they backpropagate only through the last loop. Truncated backprop with depth one. That's a big saving in training memory, because you don't store activations for every pass.
+MIA: And sampling the loop count is what gives you elastic depth. One checkpoint, several compute budgets.
+GEORGE: Yes. Because it has seen every loop count from one to four in training, you get to choose at inference. Quick at one loop, more careful at four. Same file on disk.
+MIA: Which I like. One model, and you set the depth per call, the way you'd set an effort level.
+GEORGE: Then there's reinforcement learning, which was a sore point for Ouro. Their RL runs, with DAPO and GRPO, gave no significant gains over supervised fine-tuning, and they noted that variable-depth computation doesn't fit fast rollout engines like vLLM and SGLang.
+MIA: And the new models just fix the loop count per rollout worker.
+GEORGE: Exactly. NVIDIA goes a step further with what they call a difficulty-aware loop curriculum. Prompts with lower profiled pass rates get routed preferentially to the workers running deeper loops. In their ablation that took Terminal-Bench two point one at four loops from fourteen percent to twenty-one point four.
+MIA: Nice. Give the hard problems more thinking during training, so the model learns what the deep loops are for.
+GEORGE: That's the intuition.
+MIA: So where in the stack do you loop? Inkling loops the middle, not the end.
+GEORGE: And Thinking Machines tested exactly that. Looping the middle layers gave a compute-equivalent gain of one point five one to one point nine one times. Looping the last layers gave one point two four to one point three six times. Measured at training step two thousand.
+MIA: Spell out compute-equivalent for me.
+GEORGE: How much more compute a non-looped model would need to reach the same held-out loss. Overall they say a non-looped run needs over one and a half times the compute to match the looped model.
+MIA: And why does the middle win?
+GEORGE: Their explanation is the sandwich again. The first and last layers mostly translate, tokens into internal representations and back again. The middle layers carry the more abstract reasoning. Looping the translator doesn't buy much. Looping the thinker does.
+MIA: Rereading the paragraph, versus re-spelling every word.
+GEORGE: Ha, yes, that's it.
+MIA: Now the part I care about most. What does looping actually buy you?
+GEORGE: And here all three sources agree, which is rare. Looping improves manipulating knowledge: multi-hop reasoning, coding, agentic tasks. It does not add stored knowledge. Ouro measured it directly. Looped and non-looped models both store about two bits per parameter.
+MIA: So capacity lives in the weights, full stop.
+GEORGE: Yes. And the new models show it on benchmarks. Dory's AA-Omniscience accuracy at one, two and four loops is ten point oh three, ten point oh eight, ten point oh three. Totally flat. Meanwhile SWE-Bench Verified goes from fifty point three to fifty-nine point five to sixty-one point eight percent.
+MIA: That's a stark contrast. Eleven and a half points on coding, nothing on facts.
+GEORGE: Inkling's research variant shows the same pattern: knowledge recall on four different benchmarks nearly unchanged across pass counts. Thinking Machines say it plainly, factual knowledge tracks parameter count, not looping.
+MIA: Ouro had a striking head-to-head as well.
+GEORGE: Ouro one point four B at four steps against Qwen3 four B. On MATH five hundred, eighty-two point four against fifty-nine point six. But on MMLU, which leans more on knowledge, sixty-seven point three five against seventy-three point one nine. The small looped model wins on maths and loses on breadth.
+MIA: And they found looped models learn a synthetic multi-hop task from fewer examples. So the design rule writes itself. A looped model is a reasoning engine, not an encyclopedia. Pair it with retrieval: put the facts in the context and let the loops do the combining.
+GEORGE: That's the rule. Looping can't make a small model know more facts.
+MIA: Which is a nice fit for RAG. The thing small models are typically weakest at, reasoning across several retrieved chunks, is the kind of thing looping helps with.
+GEORGE: I'd call that a hypothesis for your pipeline until you test it, but the direction matches the evidence.
+MIA: OK, back to my opening number. Why does the four-loop run use fewer tokens?
+GEORGE: Because latent compute is substituting for token compute. Each token costs more, since you run the middle block more times, but you need fewer tokens. In Inkling's research model, mean reasoning tokens on GPQA Diamond fall from three thousand seven hundred and three at one pass to one thousand seven hundred and thirty-one at three passes. At five passes it's one thousand six hundred and sixty-one, so the gain tapers off.
+MIA: Roughly halved by going to three.
+GEORGE: And Dory on agentic tasks is even more striking. From one loop to four, on GDPval-AA version two, turns per attempt go from a hundred and sixteen to forty-nine. Output tokens per attempt from two hundred and twelve thousand to eighty-five thousand. On Terminal-Bench, from a hundred and nine thousand to fifty-four thousand. On SWE-Bench Verified, from thirty-three point six thousand to twenty-four point eight thousand.
+MIA: The turns are the big thing for me. Every agent turn is a tool call, another pass over a growing context, more latency, another chance to go off the rails. A model that thinks harder per step and needs fewer steps, that's where the real savings come from.
+GEORGE: And the paper attributes most of the token saving to exactly that, fewer turns.
+MIA: But loops aren't free either. What does it cost in compute?
+GEORGE: NVIDIA's approximate accounting: two loops cost only one point oh three to one point two five times the compute of one loop, yet recover eighty-six percent of the four-loop Elo gain on GDPval-AA and eighty percent on SWE-Bench Verified. Four loops cost one point oh seven to two point oh four times.
+MIA: So two loops is nearly free and gets you most of the way.
+GEORGE: Which is why they call two loops "a good default", with four when accuracy matters most. On their twelve-benchmark average, one loop scores thirty-five point one seven, two loops thirty-nine point six seven, four loops forty point six.
+MIA: This is the same lesson as our "effort is the new prompt" item on the sixteenth. Price per token doesn't predict cost per task. And Lucas, as an economist, that's the bit to sit with. The unit you pay for and the unit of output have come apart. If you compare local models on tokens per second, you're measuring the wrong thing.
+GEORGE: Cost per solved task.
+MIA: Cost per solved task. Accuracy, output tokens, wall-clock time, peak memory. Does it saturate, though? Can I just crank it to eight loops?
+GEORGE: No. NVIDIA says the base model's performance "tends to saturate after four loops". At six and eight loops, beyond the trained range, it's roughly flat. MATH five hundred is sixty-nine point four at four loops and at eight.
+MIA: So the dial has a stop. How does Dory compare with the obvious local competitors?
+GEORGE: At four loops it beats Gemma 4 twenty-six B A4B on SWE-Bench Verified, sixty-one point eight against fifty-seven point four, and comes within one point seven of Qwen three point six, thirty-five B A3B, on the average, forty point six against forty-two point three. For four billion parameters, that's respectable.
+MIA: And Inkling 2 Mini?
+GEORGE: Lab-reported: SWE-bench Verified seventy-nine point two percent, Terminal Bench two point one at seventy-one point six, MCP Atlas eighty-two point seven, BrowseComp with compaction seventy-nine. The lab claims it leads all open-weights models under a hundred billion total parameters on DeepSWE and the Vals Index. And according to Sam Witteveen's hands-on review, it scores twenty on the Artificial Analysis Intelligence Index, second of fourteen in its class.
+MIA: Let me push back a little. Almost all of these numbers are lab-reported. NVIDIA even says outright its scores may differ from Artificial Analysis's.
+GEORGE: Fair. To their credit, Thinking Machines name their own weak spots. MultiChallenge fifty percent and ComplexConstraints thirty-three point four, both behind Qwen three point eight, twenty-seven B. Multi-turn chat and many-constraint instruction following don't get the boost.
+MIA: And that matters, because my extraction prompts are basically many-constraint instruction following. Ten fields, formatting rules, edge cases.
+GEORGE: Then that's exactly where you'd test first.
+MIA: One more number I liked: energy.
+GEORGE: Stanford's intelligence-per-watt score on a DGX Spark: zero point seven oh three for Inkling 2 Mini, against zero point four three for Qwen three point six, thirty-five B A3B. If you're running something all day on a box under the desk, that counts.
+MIA: OK, so it saves memory. Twenty gigabytes on a laptop. What's the catch?
+GEORGE: Looping saves weight memory, not compute. And it doesn't automatically save cache memory. With standard caching every loop keeps its own key-value cache, so cache memory grows linearly with the number of loops.
+MIA: Witteveen made that point in his review: the per-pass caches make long-context memory behave like a forty-eight layer model.
+GEORGE: Right. Weights of a twenty-four layer model, cache of a forty-eight layer one. With a context window of up to a million tokens, that's where your thirty-two gigabytes goes.
+MIA: Can't you just share the cache across loops?
+GEORGE: Depends when. Ouro found that sharing caches during prefill, while processing the prompt, costs more than ten points on GSM8K. But at decode time, keeping only the last step's cache gives seventy-eight point eight five against seventy-eight point nine two, with four times less memory.
+MIA: So reading the prompt needs every loop's view, but generating can get away with just the last one.
+GEORGE: That's the empirical finding. And Dory builds it in. Last-loop KV caching keeps attention memory at the one-loop size for any number of loops. At four loops, scores move between minus two point one two, on AA-LCR, and plus zero point four two.
+MIA: And AA-LCR is the long-context reasoning benchmark, so that's exactly where you'd expect it to bite.
+GEORGE: Plausibly, yes. Then there's a lovely trick only a looped model can do: self-speculative decoding. The same checkpoint drafts at one loop and verifies at four, four draft tokens at a time. That gives a one point one one to one point five three times speedup in request duration, without a second model.
+MIA: The cheap setting of the model is its own draft model. That's clever.
+GEORGE: Now your quantisation question.
+MIA: Right, because Witteveen also reported early llama.cpp quantised builds with looping problems. Why are these models harder to quantise?
+GEORGE: Think back to the feedback picture. In a normal model, a rounding error in a layer happens once. In a looped model, the same quantised weights get applied again and again, to a state that already carries the previous error, so errors get more chances to compound. That's my intuition, not something the paper spells out, but it fits what NVIDIA saw. MXFP8 post-training quantisation stayed close to BF16, but NVFP4 and the Q5 K M GGUF format needed quantisation-aware distillation.
+MIA: So you train the quantised model to imitate the full-precision one.
+GEORGE: Right. And once that's done, up to two point four four times inference speedup over BF16 on a DGX Spark. Dory is released under the OpenMDW one point one licence.
+MIA: And Inkling ships pre-quantised?
+GEORGE: About a twenty gigabyte checkpoint in mixed NVFP4 and MXFP8. It was trained that way too: four-bit for the expert layers in pretraining and RL, the last four layers in MXFP8. RL totalled two point two trillion tokens over two thousand steps, plus on-policy distillation.
+MIA: And the expert pruning story, which I liked.
+GEORGE: Training started with eight of three hundred and eighty-four experts active. Midtraining pruned two-thirds, keeping the hundred and twenty-eight most-used experts per layer, and then they "healed" the model with a trillion tokens distilled from a larger internal Inkling. Runtimes: SGLang, vLLM, Transformers, Ollama, and llama.cpp with GGUF builds via Unsloth, among others. Ollama needs a Mac with at least thirty-two gigabytes, and their demos ran on a MacBook Pro M5 Pro with forty-eight. But the model card itself says looped-model support in local runtimes is new and speed varies.
+MIA: So "it runs on a laptop" is not the same as "it runs well in my stack".
+GEORGE: Exactly that.
+MIA: OK, my alarm. On the twenty-fourth of October we did trajectory monitors, a second model reading the agent's reasoning. If the reasoning moves into the hidden state, what's left for the monitor to read?
+GEORGE: That's the right worry, and Thinking Machines measured it directly. First question: does looping increase what the model can do without writing anything down? They use a no chain of thought time horizon. That's the length of task, in human time, the model solves at fifty percent reliability with no chain of thought at all.
+MIA: And?
+GEORGE: Sixteen seconds at one pass, thirty-seven seconds at three, then roughly flat.
+MIA: So it more than doubles. That's capability moving out of readable text.
+GEORGE: Yes, from small numbers, but yes. Then a control evaluation in LinuxArena. They take a helpful-only attacker fine-tune, give it a main task plus a hidden side task, and a weaker model, Qwen three point six, thirty-five B A3B, acts as monitor. Stealth rate is how often the side task gets through unflagged, at a one percent false-positive threshold, across a hundred and eighty-four task pairings.
+MIA: Numbers.
+GEORGE: With a monitor that only sees tool calls: one percent at one pass, two point five at two, four at three, two point eight at four, five at five.
+MIA: That looks like a trend to me.
+GEORGE: It wobbles, four passes drops back down. Their own phrase is "no clear trend with the number of looped passes". And when the monitor also sees the text and the thinking, stealth falls to between zero and zero point six percent for the variable-loop model, and one point three for Inkling 2 Mini.
+MIA: So the readable reasoning is still doing most of the catching.
+GEORGE: That's how I read it. They also tested controllability: can the model deliberately reshape its chain of thought, say, avoid a keyword? At most zero point one percent for Inkling 2 Mini and the three-pass variant, against one point three for Qwen three point eight, twenty-seven B. The authors say the test can't separate loop counts at rates that low.
+MIA: And their bottom line?
+GEORGE: Looping "increases what these models can do without a verbalized chain of thought", but "at this scale we do not see a meaningful reduction in the monitorability." And they say themselves this needs tracking in larger models.
+MIA: I'd hold on to both halves. Today, fine. But the direction of travel is clear, that no chain of thought horizon is rising.
+GEORGE: There's a faithfulness hint from Ouro as well. Probes suggest each recurrent step can revise the provisional answer. Answers at step two and step four agree only thirty-six point one percent of the time, on a thousand Quora question pairs. But the authors stress it's observational, since they "cannot manipulate the latent reasoning process".
+MIA: So the practical rule for me: never make a looped model's written reasoning your only control. Monitor actions and tool calls, and keep it sandboxed.
+GEORGE: Especially since the model card says it "may take destructive actions without confirmation".
+MIA: Let's stay on that card, because the limitations list is honest. More likely to state wrong things confidently. Can get stuck in long reasoning loops, especially when debugging, so they recommend capping output tokens and agent turns. Less reliable with tools and detailed instructions. Lower output quality outside English.
+GEORGE: Which for you, Lucas, means Dutch documents need their own test. Don't assume English results carry over.
+MIA: And Witteveen finds it less eager than Qwen three point eight, twenty-seven B to call tools and act. He passes on a community suggestion: use it for planning, diagnosis and code review, and hand the action-taking to a more eager model.
+GEORGE: Which fits the whole profile, really. A strong reasoner that knows less than its size suggests and is hesitant with tools. A reviewer, not a doer.
+MIA: Honestly, for autonomy that's not a bad trait. A cautious planner and a separate executor with tight permissions is a split I'd want anyway.
+GEORGE: Let me be the sceptic for a moment, though. Extrapolation is limited. Dory saturates around four loops. Inkling's research model was trained mostly at three passes, with RL only at three, and its authors say other settings may understate what a model trained for them could do. So we don't really have a scaling law for loops yet.
+MIA: Fair. So here's the weekend project. Take one local workload where you already have gold labels. Say, extracting fields from a set of reports, or a code-review pass on one of your RAG repos. Run Inkling 2 Mini, through Ollama on a Mac with thirty-two gigabytes or more, or vLLM or SGLang with the native weights, against the dense local model you use now.
+GEORGE: And measure cost per solved task. Accuracy, output tokens, wall-clock time and peak memory. Not tokens per second.
+MIA: Three settings. Test the Dutch inputs separately. Cap output tokens and agent turns, and run it in a sandbox without destructive permissions. And try it in the planner or reviewer role, with tool execution left to a more eager model.
+GEORGE: If the hardware is smaller, Dory one point oh, four B at two loops is the cheap variant, which is NVIDIA's own recommended default. And either way, pair it with retrieval, because looping doesn't add knowledge.
+MIA: Think in loops, fetch the facts. Enjoy the weekend, Lucas.
+GEORGE: Cheers, Lucas, see you Monday.
